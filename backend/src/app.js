@@ -6,6 +6,7 @@ import { alertsRouter } from "./routes/alerts.js";
 import { analyticsRouter } from "./routes/analytics.js";
 import { binsRouter } from "./routes/bins.js";
 import { routesRouter } from "./routes/routes.js";
+import { osmBinsRouter } from "./routes/osmBins.js";
 import { sensorsRouter } from "./routes/sensors.js";
 
 export function createApp() {
@@ -19,6 +20,7 @@ export function createApp() {
   });
 
   app.use("/api/bins", binsRouter);
+  app.use("/api/osm-bins", osmBinsRouter);
   app.use("/api/sensors", sensorsRouter);
   app.use("/api/alerts", alertsRouter);
   app.use("/api/routes", routesRouter);
