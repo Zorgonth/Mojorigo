@@ -154,6 +154,14 @@ function DashboardPage({ onBack }: DashboardPageProps) {
   const [loading, setLoading] = useState(true);
   const [selectedGlassType, setSelectedGlassType] = useState<(typeof chipFilters)[number]["key"]>("all");
   const [mapSearch, setMapSearch] = useState("");
+  const [routeResult, setRouteResult] = useState<{
+    count?: number;
+    route?: { duration?: string; distanceMeters?: number };
+    stops?: Array<{ sequence?: number; name?: string; address?: string; latitude?: number; longitude?: number; id?: string }>;
+    message?: string;
+  } | null>(null);
+  const [routeError, setRouteError] = useState("");
+  const [isGeneratingRoutes, setIsGeneratingRoutes] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -233,7 +241,49 @@ function DashboardPage({ onBack }: DashboardPageProps) {
     }));
   }, [filteredMapPoints, mapPoints]);
 
+  const handleGenerateRoutes = async () => {
+    setIsGeneratingRoutes(true);
+    setRouteError("");
+
+    try {
+      const response = await fetch("/api/osm-bins/collection-route", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          origin: { latitude: 49.1427, longitude: 9.2109 },
+          returnToOrigin: true,
+        }),
+      });
+
+      const payload = await response.json();
+
+      if (!response.ok) {
+        throw new Error(payload?.error?.message ?? "Unable to generate the collection route.");
+      }
+
+      setRouteResult(payload);
+    } catch (error) {
+      setRouteResult(null);
+      setRouteError(error instanceof Error ? error.message : "Unable to generate the route.");
+    } finally {
+      setIsGeneratingRoutes(false);
+    }
+  };
+
   const routeRows = useMemo(() => {
+    if (routeResult?.stops?.length) {
+      return routeResult.stops.slice(0, 3).map((stop, index) => ({
+        name: `Route ${String.fromCharCode(65 + index)}`,
+        stops: stop.sequence ?? index + 1,
+        est: routeResult.route?.duration ?? "Optimising",
+        traffic: routeResult.route?.distanceMeters && routeResult.route.distanceMeters > 6000 ? "Heavy" : "Moderate",
+        driver: index === 0 ? "MK" : index === 1 ? "SB" : "CL",
+        status: routeResult.message ? "Waiting" : "Optimized",
+      }));
+    }
+
     const sourceAreas = selectedGlassType === "all"
       ? (dashboardData?.busiestAreas ?? [])
       : (dashboardData?.busiestAreas ?? []).filter((area) => {
@@ -249,7 +299,7 @@ function DashboardPage({ onBack }: DashboardPageProps) {
       driver: index === 0 ? "MK" : index === 1 ? "SB" : "CL",
       status: area.binsNeedingEmptying > 0 ? "In Progress" : "Not Started",
     }));
-  }, [dashboardData, filteredMapPoints, mapPoints, selectedGlassType]);
+  }, [dashboardData, filteredMapPoints, mapPoints, routeResult, selectedGlassType]);
 
   const selectedBin = useMemo(() => {
     const sourceBins = filteredMapPoints.length > 0 ? filteredMapPoints : mapPoints;
@@ -479,8 +529,19 @@ function DashboardPage({ onBack }: DashboardPageProps) {
             <section className="panel route-panel">
               <div className="panel-title-row">
                 <h2>Generated Routes</h2>
-                <button type="button" className="text-link">View all routes <ArrowRight size={14} /></button>
+                <button type="button" className="text-link" onClick={handleGenerateRoutes} disabled={isGeneratingRoutes}>
+                  {isGeneratingRoutes ? "Generating..." : "Generate routes"}
+                  <ArrowRight size={14} />
+                </button>
               </div>
+
+              {routeError && <div className="route-message error">{routeError}</div>}
+              {routeResult?.route && (
+                <div className="route-message success">
+                  Fastest route: {routeResult.route.distanceMeters ? `${Math.round(routeResult.route.distanceMeters / 1000)} km` : "best available"} · {routeResult.route.duration ?? "ETA pending"}
+                </div>
+              )}
+
               <div className="route-table">
                 <div className="route-row head">
                   <span>Route</span>
