@@ -4,6 +4,7 @@ import SearchBar from "./components/SearchBar";
 import NearbyBins from "./components/NearbyBins";
 import Navigation from "./components/Navigation";
 import HeaderControls from "./components/HeaderControls";
+import GlassBinsMap from "./components/GlassBinsMap";
 
 function App() {
   return (
@@ -45,11 +46,12 @@ function App() {
         </aside>
 
         {/* Reserved map area */}
-        <section
-          className="glass-map"
-          aria-label="Map area"
-        />
-
+<section
+  className="glass-map"
+  aria-label="Map of glass collection points"
+>
+  <GlassBinsMap />
+</section>
       </div>
 
     </main>
