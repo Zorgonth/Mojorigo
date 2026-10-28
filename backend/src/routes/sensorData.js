@@ -1,4 +1,3 @@
-
 import { Router } from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -21,37 +20,26 @@ const BIN_HEIGHT_CM = 130;
 
 // Receive a TTN uplink and save a reading.
 sensorDataRouter.post("/", async (req, res, next) => {
-    console.log("Received TTN payload:", JSON.stringify(req.body, null, 2));
+  console.log("Received TTN payload:", JSON.stringify(req.body, null, 2));
+
   try {
     const payload = req.body ?? {};
-    const device = payload.end_device_ids ?? {};
     const uplink = payload.uplink_message ?? {};
+    const decodedPayload = uplink.decoded_payload ?? {};
 
-    // TTN device identifiers.
-    const deviceId = device.device_id;
-    const devEui = device.dev_eui;
+    // Use the ID from the decoded payload to identify the sensor.
+    const id = decodedPayload.id;
 
-    // Prefer TTN's decoded distance.
-    let cm =
-      uplink.decoded_payload?.distance_cm ??
-      uplink.decoded_payload?.cm;
+    // Get the decoded distance.
+    const cm = decodedPayload.distance_cm;
 
-    // Fallback: decode the first byte of the Base64 payload.
-    if (cm === undefined && uplink.frm_payload) {
-      const bytes = Buffer.from(uplink.frm_payload, "base64");
+    console.log("Received sensor ID:", id);
+    console.log("Received distance in cm:", cm);
 
-      if (bytes.length > 0) {
-        cm = bytes[0];
-      }
-    }
-    console.log("THIS IS THE NUMBER OF CMS RECEIVED:", cm);
-    // Validate the sensor identifier.
-    if (
-      typeof deviceId !== "string" ||
-      deviceId.trim() === ""
-    ) {
+    // Validate the sensor ID.
+    if (id === undefined || id === null || String(id).trim() === "") {
       return res.status(400).json({
-        error: 'Missing end_device_ids.device_id in TTN payload',
+        error: "Missing sensor ID in decoded payload",
       });
     }
 
@@ -67,23 +55,20 @@ sensorDataRouter.post("/", async (req, res, next) => {
       });
     }
 
-    // Match the TTN device ID or its DevEUI to a configured bin.
-    const identifiers = [deviceId.trim(), devEui]
-      .filter(Boolean);
+    // Find the bin using ONLY the decoded payload ID.
+    // store.bins should contain the bins loaded from bins.csv.
+    const sensorId = String(id).trim();
 
-
-    const bin = store.bins.find((item) =>
-      identifiers.includes(String(item.sensorId).trim())
+    const bin = store.bins.find(
+      (item) => String(item.sensorId ?? "").trim() === sensorId
     );
 
-    // ----------------------------------
-
+    // Stop if the ID does not match a configured bin.
     if (!bin) {
       return res.status(404).json({
-        error: "No bin is configured for this TTN device",
-        deviceId,
-        devEui: devEui ?? null,
-        hint: "Check the sensor_id column in your bins.csv",
+        error: "No bin is configured for this sensor ID",
+        sensorId,
+        hint: "Check that the sensor ID matches the sensor_id column in bins.csv",
       });
     }
 
@@ -93,8 +78,7 @@ sensorDataRouter.post("/", async (req, res, next) => {
     );
 
     const latitude = bin.latitude ?? bin.lat ?? "";
-    const longitude =
-      bin.longitude ?? bin.lng ?? bin.lon ?? "";
+    const longitude = bin.longitude ?? bin.lng ?? bin.lon ?? "";
 
     const binLocation =
       bin.location ??
@@ -115,12 +99,13 @@ sensorDataRouter.post("/", async (req, res, next) => {
         )
       );
 
+    // Prepare the reading using the decoded sensor ID.
     const reading = {
       receivedAt:
         payload.received_at ??
         uplink.received_at ??
         new Date().toISOString(),
-      sensorId: deviceId.trim(),
+      sensorId,
       cm,
       fillPercent,
       binId: bin.id,
@@ -129,7 +114,7 @@ sensorDataRouter.post("/", async (req, res, next) => {
       longitude,
     };
 
-    // Append one new CSV row; do not replace existing rows.
+    // Append the reading to readings.csv.
     await saveReadingToCsv(reading);
 
     return res.status(201).json({
@@ -178,8 +163,9 @@ sensorDataRouter.get("/latest", (req, res, next) => {
       }
     }
 
-    const data = Array.from(latestBySensor.values())
-      .map((item) => item.reading);
+    const data = Array.from(latestBySensor.values()).map(
+      (item) => item.reading
+    );
 
     return res.status(200).json({
       count: data.length,
