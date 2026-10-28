@@ -1,5 +1,5 @@
 id,green_sensor_id,brown_sensor_id,white_sensor_id,arena_name,city,address,lat,lng
-BIN-001,SENSOR-001-green,SENSOR-001-brown,SENSOR-001-white,Heilbronn,Heilbronn,,49.139836,9.240187
+BIN-001,glass-device,SENSOR-001-brown,SENSOR-001-white,Heilbronn,Heilbronn,,49.139836,9.240187
 BIN-002,SENSOR-002-green,SENSOR-002-brown,SENSOR-002-white,Heilbronn,Heilbronn,,49.15079,9.226555
 BIN-003,SENSOR-003-green,SENSOR-003-brown,SENSOR-003-white,Heilbronn,Heilbronn,,49.139722,9.240339
 BIN-004,SENSOR-004-green,SENSOR-004-brown,SENSOR-004-white,Heilbronn,Heilbronn,,49.131802,9.189881
