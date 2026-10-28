@@ -21,3 +21,7 @@ receivedAt,sensorId,cm,fillPercent,binId,binLocation,latitude,longitude
 2026-10-28T13:53:02.853282172Z,glass-device,1,99.23,BIN-001,Kiliansplatz 1,49.1404,9.2205
 2026-10-28T13:53:05.409035148Z,glass-device,50,61.54,BIN-001,Kiliansplatz 1,49.1404,9.2205
 2026-10-28T13:53:38.949209837Z,glass-device,0,100,BIN-001,Kiliansplatz 1,49.1404,9.2205
+2026-10-28T15:19:55.192053672Z,glass-device,50,61.54,BIN-001,Kiliansplatz 1,49.1404,9.2205
+2026-10-28T15:20:04.532518524Z,glass-device,50,61.54,BIN-001,Kiliansplatz 1,49.1404,9.2205
+2026-10-28T15:20:13.145815926Z,glass-device,80,38.46,BIN-001,Kiliansplatz 1,49.1404,9.2205
+2026-10-28T15:25:12.092944181Z,glass-device,80,38.46,BIN-001,Kiliansplatz 1,49.1404,9.2205
