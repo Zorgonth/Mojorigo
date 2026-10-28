@@ -1,11 +1,96 @@
-id,sensor_id,name,glass_type,glass_type_name_de,area_id,area_name,city,address,lat,lng,capacity_liters,fill_percent,temperature_c,humidity_percent,last_reading_at,installed_at
-BIN-001,glass-device,Kiliansplatz Weißglas,white,Weißglas,innenstadt,Innenstadt,Heilbronn,Kiliansplatz 1,49.1404,9.2205,3000,52.3,10.4,77.7,2026-10-27T12:00:00.000Z,2026-03-01T00:00:00.000Z
-BIN-002,70B3D57ED0079B30,Wollhauszentrum Braunglas,brown,Braunglas,innenstadt,Innenstadt,Heilbronn,Allee 40,49.139,9.2225,3000,86.6,11.3,69.8,2026-10-27T12:00:00.000Z,2026-03-01T00:00:00.000Z
-BIN-003,SEN-003,Hauptbahnhof Blauglas,blue,Blauglas,innenstadt,Innenstadt,Heilbronn,Bahnhofstraße 10,49.1427,9.2098,3000,90,10.4,72.7,2026-10-27T12:00:00.000Z,2026-03-01T00:00:00.000Z
-BIN-004,SEN-004,Wertwiesenpark Weißglas,white,Weißglas,innenstadt,Innenstadt,Heilbronn,Wertwiesen 1,49.1365,9.203,3000,87.3,11,75,2026-10-27T12:00:00.000Z,2026-03-01T00:00:00.000Z
-BIN-005,SEN-005,Böckingen Kirchplatz Braunglas,brown,Braunglas,boeckingen,Böckingen,Heilbronn,Kirchsteige 2,49.1472,9.1855,3000,33.8,10.2,78.5,2026-10-27T12:00:00.000Z,2026-03-01T00:00:00.000Z
-BIN-006,SEN-006,Sontheim Kelter Blauglas,blue,Blauglas,sontheim,Sontheim,Heilbronn,Kelterplatz 3,49.1202,9.2228,3000,56.2,11,75.2,2026-10-27T12:00:00.000Z,2026-03-01T00:00:00.000Z
-BIN-007,SEN-007,Bildungscampus Weißglas,white,Weißglas,innenstadt,Innenstadt,Heilbronn,Bildungscampus 6,49.1485,9.2068,3000,37.3,11.1,71.9,2026-10-27T12:00:00.000Z,2026-03-01T00:00:00.000Z
-BIN-008,SEN-008,Neckargartach Rathaus Braunglas,brown,Braunglas,neckargartach,Neckargartach,Heilbronn,Sankt-Martins-Straße 4,49.1678,9.2052,3000,53.8,10.6,72.1,2026-10-27T12:00:00.000Z,2026-03-01T00:00:00.000Z
-BIN-009,SEN-009,Pfühlpark Blauglas,blue,Blauglas,pfuehl,Pfühl,Heilbronn,Pfühlstraße 20,49.1398,9.2385,3000,86.1,10.5,75.8,2026-10-27T12:00:00.000Z,2026-03-01T00:00:00.000Z
-BIN-010,SEN-010,Theresienwiese Weißglas,white,Weißglas,innenstadt,Innenstadt,Heilbronn,Theresienwiese 1,49.1358,9.2188,3000,32.2,10.7,73.9,2026-10-27T12:00:00.000Z,2026-03-01T00:00:00.000Z
+id,green_sensor_id,brown_sensor_id,white_sensor_id,arena_name,city,address,lat,lng
+BIN-001,SENSOR-001-green,SENSOR-001-brown,SENSOR-001-white,Heilbronn,Heilbronn,,49.139836,9.240187
+BIN-002,SENSOR-002-green,SENSOR-002-brown,SENSOR-002-white,Heilbronn,Heilbronn,,49.15079,9.226555
+BIN-003,SENSOR-003-green,SENSOR-003-brown,SENSOR-003-white,Heilbronn,Heilbronn,,49.139722,9.240339
+BIN-004,SENSOR-004-green,SENSOR-004-brown,SENSOR-004-white,Heilbronn,Heilbronn,,49.131802,9.189881
+BIN-005,SENSOR-005-green,SENSOR-005-brown,SENSOR-005-white,Heilbronn,Heilbronn,,49.130932,9.190673
+BIN-006,SENSOR-006-green,SENSOR-006-brown,SENSOR-006-white,Heilbronn,Heilbronn,,49.131061,9.19124
+BIN-007,SENSOR-007-green,SENSOR-007-brown,SENSOR-007-white,Heilbronn,Heilbronn,,49.131341,9.192534
+BIN-008,SENSOR-008-green,SENSOR-008-brown,SENSOR-008-white,Heilbronn,Heilbronn,,49.13138,9.191968
+BIN-009,SENSOR-009-green,SENSOR-009-brown,SENSOR-009-white,Heilbronn,Heilbronn,,49.131802,9.193235
+BIN-010,SENSOR-010-green,SENSOR-010-brown,SENSOR-010-white,Heilbronn,Heilbronn,,49.11726,9.21556
+BIN-011,SENSOR-011-green,SENSOR-011-brown,SENSOR-011-white,Heilbronn,Heilbronn,,49.11725,9.21639
+BIN-012,SENSOR-012-green,SENSOR-012-brown,SENSOR-012-white,Heilbronn,Heilbronn,,49.11928,9.21591
+BIN-013,SENSOR-013-green,SENSOR-013-brown,SENSOR-013-white,Heilbronn,Heilbronn,,49.143717,9.207869
+BIN-014,SENSOR-014-green,SENSOR-014-brown,SENSOR-014-white,Heilbronn,Heilbronn,,49.14309,9.22723
+BIN-015,SENSOR-015-green,SENSOR-015-brown,SENSOR-015-white,Heilbronn,Heilbronn,,49.145025,9.203383
+BIN-016,SENSOR-016-green,SENSOR-016-brown,SENSOR-016-white,Heilbronn,Heilbronn,,49.14501,9.203923
+BIN-017,SENSOR-017-green,SENSOR-017-brown,SENSOR-017-white,Heilbronn,Heilbronn,,49.15714,9.21556
+BIN-018,SENSOR-018-green,SENSOR-018-brown,SENSOR-018-white,Heilbronn,Heilbronn,,49.15701,9.21571
+BIN-019,SENSOR-019-green,SENSOR-019-brown,SENSOR-019-white,Heilbronn,Heilbronn,,49.124578,9.231269
+BIN-020,SENSOR-020-green,SENSOR-020-brown,SENSOR-020-white,Heilbronn,Heilbronn,,49.124843,9.231514
+BIN-021,SENSOR-021-green,SENSOR-021-brown,SENSOR-021-white,Heilbronn,Heilbronn,,49.141595,9.211756
+BIN-022,SENSOR-022-green,SENSOR-022-brown,SENSOR-022-white,Heilbronn,Heilbronn,,49.12879,9.22415
+BIN-023,SENSOR-023-green,SENSOR-023-brown,SENSOR-023-white,Heilbronn,Heilbronn,,49.13038,9.2372
+BIN-024,SENSOR-024-green,SENSOR-024-brown,SENSOR-024-white,Heilbronn,Heilbronn,,49.15545,9.22237
+BIN-025,SENSOR-025-green,SENSOR-025-brown,SENSOR-025-white,Heilbronn,Heilbronn,,49.144415,9.213813
+BIN-026,SENSOR-026-green,SENSOR-026-brown,SENSOR-026-white,Heilbronn,Heilbronn,,49.1465,9.20857
+BIN-027,SENSOR-027-green,SENSOR-027-brown,SENSOR-027-white,Heilbronn,Heilbronn,,49.14251,9.23192
+BIN-028,SENSOR-028-green,SENSOR-028-brown,SENSOR-028-white,Heilbronn,Heilbronn,,49.14251,9.23235
+BIN-029,SENSOR-029-green,SENSOR-029-brown,SENSOR-029-white,Heilbronn,Heilbronn,,49.12932,9.22415
+BIN-030,SENSOR-030-green,SENSOR-030-brown,SENSOR-030-white,Heilbronn,Heilbronn,,49.15571,9.2217
+BIN-031,SENSOR-031-green,SENSOR-031-brown,SENSOR-031-white,Heilbronn,Heilbronn,,49.14164,9.22271
+BIN-032,SENSOR-032-green,SENSOR-032-brown,SENSOR-032-white,Heilbronn,Heilbronn,,49.14652,9.20894
+BIN-033,SENSOR-033-green,SENSOR-033-brown,SENSOR-033-white,Heilbronn,Heilbronn,,49.13545,9.21443
+BIN-034,SENSOR-034-green,SENSOR-034-brown,SENSOR-034-white,Heilbronn,Heilbronn,,49.139686,9.21852
+BIN-035,SENSOR-035-green,SENSOR-035-brown,SENSOR-035-white,Heilbronn,Heilbronn,,49.139871,9.218335
+BIN-036,SENSOR-036-green,SENSOR-036-brown,SENSOR-036-white,Heilbronn,Heilbronn,,49.12328,9.23126
+BIN-037,SENSOR-037-green,SENSOR-037-brown,SENSOR-037-white,Heilbronn,Heilbronn,,49.14175,9.22728
+BIN-038,SENSOR-038-green,SENSOR-038-brown,SENSOR-038-white,Heilbronn,Heilbronn,,49.14309,9.22692
+BIN-039,SENSOR-039-green,SENSOR-039-brown,SENSOR-039-white,Heilbronn,Heilbronn,,49.14373,9.22904
+BIN-040,SENSOR-040-green,SENSOR-040-brown,SENSOR-040-white,Heilbronn,Heilbronn,,49.14169,9.21326
+BIN-041,SENSOR-041-green,SENSOR-041-brown,SENSOR-041-white,Heilbronn,Heilbronn,,49.14185,9.21303
+BIN-042,SENSOR-042-green,SENSOR-042-brown,SENSOR-042-white,Heilbronn,Heilbronn,,49.13204,9.22271
+BIN-043,SENSOR-043-green,SENSOR-043-brown,SENSOR-043-white,Heilbronn,Heilbronn,,49.1325,9.22237
+BIN-044,SENSOR-044-green,SENSOR-044-brown,SENSOR-044-white,Heilbronn,Heilbronn,,49.14925,9.21361
+BIN-045,SENSOR-045-green,SENSOR-045-brown,SENSOR-045-white,Heilbronn,Heilbronn,,49.14152,9.20815
+BIN-046,SENSOR-046-green,SENSOR-046-brown,SENSOR-046-white,Heilbronn,Heilbronn,,49.1396,9.23194
+BIN-047,SENSOR-047-green,SENSOR-047-brown,SENSOR-047-white,Heilbronn,Heilbronn,,49.13328,9.22152
+BIN-048,SENSOR-048-green,SENSOR-048-brown,SENSOR-048-white,Heilbronn,Heilbronn,,49.13348,9.22152
+BIN-049,SENSOR-049-green,SENSOR-049-brown,SENSOR-049-white,Heilbronn,Heilbronn,,49.1444,9.22485
+BIN-050,SENSOR-050-green,SENSOR-050-brown,SENSOR-050-white,Heilbronn,Heilbronn,,49.15545,9.22194
+BIN-051,SENSOR-051-green,SENSOR-051-brown,SENSOR-051-white,Heilbronn,Heilbronn,,49.13204,9.22359
+BIN-052,SENSOR-052-green,SENSOR-052-brown,SENSOR-052-white,Heilbronn,Heilbronn,,49.14361,9.20817
+BIN-053,SENSOR-053-green,SENSOR-053-brown,SENSOR-053-white,Heilbronn,Heilbronn,,49.14811,9.22377
+BIN-054,SENSOR-054-green,SENSOR-054-brown,SENSOR-054-white,Heilbronn,Heilbronn,,49.14811,9.22416
+BIN-055,SENSOR-055-green,SENSOR-055-brown,SENSOR-055-white,Heilbronn,Heilbronn,,49.13063,9.21319
+BIN-056,SENSOR-056-green,SENSOR-056-brown,SENSOR-056-white,Heilbronn,Heilbronn,,49.14361,9.21734
+BIN-057,SENSOR-057-green,SENSOR-057-brown,SENSOR-057-white,Heilbronn,Heilbronn,,49.14828,9.20815
+BIN-058,SENSOR-058-green,SENSOR-058-brown,SENSOR-058-white,Heilbronn,Heilbronn,,49.139686,9.23235
+BIN-059,SENSOR-059-green,SENSOR-059-brown,SENSOR-059-white,Heilbronn,Heilbronn,,49.1406,9.20794
+BIN-060,SENSOR-060-green,SENSOR-060-brown,SENSOR-060-white,Heilbronn,Heilbronn,,49.14238,9.21319
+BIN-061,SENSOR-061-green,SENSOR-061-brown,SENSOR-061-white,Heilbronn,Heilbronn,,49.13063,9.21275
+BIN-062,SENSOR-062-green,SENSOR-062-brown,SENSOR-062-white,Heilbronn,Heilbronn,,49.1465,9.20914
+BIN-063,SENSOR-063-green,SENSOR-063-brown,SENSOR-063-white,Heilbronn,Heilbronn,,49.14361,9.20853
+BIN-064,SENSOR-064-green,SENSOR-064-brown,SENSOR-064-white,Heilbronn,Heilbronn,,49.137885,9.231572
+BIN-065,SENSOR-065-green,SENSOR-065-brown,SENSOR-065-white,Heilbronn,Heilbronn,,49.1398,9.21852
+BIN-066,SENSOR-066-green,SENSOR-066-brown,SENSOR-066-white,Heilbronn,Heilbronn,,49.14207,9.22728
+BIN-067,SENSOR-067-green,SENSOR-067-brown,SENSOR-067-white,Heilbronn,Heilbronn,,49.139366,9.240339
+BIN-068,SENSOR-068-green,SENSOR-068-brown,SENSOR-068-white,Heilbronn,Heilbronn,,49.13328,9.22108
+BIN-069,SENSOR-069-green,SENSOR-069-brown,SENSOR-069-white,Heilbronn,Heilbronn,,49.12932,9.22377
+BIN-070,SENSOR-070-green,SENSOR-070-brown,SENSOR-070-white,Heilbronn,Heilbronn,,49.14152,9.20853
+BIN-071,SENSOR-071-green,SENSOR-071-brown,SENSOR-071-white,Heilbronn,Heilbronn,,49.12328,9.23159
+BIN-072,SENSOR-072-green,SENSOR-072-brown,SENSOR-072-white,Heilbronn,Heilbronn,,49.13348,9.22108
+BIN-073,SENSOR-073-green,SENSOR-073-brown,SENSOR-073-white,Heilbronn,Heilbronn,,49.14652,9.20857
+BIN-074,SENSOR-074-green,SENSOR-074-brown,SENSOR-074-white,Heilbronn,Heilbronn,,49.14238,9.21361
+BIN-075,SENSOR-075-green,SENSOR-075-brown,SENSOR-075-white,Heilbronn,Heilbronn,,49.13994,9.2201
+BIN-076,SENSOR-076-green,SENSOR-076-brown,SENSOR-076-white,Heilbronn,Heilbronn,,49.182449,9.117281
+BIN-077,SENSOR-077-green,SENSOR-077-brown,SENSOR-077-white,Heilbronn,Heilbronn,,49.162791,9.208453
+BIN-078,SENSOR-078-green,SENSOR-078-brown,SENSOR-078-white,Heilbronn,Heilbronn,,49.131103,9.191599
+BIN-079,SENSOR-079-green,SENSOR-079-brown,SENSOR-079-white,Heilbronn,Heilbronn,,49.11726,9.21589
+BIN-080,SENSOR-080-green,SENSOR-080-brown,SENSOR-080-white,Heilbronn,Heilbronn,,49.13038,9.17642
+BIN-081,SENSOR-081-green,SENSOR-081-brown,SENSOR-081-white,Heilbronn,Heilbronn,,49.191254,9.150821
+BIN-082,SENSOR-082-green,SENSOR-082-brown,SENSOR-082-white,Heilbronn,Heilbronn,,49.150231,9.167822
+BIN-083,SENSOR-083-green,SENSOR-083-brown,SENSOR-083-white,Heilbronn,Heilbronn,,49.111823,9.178221
+BIN-084,SENSOR-084-green,SENSOR-084-brown,SENSOR-084-white,Heilbronn,Heilbronn,,49.141254,9.219821
+BIN-085,SENSOR-085-green,SENSOR-085-brown,SENSOR-085-white,Heilbronn,Heilbronn,,49.138254,9.211821
+BIN-086,SENSOR-086-green,SENSOR-086-brown,SENSOR-086-white,Heilbronn,Heilbronn,,49.144254,9.218821
+BIN-087,SENSOR-087-green,SENSOR-087-brown,SENSOR-087-white,Heilbronn,Heilbronn,,49.135254,9.233821
+BIN-088,SENSOR-088-green,SENSOR-088-brown,SENSOR-088-white,Heilbronn,Heilbronn,,49.138254,9.241821
+BIN-089,SENSOR-089-green,SENSOR-089-brown,SENSOR-089-white,Heilbronn,Heilbronn,,49.153254,9.235821
+BIN-090,SENSOR-090-green,SENSOR-090-brown,SENSOR-090-white,Heilbronn,Heilbronn,,49.158254,9.261821
+BIN-091,SENSOR-091-green,SENSOR-091-brown,SENSOR-091-white,Heilbronn,Heilbronn,,49.146254,9.221821
+BIN-092,SENSOR-092-green,SENSOR-092-brown,SENSOR-092-white,Heilbronn,Heilbronn,,49.145254,9.215821
+BIN-093,SENSOR-093-green,SENSOR-093-brown,SENSOR-093-white,Heilbronn,Heilbronn,,49.136254,9.213821
+BIN-094,SENSOR-094-green,SENSOR-094-brown,SENSOR-094-white,Heilbronn,Heilbronn,,49.140254,9.222821
+BIN-095,SENSOR-095-green,SENSOR-095-brown,SENSOR-095-white,Heilbronn,Heilbronn,,49.139254,9.215821
