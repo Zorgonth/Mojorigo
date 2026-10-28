@@ -1,3 +1,6 @@
+import LanguageSelect from "./LanguageSelect";
+import { useTranslation } from "react-i18next";
+import { locale, locationLabel, urgencyLabel, t } from "../i18n";
 import { useEffect, useMemo, useState } from "react";
 import {
   AlertTriangle,
@@ -12,7 +15,7 @@ import {
   Search,
   ShieldCheck,
   Truck,
-  User,
+  UserRound,
   Users,
   Warehouse,
 } from "lucide-react";
@@ -149,6 +152,7 @@ const fallbackMapPoints: MapPoint[] = [
 ];
 
 function DashboardPage({ onBack }: DashboardPageProps) {
+  const { t: translate } = useTranslation();
   const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
   const [mapPoints, setMapPoints] = useState<MapPoint[]>([]);
   const [loading, setLoading] = useState(true);
@@ -156,7 +160,7 @@ function DashboardPage({ onBack }: DashboardPageProps) {
   const [mapSearch, setMapSearch] = useState("");
   const [routeResult, setRouteResult] = useState<{
     count?: number;
-    route?: { duration?: string; distanceMeters?: number };
+    route?: { duration?: string; distanceMeters?: number } | null;
     stops?: Array<{ sequence?: number; name?: string; address?: string; latitude?: number; longitude?: number; id?: string }>;
     message?: string;
   } | null>(null);
@@ -215,13 +219,13 @@ function DashboardPage({ onBack }: DashboardPageProps) {
     const areasCount = new Set(dataPoints.map((point) => point.areaName)).size;
 
     return [
-      { label: "Total Smart Bins", value: String(dataPoints.length), delta: `${areasCount} areas`, accent: "blue" },
-      { label: "Needs Pickup", value: String(needsPickup), delta: `${dashboardData.totals.collections} collections`, accent: "red" },
+      { label: "Total Smart Bins", value: String(dataPoints.length), delta: translate("{{count}} areas", {count: areasCount}), accent: "blue" },
+      { label: "Needs Pickup", value: String(needsPickup), delta: translate("{{count}} collections", {count: dashboardData.totals.collections}), accent: "red" },
       { label: "Avg. Fullness", value: `${avgFill}%`, delta: `${Math.round(dashboardData.avgTemperatureC)}°C`, accent: "amber" },
-      { label: "Collected Today", value: String(dashboardData.totals.collections), delta: `${dashboardData.totals.readings} readings`, accent: "green" },
-      { label: "Route Efficiency", value: `${routeEfficiency}%`, delta: `${Math.round(dashboardData.avgHumidityPercent)}% humidity`, accent: "teal" },
+      { label: "Collected Today", value: String(dashboardData.totals.collections), delta: translate("{{count}} readings", {count: dashboardData.totals.readings}), accent: "green" },
+      { label: "Route Efficiency", value: `${routeEfficiency}%`, delta: translate("{{value}}% humidity", {value: Math.round(dashboardData.avgHumidityPercent)}), accent: "teal" },
     ];
-  }, [dashboardData, filteredMapPoints, mapPoints, selectedGlassType]);
+  }, [dashboardData, filteredMapPoints, mapPoints, translate]);
 
   const areaRows = useMemo(() => {
     const grouped = new Map<string, number[]>();
@@ -244,6 +248,7 @@ function DashboardPage({ onBack }: DashboardPageProps) {
   const handleGenerateRoutes = async () => {
     setIsGeneratingRoutes(true);
     setRouteError("");
+    setRouteResult(null);
 
     try {
       const response = await fetch("/api/osm-bins/collection-route", {
@@ -272,34 +277,17 @@ function DashboardPage({ onBack }: DashboardPageProps) {
     }
   };
 
-  const routeRows = useMemo(() => {
-    if (routeResult?.stops?.length) {
-      return routeResult.stops.slice(0, 3).map((stop, index) => ({
-        name: `Route ${String.fromCharCode(65 + index)}`,
-        stops: stop.sequence ?? index + 1,
-        est: routeResult.route?.duration ?? "Optimising",
-        traffic: routeResult.route?.distanceMeters && routeResult.route.distanceMeters > 6000 ? "Heavy" : "Moderate",
-        driver: index === 0 ? "MK" : index === 1 ? "SB" : "CL",
-        status: routeResult.message ? "Waiting" : "Optimized",
-      }));
-    }
-
-    const sourceAreas = selectedGlassType === "all"
-      ? (dashboardData?.busiestAreas ?? [])
-      : (dashboardData?.busiestAreas ?? []).filter((area) => {
-          const matchingPoints = (filteredMapPoints.length > 0 ? filteredMapPoints : mapPoints).filter((point) => point.areaName === area.areaName);
-          return matchingPoints.length > 0;
-        });
-
-    return sourceAreas.slice(0, 3).map((area, index) => ({
-      name: index === 0 ? "Route West" : index === 1 ? "Route North" : "Route South",
-      stops: area.binCount,
-      est: `${Math.max(1, Math.round(area.collectionCount / 2))}h ${Math.round((area.collectionCount % 2) * 30)}m`,
-      traffic: area.avgFillPercent > 70 ? "Heavy" : area.avgFillPercent > 45 ? "Moderate" : "Light",
-      driver: index === 0 ? "MK" : index === 1 ? "SB" : "CL",
-      status: area.binsNeedingEmptying > 0 ? "In Progress" : "Not Started",
-    }));
-  }, [dashboardData, filteredMapPoints, mapPoints, routeResult, selectedGlassType]);
+  const routeDuration = (() => {
+    const raw = routeResult?.route?.duration;
+    const seconds = raw && /^\d+(?:\.\d+)?s$/.test(raw) ? Number(raw.slice(0, -1)) : null;
+    if (seconds === null) return raw || t("Unavailable");
+    const minutes = Math.ceil(seconds / 60);
+    return minutes >= 60 ? t("{{hours}}h {{minutes}}m", {hours: Math.floor(minutes / 60), minutes: minutes % 60}) : t("{{minutes}} min", {minutes});
+  })();
+  const routeRows = routeResult?.route && routeResult.stops?.length ? [{
+    name: "Collection route", stops: routeResult.stops.length, est: routeDuration,
+    traffic: "Traffic-aware", driver: "Unassigned", status: "Generated",
+  }] : [];
 
   const selectedBin = useMemo(() => {
     const sourceBins = filteredMapPoints.length > 0 ? filteredMapPoints : mapPoints;
@@ -333,7 +321,7 @@ function DashboardPage({ onBack }: DashboardPageProps) {
     if (!sourceInsights.length) {
       return [
         {
-          title: selectedGlassType === "all" ? "System healthy" : `${selectedGlassType.charAt(0).toUpperCase()}${selectedGlassType.slice(1)} collection steady`,
+          title: selectedGlassType === "all" ? translate("System healthy") : translate("{{colour}} collection steady", {colour: translate(selectedGlassType.charAt(0).toUpperCase() + selectedGlassType.slice(1))}),
           text: "No active emptying alerts. Current collection workload remains within the configured thresholds for the chosen glass stream.",
           tag: "Stable",
         },
@@ -342,16 +330,16 @@ function DashboardPage({ onBack }: DashboardPageProps) {
 
     return sourceInsights.slice(0, 3).map((alert) => ({
       title: `${alert.areaName} · ${alert.name}`,
-      text: alert.urgencyMessage || `${alert.name} is currently at ${alert.fillPercent}% fullness and requires attention.`,
-      tag: alert.status === "critical" ? "Critical" : "Needs pickup",
+      text: alert.urgencyMessage || translate("{{name}} is currently at {{fill}}% fullness and requires attention.", {name: alert.name, fill: alert.fillPercent}),
+      tag: alert.status === "critical" ? translate("Critical") : translate("Needs pickup"),
     }));
-  }, [dashboardData, selectedGlassType]);
+  }, [dashboardData, selectedGlassType, translate]);
 
   if (loading || !dashboardData) {
     return (
       <main className="glass-app dashboard-shell">
         <div className="glass-background" />
-        <div className="dashboard-loading">Loading live dashboard data…</div>
+        <div className="dashboard-loading">{t("Loading live dashboard data…")}</div>
       </main>
     );
   }
@@ -362,23 +350,24 @@ function DashboardPage({ onBack }: DashboardPageProps) {
 
       <header className="dashboard-header">
         <div className="dashboard-brand-wrap">
-          <button type="button" className="brand-button" onClick={onBack} aria-label="Return to home">
-            <span className="brand-logo">G.L.A.S.S</span>
+          <button type="button" className="brand-button" onClick={onBack} aria-label={t("Return to home")}>
+            <span className="brand-logo">G.<span className="logo-l">L</span>.A.S.S</span>
           </button>
-          <div className="brand-subtitle">Glass Logistics &amp; Smart Sensing</div>
+          <div className="brand-subtitle">{t("Glass Logistics & Smart Sensing")}</div>
         </div>
 
         <div className="header-right">
+          <LanguageSelect/>
           <div className="mini-widget">
             <span className="mini-label">Heilbronn</span>
-            <span className="mini-time">Tue, 15 Apr 2025 10:24</span>
+            <span className="mini-time">{new Date().toLocaleString(locale(), {dateStyle: "medium", timeStyle: "short"})}</span>
           </div>
-          <button type="button" className="header-bell" aria-label="Notifications">
+          <button type="button" className="header-bell" aria-label={t("Notifications")}>
             <Bell size={18} />
           </button>
           <div className="user-pill">
             <div className="user-avatar">
-              <User size={14} />
+              <UserRound size={21} strokeWidth={1.8} aria-hidden="true" />
             </div>
             <span>T. Maier</span>
           </div>
@@ -389,41 +378,27 @@ function DashboardPage({ onBack }: DashboardPageProps) {
         <aside className="dashboard-sidebar">
           <div className="nav-group">
             <button type="button" className="nav-item active">
-              <Grid2x2 size={18} />
-              Overview
-            </button>
+              <Grid2x2 size={18} />{t("Overview")}</button>
             <button type="button" className="nav-item">
-              <MapIcon size={18} />
-              Map
-            </button>
+              <MapIcon size={18} />{t("Map")}</button>
             <button type="button" className="nav-item">
-              <Warehouse size={18} />
-              Bins
-            </button>
+              <Warehouse size={18} />{t("Bins")}</button>
             <button type="button" className="nav-item">
-              <Route size={18} />
-              Routes
-            </button>
+              <Route size={18} />{t("Routes")}</button>
             <button type="button" className="nav-item">
-              <Users size={18} />
-              Analytics
-            </button>
+              <Users size={18} />{t("Analytics")}</button>
             <button type="button" className="nav-item">
-              <ShieldCheck size={18} />
-              Reports
-            </button>
+              <ShieldCheck size={18} />{t("Reports")}</button>
             <button type="button" className="nav-item">
-              <Menu size={18} />
-              Settings
-            </button>
+              <Menu size={18} />{t("Settings")}</button>
           </div>
         </aside>
 
         <main className="dashboard-main">
           <div className="section-header-row">
             <div>
-              <h1>Hack the Bin – Smart glass collection dashboard</h1>
-              <p>Glass Logistics &amp; Smart Sensing</p>
+              <h1>{t("Hack the Bin – Smart glass collection dashboard")}</h1>
+              <p>{t("Glass Logistics & Smart Sensing")}</p>
             </div>
           </div>
 
@@ -435,14 +410,14 @@ function DashboardPage({ onBack }: DashboardPageProps) {
                 className={selectedGlassType === filter.key ? "filter-chip primary" : "filter-chip"}
                 onClick={() => setSelectedGlassType(filter.key)}
               >
-                {filter.label}
+                {t(filter.label)}
               </button>
             ))}
           </div>
 
           <div className="stats-grid">
             {stats.map((card) => (
-              <div key={card.label} className={`stat-card ${card.accent}`}>
+              <div key={t(card.label)} className={`stat-card ${card.accent}`}>
                 <div className="stat-icon">
                   {card.accent === "blue" && <Warehouse size={18} />}
                   {card.accent === "red" && <AlertTriangle size={18} />}
@@ -451,7 +426,7 @@ function DashboardPage({ onBack }: DashboardPageProps) {
                   {card.accent === "teal" && <Route size={18} />}
                 </div>
                 <div className="stat-copy">
-                  <div className="stat-label">{card.label}</div>
+                  <div className="stat-label">{t(card.label)}</div>
                   <div className="stat-value-row">
                     <strong>{card.value}</strong>
                     <span>{card.delta}</span>
@@ -464,7 +439,7 @@ function DashboardPage({ onBack }: DashboardPageProps) {
           <div className="content-grid">
             <section className="panel table-panel">
               <div className="panel-title-row">
-                <h2>Bin Status Overview</h2>
+                <h2>{t("Bin Status Overview")}</h2>
               </div>
               <div className="legend-row">
                 <span>0 – 25%</span>
@@ -472,27 +447,27 @@ function DashboardPage({ onBack }: DashboardPageProps) {
                 <span>51 – 75%</span>
                 <span>76 – 90%</span>
                 <span>91 – 100%</span>
-                <span>Total</span>
+                <span>{t("Total")}</span>
               </div>
               <div className="table-wrap">
                 <table>
                   <thead>
                     <tr>
-                      <th>Area / District</th>
+                      <th>{t("Area / District")}</th>
                       <th>0 – 25%</th>
                       <th>26 – 50%</th>
                       <th>51 – 75%</th>
                       <th>76 – 90%</th>
                       <th>91 – 100%</th>
-                      <th>Total</th>
+                      <th>{t("Total")}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {areaRows.map((row) => (
-                      <tr key={row.area}>
-                        <td>{row.area}</td>
+                      <tr key={t(row.area)}>
+                        <td>{t(row.area)}</td>
                         {row.values.map((value, index) => (
-                          <td key={`${row.area}-${index}`}>{value}</td>
+                          <td key={`${t(row.area)}-${index}`}>{value}</td>
                         ))}
                       </tr>
                     ))}
@@ -503,18 +478,17 @@ function DashboardPage({ onBack }: DashboardPageProps) {
 
             <section className="panel map-panel">
               <div className="map-header">
-                <button type="button" className="map-tab active">Map</button>
-                <button type="button" className="map-tab">Satellite</button>
-                <label className="map-search" aria-label="Search bins, areas or addresses">
+                <button type="button" className="map-tab active">{t("Map")}</button>
+                <label className="map-search" aria-label={t("Search bins, areas or addresses")}>
                   <Search size={15} />
                   <input
                     type="text"
                     value={mapSearch}
                     onChange={(event) => setMapSearch(event.target.value)}
-                    placeholder="Search bins, areas or addresses..."
+                    placeholder={t("Search bins, areas or addresses...")}
                   />
                 </label>
-                <button type="button" className="map-button" aria-label="Open filters">
+                <button type="button" className="map-button" aria-label={t("Open filters")}>
                   <MapPinned size={15} />
                 </button>
               </div>
@@ -528,91 +502,99 @@ function DashboardPage({ onBack }: DashboardPageProps) {
           <div className="bottom-grid">
             <section className="panel route-panel">
               <div className="panel-title-row">
-                <h2>Generated Routes</h2>
-                <button type="button" className="text-link" onClick={handleGenerateRoutes} disabled={isGeneratingRoutes}>
-                  {isGeneratingRoutes ? "Generating..." : "Generate routes"}
+                <h2>{t("Generated Routes")}</h2>
+                <button type="button" className="generate-route-button" onClick={handleGenerateRoutes} disabled={isGeneratingRoutes}>
+                  {isGeneratingRoutes ? t("Generating...") : t("Generate routes")}
                   <ArrowRight size={14} />
                 </button>
               </div>
 
-              {routeError && <div className="route-message error">{routeError}</div>}
+              {routeError && <div className="route-message error">{t(routeError)}</div>}
               {routeResult?.route && (
-                <div className="route-message success">
-                  Fastest route: {routeResult.route.distanceMeters ? `${Math.round(routeResult.route.distanceMeters / 1000)} km` : "best available"} · {routeResult.route.duration ?? "ETA pending"}
+                <div className="route-message success">{t("Collection route:")}{" "}{routeResult.route.distanceMeters !== undefined ? `${(routeResult.route.distanceMeters / 1000).toLocaleString(locale(), {maximumFractionDigits: 1, minimumFractionDigits: 1})} km` : t("Distance unavailable")} · {routeDuration}
                 </div>
               )}
 
-              <div className="route-table">
+              {routeResult?.message && <p className="route-message" role="status">{t(routeResult.message)}</p>}
+              {!routeResult && !routeError && !isGeneratingRoutes && <p className="route-message">{t("Generate a collection route for locations with a compartment over 70% full.")}</p>}
+              {routeRows.length > 0 && <div className="route-table">
                 <div className="route-row head">
-                  <span>Route</span>
-                  <span>Stops</span>
-                  <span>Est. Time</span>
-                  <span>Traffic</span>
-                  <span>Driver</span>
-                  <span>Status</span>
+                  <span>{t("Route")}</span>
+                  <span>{t("Stops")}</span>
+                  <span>{t("Est. Time")}</span>
+                  <span>{t("Traffic")}</span>
+                  <span>{t("Driver")}</span>
+                  <span>{t("Status")}</span>
                 </div>
                 {routeRows.map((row) => (
                   <div key={row.name} className="route-row">
-                    <span className="route-name"><i className="route-dot" />{row.name}</span>
+                    <span className="route-name"><i className="route-dot" />{t(row.name)}</span>
                     <span>{row.stops}</span>
                     <span>{row.est}</span>
-                    <span>{row.traffic}</span>
-                    <span>{row.driver}</span>
-                    <span className="route-status">{row.status}</span>
+                    <span>{t(row.traffic)}</span>
+                    <span>{t(row.driver)}</span>
+                    <span className="route-status">{t(row.status)}</span>
                   </div>
                 ))}
-              </div>
+              </div>}
+              {routeResult?.route && <ol className="collection-stops" aria-label={t("Collection stop order")}>
+                {routeResult.stops?.map((stop, index) => <li key={stop.id ?? index}>
+                  <strong>{locationLabel(stop.name || stop.address || "Collection location")}</strong>
+                  {stop.address && stop.address !== stop.name && <span>{locationLabel(stop.address)}</span>}
+                  {stop.latitude !== undefined && stop.longitude !== undefined && <a href={`https://www.google.com/maps/dir/?api=1&destination=${stop.latitude},${stop.longitude}`} target="_blank" rel="noreferrer">{t("Directions ↗")}</a>}
+                </li>)}
+              </ol>}
             </section>
 
             <section className="panel selected-panel">
               <div className="panel-title-row">
-                <h2>Selected Bin Details</h2>
-                <span className="mini-tag">1 of {dashboardData.totals.bins}</span>
+                <h2>{t("Selected Bin Details")}</h2>
+                <span className="mini-tag">{t("{{count}} of {{total}}", {count: 1, total: dashboardData.totals.bins})}</span>
               </div>
 
               <div className="selected-bin-header">
-                <div className="bin-id">BIN ID <strong>{selectedBin?.binId ?? "N/A"}</strong></div>
-                <span className="warning-pill"><AlertTriangle size={12} /> {selectedBin?.urgencyMessage ?? "Monitoring"}</span>
+                <div className="bin-id">{t("BIN ID")}{" "}<strong>{selectedBin?.binId ?? t("N/A")}</strong></div>
+                <span className="warning-pill"><AlertTriangle size={12} /> {urgencyLabel(selectedBin?.urgencyMessage ?? "Monitoring")}</span>
               </div>
 
               <div className="bin-meta">
-                <span><span className="meta-label">Location</span><strong>{selectedBin?.areaName ?? "Unknown area"}</strong></span>
-                <span><span className="meta-label">Address</span><strong>{selectedBin?.address ?? "No address recorded"}</strong></span>
+                <span><span className="meta-label">{t("Location")}</span><strong>{t(selectedBin?.areaName ?? "Unknown area")}</strong></span>
+                <span><span className="meta-label">{t("Address")}</span><strong>{locationLabel(selectedBin?.address ?? "No address recorded")}</strong></span>
               </div>
 
               <div className="meter-grid">
                 <div className="meter-box">
-                  <span>Fullness</span>
+                  <span>{t("Fullness")}</span>
                   <strong>{selectedBin?.fillPercent ?? 0}%</strong>
                 </div>
                 <div className="meter-box">
-                  <span>Humidity</span>
+                  <span>{t("Humidity")}</span>
                   <strong>{selectedBin?.humidityPercent ?? 0}%</strong>
                 </div>
                 <div className="meter-box">
-                  <span>Temperature</span>
-                  <strong>{selectedBin?.temperatureC ?? 0}°C</strong>
+                  <span>{t("Temperature")}</span>
+                  <strong>{selectedBin?.temperatureC ?? 0}{t("°C")}</strong>
                 </div>
                 <div className="meter-box">
-                  <span>Traffic nearby</span>
-                  <strong>{selectedBin?.fillPercent && selectedBin.fillPercent > 70 ? "Heavy" : selectedBin?.fillPercent && selectedBin.fillPercent > 45 ? "Moderate" : "Light"}</strong>
+                  <span>{t("Traffic nearby")}</span>
+                  <strong>{selectedBin?.fillPercent && selectedBin.fillPercent > 70 ? t("Heavy") : selectedBin?.fillPercent && selectedBin.fillPercent > 45 ? t("Moderate") : t("Light")}</strong>
                 </div>
               </div>
             </section>
 
             <section className="panel insight-panel">
               <div className="panel-title-row">
-                <h2>Hotspots &amp; Planning Insights</h2>
+                <h2>{t("Hotspots & Planning Insights")}</h2>
               </div>
 
               <div className="insight-list">
                 {insightCards.map((item) => (
-                  <article key={item.title} className="insight-item">
+                  <article key={t(item.title)} className="insight-item">
                     <div className="insight-title-row">
-                      <h3>{item.title}</h3>
-                      <span className="insight-badge">{item.tag}</span>
+                      <h3>{t(item.title)}</h3>
+                      <span className="insight-badge">{t(item.tag)}</span>
                     </div>
-                    <p>{item.text}</p>
+                    <p>{urgencyLabel(item.text)}</p>
                   </article>
                 ))}
               </div>
