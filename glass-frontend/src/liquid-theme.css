@@ -1,0 +1,400 @@
+/* Rathaus Heilbronn palette and shared liquid-glass surfaces. */
+.glass-app {
+  --rathaus-red: #e30613;
+  --rathaus-blue: #005a9c;
+  --ink: #003f6d;
+  --muted-ink: #52687a;
+  --glass-edge: rgba(255, 255, 255, .88);
+  --glass-shadow: inset 0 1px 2px #fff, inset 1px 0 1px #ffffffb3,
+    inset 0 -1px 2px #ffffff80, 0 8px 28px #003f6d12;
+  background: #e6f0f8;
+  color: #172b3b;
+}
+
+.glass-background {
+  background-image: url('/images/heilbronn-background.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(40px) saturate(.45) brightness(1.08);
+}
+
+.glass-app::before {
+  background: radial-gradient(ellipse at 14% 20%, #ffffff26, transparent 48%),
+    linear-gradient(115deg, #f4f2eb40, #f7f5ee26 60%, #ffffff26);
+}
+
+.glass-header { z-index: 4; }
+.brand-tagline { color: var(--muted-ink); }
+.logo-l {
+  background-image: linear-gradient(to bottom,
+    var(--rathaus-red) 0% 47%,
+    #ffffff 47% 53%,
+    var(--rathaus-blue) 53% 100%);
+}
+
+/* A brighter rim and a transparent centre give the surfaces their rounded depth. */
+.glass-navigation,
+.language-selector,
+.profile-button,
+.postcode-search,
+.current-location-button,
+.glass-filter,
+.nearby-bin-card,
+.view-more {
+  background: linear-gradient(145deg, #ffffff70, #ffffff26 48%, #e6f0f83d);
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(155%);
+  -webkit-backdrop-filter: blur(22px) saturate(155%);
+}
+
+.glass-navigation { background: linear-gradient(165deg, #ffffff70, #e6f0f833); }
+.nav-button { color: var(--muted-ink); }
+.nav-button.nav-active {
+  color: var(--rathaus-blue);
+  background: linear-gradient(150deg, #ffffffa6, #9cc3e34d 60%, #ffffff66);
+  border-color: #ffffffed;
+  box-shadow: inset 0 2px 5px #fff, inset 0 -2px 5px #9cc3e34d, 0 3px 15px #005a9c14;
+}
+.nav-button.nav-active svg { color: var(--rathaus-blue); }
+.language-selector select,
+.profile-button { color: var(--ink); }
+
+.glass-layout {
+  --map-overlap: clamp(86px, 8.3vw, 128px);
+  isolation: isolate;
+}
+.glass-sidebar {
+  background: linear-gradient(135deg, #ffffff52, #e6f0f826 48%, #ffffff38);
+  border: 1px solid #ffffffc9;
+  border-bottom: 0;
+  box-shadow: inset 0 2px 3px #fffffff2, inset 1px 0 2px #fff,
+    inset -1px 0 2px #ffffffa6, 12px 12px 45px #003f6d1a;
+  backdrop-filter: blur(30px) saturate(150%);
+  -webkit-backdrop-filter: blur(30px) saturate(150%);
+}
+.sidebar-intro p,
+.bin-card-copy > span,
+.nearby-heading > span { color: var(--muted-ink); }
+
+/* Extend the map behind the final filter column; the sidebar stays above it. */
+.glass-map {
+  margin-left: calc(-1 * var(--map-overlap));
+  border: 1px solid #ffffffb3;
+  border-radius: 32px 0 0 0;
+  background: #e6f0f8;
+  box-shadow: inset 0 1px 2px white;
+}
+
+.postcode-search {
+  background: linear-gradient(160deg, #ffffff8c, #e6f0f840);
+  box-shadow: inset 0 2px 5px #fff, inset 0 -1px 3px #9cc3e366, 0 6px 20px #003f6d0d;
+}
+.postcode-icon { color: var(--rathaus-blue); }
+.postcode-search input { color: var(--ink); }
+.postcode-search input::placeholder { color: #60798b; }
+.postcode-submit {
+  background: radial-gradient(ellipse at 30% 10%, #f6949c 0%, #e30613bf 48%, #b80410e6 100%) !important;
+  border: 1px solid #ffffffd9 !important;
+  box-shadow: inset 0 2px 5px #ffffffc9, inset 0 -2px 5px #a8040f66,
+    0 4px 15px #e3061326;
+}
+.postcode-submit:hover { background: linear-gradient(150deg, #f04a52, #e30613) !important; }
+.current-location-button { color: var(--rathaus-blue); }
+.glass-filters {
+  background: #ffffff12;
+  border-color: #ffffff80;
+  box-shadow: inset 0 1px 3px #ffffff99;
+}
+.glass-filter:nth-child(n) {
+  background: linear-gradient(150deg, #ffffff80, #ffffff26 55%, #e6f0f847);
+  box-shadow: var(--glass-shadow);
+}
+.glass-filter-active:nth-child(n) {
+  color: var(--rathaus-blue);
+  background: linear-gradient(145deg, #ffffffa6, #9cc3e380 65%, #e6f0f880);
+  border-color: #3b8ccbb3;
+  box-shadow: inset 0 2px 5px white, inset 0 -2px 5px #3b8ccb26,
+    0 0 0 3px #ffffff80, 0 5px 18px #005a9c1f;
+}
+.filter-icon.all { color: var(--rathaus-blue); }
+.glass-filter:hover,
+.nearby-bin-card:hover,
+.current-location-button:hover,
+.view-more:hover { background: linear-gradient(145deg, #ffffffb3, #e6f0f866); }
+.nearby-bin-card.bin-selected {
+  border-color: #3b8ccbb3;
+  background: linear-gradient(120deg, #ffffffa6, #e6f0f861);
+  box-shadow: inset 0 1px 3px white, inset 0 -1px 2px #ffffffb3, 0 4px 18px #005a9c14;
+}
+.bin-card-copy strong { color: #172b3b; }
+.fill-track { background: #003f6d14; box-shadow: inset 0 1px 3px #003f6d14, 0 1px 1px #ffffffb3; }
+.high > span, i.high { background: linear-gradient(100deg, #e30613, #f69da1); }
+.preview-note { color: #52687a; }
+
+button:focus-visible, a:focus-visible, select:focus-visible {
+  outline: 2px solid var(--rathaus-blue);
+  outline-offset: 3px;
+}
+.postcode-search:focus-within { border-color: #3b8ccb; }
+
+/* Frost just the cartography, keeping the pins and controls crisp and clickable. */
+.glass-map .leaflet-tile-pane {
+  filter: saturate(1.18) contrast(.97) brightness(1.03);
+}
+.glass-map .leaflet-map::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 250;
+  pointer-events: none;
+  background: linear-gradient(115deg, #e6f0f829, #ffffff0d 50%, #e6f0f81a);
+  backdrop-filter: blur(.35px);
+  -webkit-backdrop-filter: blur(.35px);
+  box-shadow: inset 0 2px 3px #ffffffb3;
+}
+.glass-map .map-legend,
+.glass-map .selected-bin-panel {
+  background: linear-gradient(145deg, #ffffffad, #e6f0f870 65%, #ffffff80);
+  border-color: #fffffff2;
+  box-shadow: var(--glass-shadow), 0 12px 35px #003f6d1a;
+  backdrop-filter: blur(26px) saturate(160%);
+  -webkit-backdrop-filter: blur(26px) saturate(160%);
+}
+.glass-map .selected-bin-actions a,
+.glass-map .selected-bin-actions button {
+  background: linear-gradient(145deg, #ffffffb3, #e6f0f84d);
+  box-shadow: inset 0 1px 3px white, 0 3px 12px #003f6d12;
+  color: var(--ink);
+}
+.glass-map .selected-bin-actions a { color: var(--rathaus-blue); background: linear-gradient(145deg, #ffffffb3, #9cc3e366); }
+.glass-map .glass-bin-pin.high { color: var(--rathaus-red); box-shadow: 0 0 18px #e306134d; }
+.glass-map .leaflet-control-zoom a {
+  background: linear-gradient(150deg, #ffffffe6, #e6f0f8ad) !important;
+  color: var(--ink) !important;
+}
+
+/* Keep the scale clear of the part of the map underneath the sidebar. */
+.glass-map .leaflet-control-scale {
+  margin: 0 0 25px calc(var(--map-overlap) + 24px) !important;
+  padding: 12px 17px;
+  border: 1px solid #ffffffd9;
+  background: linear-gradient(145deg, #ffffffd9, #e6f0f8b3);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.glass-map .leaflet-control-scale-line { color: var(--ink); }
+
+@media (max-width: 950px) and (min-width: 701px) {
+  .glass-layout { --map-overlap: 85px; }
+}
+@media (max-width: 700px) {
+  .glass-layout { --map-overlap: 0px; }
+  .glass-sidebar { border-bottom: 1px solid #ffffffc9; }
+  .glass-map { margin-left: 0; border-radius: 26px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* Keep scrolling available without a heavy track cutting through the glass. */
+.sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #005a9c52 transparent;
+  scrollbar-gutter: stable;
+}
+.sidebar-scroll::-webkit-scrollbar {
+  width: 7px;
+}
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 28px;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #9cc3e380, #005a9c66, #9cc3e380);
+  background-clip: padding-box;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: #005a9c99;
+  background-clip: padding-box;
+}
+.sidebar-scroll::-webkit-scrollbar-corner {
+  background: transparent;
+}
+@media (forced-colors: active) {
+  .sidebar-scroll { scrollbar-color: auto; }
+}
+
+/* The outer glass shell clips the scroll area inside its curved rim. */
+.glass-sidebar {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-scroll {
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px 6px 8px 4px;
+  overscroll-behavior-y: contain;
+}
+@media (max-width: 700px) {
+  .sidebar-scroll { overflow: visible; scrollbar-gutter: auto; }
+}
+
+/* A framed map with space around every edge, including on shorter screens. */
+.glass-layout {
+  height: calc(100dvh - 106px);
+  min-height: 440px;
+  padding: 0 24px 24px 26px;
+}
+.glass-map { border-radius: 32px; }
+.glass-sidebar { border-radius: 32px; border-bottom: 1px solid #ffffffc9; padding-top: 55px; }
+.glass-sidebar[hidden] { display: none; }
+.panel-toggle {
+  position: absolute;
+  top: 14px;
+  left: 52px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border: 1px solid #ffffffd9;
+  border-radius: 999px;
+  background: linear-gradient(145deg, #ffffffbf, #e6f0f880);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  color: var(--rathaus-blue);
+  font-size: 12px;
+}
+.toggle-flipped { transform: rotate(180deg); }
+.panel-collapsed { grid-template-columns: minmax(0, 1fr); --map-overlap: 0px; }
+.panel-collapsed .glass-map { margin-left: 0; }
+.panel-collapsed .panel-toggle { top: 20px; }
+
+/* Rathaus accents inside the glass navigation. */
+.glass-navigation {
+  background: linear-gradient(115deg, #9cc3e37a, #ffffff7a 52%, #fde6e747);
+  border-color: #ffffffeb;
+}
+.glass-navigation .nav-button:nth-child(2) { color: #a8040f; }
+.glass-navigation .nav-button:nth-child(2) svg { color: var(--rathaus-red); }
+.glass-navigation .nav-button:nth-child(3) { color: var(--rathaus-blue); }
+.glass-navigation .nav-button:nth-child(2).nav-active {
+  background: linear-gradient(145deg, #ffffffad, #f69da166);
+  border-color: #f69da1b3;
+  box-shadow: inset 0 2px 5px white, 0 4px 16px #e3061314;
+}
+.language-selector {
+  background: linear-gradient(145deg, #ffffffad, #9cc3e380);
+  border-color: #9cc3e3;
+}
+.language-selector select, .language-selector svg { color: var(--rathaus-blue); }
+.language-selector select option { background: white; color: #003f6d; }
+.profile-button {
+  color: var(--rathaus-red);
+  background: linear-gradient(145deg, #ffffffbf, #fde6e7a6);
+  border-color: #f69da180;
+}
+.profile-button:hover { background: linear-gradient(145deg, white, #f69da180); }
+@media (max-width: 950px) and (min-width: 701px) {
+  .glass-layout { padding-left: 16px; padding-right: 16px; }
+  .panel-toggle { left: 38px; }
+}
+@media (max-width: 700px) {
+  .glass-layout { height: auto; min-height: 0; padding: 0 12px 18px; }
+  .glass-sidebar { padding-top: 58px; }
+  .panel-toggle { left: 32px; }
+  .glass-map { height: 560px; min-height: 350px; border-radius: 26px; }
+  .panel-collapsed .glass-map { height: calc(100dvh - 173px); min-height: 420px; }
+  .panel-collapsed .map-legend { top: 76px; }
+}
+
+/* A quieter, opaque navigation surface lets the brand colours stay crisp. */
+.glass-navigation {
+  background: #ffffffed;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 20px #003f6d0d, 0 1px 3px #003f6d0a;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px;
+}
+.glass-navigation .nav-button {
+  color: #52687a;
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+  font-weight: 500;
+  transition: background .18s ease, color .18s ease;
+}
+.glass-navigation .nav-button:nth-child(n) { color: #005a9c; }
+.glass-navigation .nav-button:nth-child(n) svg { color: #005a9c; }
+.glass-navigation .nav-button:hover { background: #e6f0f8; color: #003f6d; }
+.glass-navigation .nav-button.nav-active {
+  color: #ffffff;
+  background: #005a9c;
+  border-color: #005a9c;
+  box-shadow: 0 2px 6px #005a9c26;
+}
+.glass-navigation .nav-button.nav-active svg { color: #ffffff; }
+.glass-navigation .nav-button:nth-child(n).nav-active {
+  color: #ffffff;
+  background: #005a9c;
+  border-color: #005a9c;
+  box-shadow: 0 2px 6px #005a9c26;
+}
+.glass-navigation .nav-button:nth-child(n).nav-active svg { color: #ffffff; }
+.language-selector,
+.profile-button {
+  background: #ffffffed;
+  border: 1px solid #ffffff;
+  box-shadow: 0 3px 14px #003f6d0d;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.language-selector select, .language-selector svg { color: #005a9c; }
+.language-selector:hover { background: #e6f0f8; }
+.profile-button { color: #e30613; }
+.profile-button:hover { background: #fde6e7; }
+
+
+/* Header actions mirror the navigation's white-to-brand interaction. */
+.language-selector {
+  background: #ffffffed;
+  border-color: #ffffff;
+  transition: background .18s ease, border-color .18s ease;
+}
+.language-selector select, .language-selector svg { color: #005a9c; }
+.language-selector:active,
+.language-selector:focus-within {
+  background: #005a9c;
+  border-color: #005a9c;
+}
+.language-selector:active select,
+.language-selector:active svg,
+.language-selector:focus-within select,
+.language-selector:focus-within svg { color: #ffffff; }
+.profile-button {
+  background: #ffffffed;
+  color: #e30613;
+  transition: background .18s ease, color .18s ease;
+}
+.profile-button:active,
+.profile-button:focus {
+  background: #e30613;
+  border-color: #e30613;
+  color: #ffffff;
+}
+
+.postcode-error {
+  margin: 9px 16px 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #a8040f;
+}
+.postcode-search:has(input[aria-invalid="true"]) { border-color: #e30613; }
