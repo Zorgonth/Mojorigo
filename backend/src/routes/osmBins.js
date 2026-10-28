@@ -197,13 +197,6 @@ osmBinsRouter.post(
   asyncHandler(async (req, res) => {
     const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 
-    if (!apiKey) {
-      const error = new Error(
-        "GOOGLE_MAPS_API_KEY is not configured.",
-      );
-      error.statusCode = 500;
-      throw error;
-    }
 
     const originLat = Number(req.body?.origin?.latitude);
     const originLng = Number(req.body?.origin?.longitude);
@@ -293,6 +286,15 @@ osmBinsRouter.post(
         stops: collectionStops,
       });
     }
+
+    if (!apiKey) {
+      const error = new Error(
+        "GOOGLE_MAPS_API_KEY is not configured.",
+      );
+      error.statusCode = 500;
+      throw error;
+    }
+
 
     // When returning to the origin, optimize every collection stop.
     // Otherwise, the final stop is the destination and stays fixed.

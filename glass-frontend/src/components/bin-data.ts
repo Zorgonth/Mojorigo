@@ -12,7 +12,7 @@ export type BinSensor = {
 export type GlassBin = {
   id: string; name: string; address: string; city: string; area: string; postcode: string;
   latitude: number; longitude: number; sensors: BinSensor[];
-  googleMapsUrl?: string;
+  googleMapsUrl?: string; distanceMetres?: number;
 };
 const numeric = (value: unknown): number | null => {
   if ((typeof value !== "number" && typeof value !== "string") || String(value).trim() === "") return null;
@@ -66,4 +66,12 @@ export function locationTitle(bin: GlassBin): string {
 }
 export function locationSubtitle(bin: GlassBin): string {
   return [[bin.postcode, bin.city].filter(Boolean).join(" "), `${bin.latitude.toFixed(5)}, ${bin.longitude.toFixed(5)}`].filter(Boolean).join(" · ");
+}
+
+export function compartmentEntries(bins: GlassBin[], color: GlassColor = "All") {
+  return bins.flatMap(bin => (["Brown", "White", "Green"] as const)
+    .filter(type => color === "All" || type === color)
+    .flatMap(type => bin.sensors.filter(sensor => sensor.color === type).map(sensor => ({
+      key: `${bin.id}:${sensor.color}`, bin, sensor,
+    }))));
 }

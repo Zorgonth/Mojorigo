@@ -5,7 +5,7 @@ import ts from 'typescript';
 const source = readFileSync(new URL('../src/components/bin-data.ts', import.meta.url), 'utf8');
 const namesSource = readFileSync(new URL('../src/components/location-names.ts', import.meta.url), 'utf8');
 const compiled = ts.transpileModule(source.replace('import { locationNames } from "./location-names";', namesSource.replace('export const', 'const')), { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2023 } }).outputText;
-const { parseMapResponse, binFill, fillTone, locationTitle, locationSubtitle } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`);
+const { parseMapResponse, compartmentEntries, binFill, fillTone, locationTitle, locationSubtitle } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`);
 const location = { id: 'BIN-001', name: 'Collection point', latitude: '49.14', longitude: '9.22', sensors: [
   { type: 'brown', sensorId: 'b', fillPercent: 91, cm: 12, receivedAt: '2026-10-28T12:00:00Z' },
   { type: 'green', sensorId: 'g', fillPercent: 0 },
@@ -51,4 +51,16 @@ test('street labels and postcodes are preserved for display and postcode search'
   assert.match(locationSubtitle(bin), /74076 Heilbronn/);
   const [named] = parseMapResponse({data:[{...location,name:'Recyclinghof-Ost',address:'Im Wannental',city:'Heilbronn'}]});
   assert.equal(locationTitle(named),'Recyclinghof-Ost');
+});
+
+test('All shows three separate compartments per location; each colour shows only its reading', () => {
+  const bins = parseMapResponse({data:[location,{...location,id:'BIN-002'}]});
+  const all = compartmentEntries(bins);
+  assert.equal(all.length,6);
+  assert.equal(new Set(all.map(entry=>entry.key)).size,6);
+  assert.deepEqual(all.slice(0,3).map(entry=>entry.sensor.color),['Brown','White','Green']);
+  const green = compartmentEntries(bins,'Green');
+  assert.equal(green.length,2);
+  assert.ok(green.every(entry=>entry.sensor.color==='Green' && entry.sensor.fillPercent===0));
+  assert.ok(compartmentEntries(bins,'White').every(entry=>entry.sensor.fillPercent===null));
 });

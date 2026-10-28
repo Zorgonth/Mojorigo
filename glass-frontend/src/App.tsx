@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { t } from "./i18n";
+import { useEffect, useMemo, useState } from "react";
 import { ChevronDown, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import "./App.css";
 import "./liquid-theme.css";
@@ -10,10 +12,12 @@ import LoginPage from "./components/LoginPage";
 import InfoPage from "./components/InfoPage";
 import Navigation, { type NavigationTab } from "./components/Navigation";
 import NearbyBins from "./components/NearbyBins";
+import { postcodeCentres, rankByDistance } from "./components/postcode-search";
 import SearchBar from "./components/SearchBar";
-import { demoBins, parseMapResponse, type GlassBin, type GlassColor } from "./components/bin-data";
+import { demoBins, parseMapResponse, compartmentEntries, type GlassBin, type GlassColor } from "./components/bin-data";
 
 function App() {
+  useTranslation();
   const [activeTab, setActiveTab] = useState<NavigationTab>("find");
   const [view, setView] = useState<"home" | "login" | "dashboard">("home");
   const [bins, setBins] = useState<GlassBin[]>(demoBins);
@@ -22,7 +26,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [expanded, setExpanded] = useState(false);
   const [panelCollapsed, setPanelCollapsed] = useState(false);
-  const [selected, setSelected] = useState<string | null>(demoBins[0]?.id ?? null);
+  const [selected, setSelected] = useState<string | null>(null);
   const [location, setLocation] = useState<[number, number] | null>(null);
 
   useEffect(() => {
@@ -37,7 +41,7 @@ function App() {
         const valid = parseMapResponse(result);
         setBins(valid);
         setDemo(false);
-        setSelected(valid[0]?.id ?? null);
+        setSelected(null);
       })
       .catch(() => {
         // Keep the demo dataset if the backend is unavailable.
@@ -46,11 +50,26 @@ function App() {
     return () => controller.abort();
   }, []);
 
-  const filtered = bins.filter(
-    (bin) =>
-      (color === "All" || bin.sensors.some(sensor => sensor.color === color && sensor.sensorId)) &&
-      (!query || `${bin.name} ${bin.address} ${bin.postcode}`.toLowerCase().includes(query.toLowerCase())),
-  );
+  const filtered = useMemo(() => {
+    const matching = bins.filter(bin => color === "All" || bin.sensors.some(sensor => sensor.color === color && sensor.sensorId));
+    return location ? rankByDistance(matching, location) : matching;
+  }, [bins, color, location]);
+
+  function searchPostcode(postcode: string) {
+    const centre = postcodeCentres[postcode];
+    if (!centre) return;
+    setQuery(postcode);
+    setLocation(centre);
+    setExpanded(false);
+    setSelected(null);
+  }
+  function searchLocation(coordinates: [number, number]) {
+    setQuery("");
+    setLocation(coordinates);
+    setExpanded(false);
+    setSelected(null);
+  }
+  const visibleSelected = filtered.some(bin => bin.id === selected) ? selected : null;
 
   if (view === "login") {
     return <LoginPage onBack={() => setView("home")} onLogin={() => setView("dashboard")} />;
@@ -61,7 +80,7 @@ function App() {
   }
 
   return (
-    <main className="glass-app">
+    <main className={`glass-app ${activeTab === "find" ? "finder-page" : ""}`}>
       <div className="glass-background" />
 
       <header className="glass-header">
@@ -69,7 +88,7 @@ function App() {
           <div className="glass-logo">
             G.<span className="logo-l">L</span>.A.S.S
           </div>
-          <span className="brand-tagline">GLASS RECYCLING NEAR YOU</span>
+          <span className="brand-tagline">{t("GLASS RECYCLING NEAR YOU")}</span>
         </div>
 
         <Navigation activeTab={activeTab} onChange={setActiveTab} />
@@ -83,35 +102,37 @@ function App() {
           onClick={() => setPanelCollapsed(!panelCollapsed)}
           aria-expanded={!panelCollapsed}
           aria-controls="container-search-panel"
-          aria-label={panelCollapsed ? "Show container search" : "Collapse search to view full map"}
+          aria-label={panelCollapsed ? t("Show container search") : t("Collapse search to view full map")}
         >
           {panelCollapsed ? <PanelLeftOpen size={17} /> : <PanelLeftClose size={17} />}
-          <span>{panelCollapsed ? "Find a container" : "Full map"}</span>
+          <span>{panelCollapsed ? t("Find a container") : t("Full map")}</span>
           <ChevronDown size={15} className={panelCollapsed ? "toggle-flipped" : ""} />
         </button>
 
         <aside id="container-search-panel" className="glass-sidebar" hidden={panelCollapsed}>
           <div className="sidebar-intro">
               <h1>
-                <span>Find a glass</span>
-                <span>container</span>
+                <span>{t("Find a glass")}</span>
+                <span>{t("container")}</span>
               </h1>
-              <p>Check the current fill level of glass recycling containers in your area.</p>
+              <p>{t("Check the current fill level of glass recycling containers in your area.")}</p>
             </div>
 
           <div className="sidebar-scroll">
-            <SearchBar onSearch={setQuery} onLocation={setLocation} />
+            <SearchBar onSearch={searchPostcode} onLocation={searchLocation} />
+            {location && <p className="search-results-note" role="status">{query ? t("Closest to {{postcode}} · approximate postcode reference point", {postcode: query}) : t("Closest to your location")}{t(". Distances are straight-line estimates.")}</p>}
             <GlassFilters selected={color} onChange={setColor} />
             <NearbyBins
-              total={filtered.length}
+              color={color}
+              total={compartmentEntries(filtered, color).length}
               bins={expanded ? filtered : filtered.slice(0, 5)}
-              selected={selected}
+              selected={visibleSelected}
               onSelect={setSelected}
             />
 
             {filtered.length > 5 && (
               <button className="view-more" onClick={() => setExpanded(!expanded)}>
-                {expanded ? "View fewer bins" : "View more bins"}
+                {expanded ? t("View fewer bins") : t("View more bins")}
                 <ChevronDown
                   size={17}
                   style={{ transform: expanded ? "rotate(180deg)" : undefined }}
@@ -121,16 +142,16 @@ function App() {
 
             <p className="preview-note">
               {demo
-                ? "Design preview · Sample bin locations and fill levels"
-                : "Glass collection points in Heilbronn"}
+                ? t("Design preview · Sample bin locations and fill levels")
+                : t("Glass collection points in Heilbronn")}
             </p>
           </div>
         </aside>
 
-        <section className="glass-map" aria-label="Map of glass collection points">
+        <section className="glass-map" aria-label={t("Map of glass collection points")}>
           <GlassBinsMap
             bins={filtered}
-            selected={selected}
+            selected={visibleSelected}
             onSelect={setSelected}
             color={color}
             location={location}
