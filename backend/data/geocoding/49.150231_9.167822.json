@@ -1,0 +1,32 @@
+{
+  "place_id": 125629510,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 90957294,
+  "lat": "49.1536132",
+  "lon": "9.1679331",
+  "category": "building",
+  "type": "yes",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "19, Schleifweg, Frankenbach, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "house_number": "19",
+    "road": "Schleifweg",
+    "suburb": "Frankenbach",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1535608",
+    "49.1536656",
+    "9.1678694",
+    "9.1679967"
+  ]
+}

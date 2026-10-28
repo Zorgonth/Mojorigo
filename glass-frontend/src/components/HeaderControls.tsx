@@ -1,28 +1,24 @@
-import { useState } from "react";
-import { ChevronDown, UserRound } from "lucide-react";
+import LanguageSelect from "./LanguageSelect";
+import { useTranslation } from "react-i18next";
+import { t } from "../i18n";
+import { UserRound } from "lucide-react";
 
-export default function HeaderControls() {
-  const [language, setLanguage] = useState("EN");
+interface HeaderControlsProps {
+  onOpenLogin: () => void;
+}
+
+export default function HeaderControls({ onOpenLogin }: HeaderControlsProps) {
+  useTranslation();
 
   return (
     <div className="header-controls">
-      <div className="language-selector">
-        <select
-          value={language}
-          onChange={(event) => setLanguage(event.target.value)}
-          aria-label="Select language"
-        >
-          <option value="EN">EN</option>
-          <option value="DE">DE</option>
-        </select>
-
-        <ChevronDown size={18} />
-      </div>
+      <LanguageSelect />
 
       <button
         type="button"
         className="profile-button"
-        aria-label="Profile"
+        aria-label={t("Open login")}
+        onClick={onOpenLogin}
       >
         <UserRound size={24} />
       </button>

@@ -1,41 +1,42 @@
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { t } from "../i18n";
 import { MapPin, Info, Recycle } from "lucide-react";
 
-type NavigationTab = "find" | "about" | "recycling";
+export type NavigationTab = "find" | "about" | "recycling";
 
-export default function Navigation() {
-  const [activeTab, setActiveTab] = useState<NavigationTab>("find");
+export default function Navigation({ activeTab, onChange }: { activeTab: NavigationTab; onChange: (tab: NavigationTab) => void }) {
+  useTranslation();
 
   return (
-    <nav className="glass-navigation" aria-label="Main navigation">
+    <nav className="glass-navigation" aria-label={t("Main navigation")}>
       <button
         type="button"
         className={`nav-button ${activeTab === "find" ? "nav-active" : ""}`}
-        onClick={() => setActiveTab("find")}
+        onClick={() => onChange("find")}
         aria-current={activeTab === "find" ? "page" : undefined}
       >
         <MapPin size={21} strokeWidth={2.7} />
-        <span>Find Bins</span>
+        <span>{t("Find Bins")}</span>
       </button>
 
       <button
         type="button"
         className={`nav-button ${activeTab === "about" ? "nav-active" : ""}`}
-        onClick={() => setActiveTab("about")}
+        onClick={() => onChange("about")}
         aria-current={activeTab === "about" ? "page" : undefined}
       >
         <Info size={21} strokeWidth={2.5} />
-        <span>About</span>
+        <span>{t("About")}</span>
       </button>
 
       <button
         type="button"
         className={`nav-button ${activeTab === "recycling" ? "nav-active" : ""}`}
-        onClick={() => setActiveTab("recycling")}
+        onClick={() => onChange("recycling")}
         aria-current={activeTab === "recycling" ? "page" : undefined}
       >
         <Recycle size={22} strokeWidth={2.7} />
-        <span>Recycling Info</span>
+        <span>{t("Recycling Info")}</span>
       </button>
     </nav>
   );

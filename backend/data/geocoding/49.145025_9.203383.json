@@ -1,0 +1,33 @@
+{
+  "place_id": 126347590,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 88982780,
+  "lat": "49.1451790",
+  "lon": "9.2036324",
+  "category": "building",
+  "type": "yes",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "15, Hafenstraße, Industriegebiet Kanalhafen, Kernstadt, Heilbronn, Baden-Württemberg, 74076, Deutschland",
+  "address": {
+    "house_number": "15",
+    "road": "Hafenstraße",
+    "industrial": "Industriegebiet Kanalhafen",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74076",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1451314",
+    "49.1452340",
+    "9.2035686",
+    "9.2036978"
+  ]
+}

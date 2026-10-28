@@ -1,0 +1,32 @@
+{
+  "place_id": 125850790,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 2244637363,
+  "lat": "49.1433802",
+  "lon": "9.2078588",
+  "category": "amenity",
+  "type": "bench",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Lauerweg, Neckarbogen, Kernstadt, Heilbronn, Baden-Württemberg, 74076, Deutschland",
+  "address": {
+    "road": "Lauerweg",
+    "neighbourhood": "Neckarbogen",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74076",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1433302",
+    "49.1434302",
+    "9.2078088",
+    "9.2079088"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "place_id": 125136910,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 116587375,
+  "lat": "49.1307748",
+  "lon": "9.2132294",
+  "category": "place",
+  "type": "house",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "place",
+  "name": "",
+  "display_name": "16, Liebigstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "house_number": "16",
+    "road": "Liebigstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1307015",
+    "49.1308291",
+    "9.2131329",
+    "9.2133259"
+  ]
+}

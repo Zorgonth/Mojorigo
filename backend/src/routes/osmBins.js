@@ -105,6 +105,9 @@ osmBinsRouter.get(
           area: bin.arena_name || "",
           city: bin.city || "",
           address: bin.address || "",
+          postcode: bin.postcode || "",
+          addressSource: bin.address_source || "",
+          addressMatch: bin.address_match || "",
           latitude: lat,
           longitude: lng,
           sensors,
@@ -130,14 +133,7 @@ osmBinsRouter.get(
 );
 
 
-
 const COLLECTION_THRESHOLD = 70;
-
-const SENSOR_TYPES = [
-  { type: "green", column: "green_sensor_id" },
-  { type: "brown", column: "brown_sensor_id" },
-  { type: "white", column: "white_sensor_id" },
-];
 
 function getLatestReadingBySensor(readings) {
   const latest = new Map();
@@ -201,13 +197,6 @@ osmBinsRouter.post(
   asyncHandler(async (req, res) => {
     const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 
-    if (!apiKey) {
-      const error = new Error(
-        "GOOGLE_MAPS_API_KEY is not configured.",
-      );
-      error.statusCode = 500;
-      throw error;
-    }
 
     const originLat = Number(req.body?.origin?.latitude);
     const originLng = Number(req.body?.origin?.longitude);
@@ -297,6 +286,15 @@ osmBinsRouter.post(
         stops: collectionStops,
       });
     }
+
+    if (!apiKey) {
+      const error = new Error(
+        "GOOGLE_MAPS_API_KEY is not configured.",
+      );
+      error.statusCode = 500;
+      throw error;
+    }
+
 
     // When returning to the origin, optimize every collection stop.
     // Otherwise, the final stop is the destination and stays fixed.

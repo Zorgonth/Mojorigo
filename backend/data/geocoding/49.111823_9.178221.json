@@ -1,0 +1,32 @@
+{
+  "place_id": 126417130,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 69558034,
+  "lat": "49.1121461",
+  "lon": "9.1788866",
+  "category": "leisure",
+  "type": "fishing",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "leisure",
+  "name": "Teichanlage Fischereiverein 1893 e.V.",
+  "display_name": "Teichanlage Fischereiverein 1893 e.V., Schozach, Sontheim, Heilbronn, Baden-Württemberg, 74081, Deutschland",
+  "address": {
+    "leisure": "Teichanlage Fischereiverein 1893 e.V.",
+    "road": "Schozach",
+    "suburb": "Sontheim",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74081",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1114783",
+    "49.1128753",
+    "9.1782642",
+    "9.1794566"
+  ]
+}

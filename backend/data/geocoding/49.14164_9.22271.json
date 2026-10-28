@@ -1,0 +1,32 @@
+{
+  "place_id": 429399679,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 14228034456,
+  "lat": "49.1416790",
+  "lon": "9.2226907",
+  "category": "highway",
+  "type": "bus_stop",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "highway",
+  "name": "Harmonie SEV",
+  "display_name": "Harmonie SEV, Moltkestraße, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "highway": "Harmonie SEV",
+    "road": "Moltkestraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1416290",
+    "49.1417290",
+    "9.2226407",
+    "9.2227407"
+  ]
+}

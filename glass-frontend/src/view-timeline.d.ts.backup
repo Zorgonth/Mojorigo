@@ -1,0 +1,16 @@
+interface ViewTimeline {
+  readonly source: Element;
+  readonly startOffset: CSSUnitValue;
+  readonly endOffset: CSSUnitValue;
+  readonly currentTime: number | null;
+}
+
+interface ViewTimelineOptions {
+  axis?: "block" | "inline";
+  subject: Element;
+}
+
+declare var ViewTimeline: {
+  prototype: ViewTimeline;
+  new (options: ViewTimelineOptions): ViewTimeline;
+};

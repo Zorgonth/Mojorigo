@@ -1,0 +1,33 @@
+{
+  "place_id": 125847150,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 5822597153,
+  "lat": "49.1411928",
+  "lon": "9.2200511",
+  "category": "shop",
+  "type": "department_store",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "shop",
+  "name": "Woolworth",
+  "display_name": "Woolworth, 4, Kiliansplatz, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "shop": "Woolworth",
+    "house_number": "4",
+    "road": "Kiliansplatz",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1411428",
+    "49.1412428",
+    "9.2200011",
+    "9.2201011"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "place_id": 125860932,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 30789790,
+  "lat": "49.1179529",
+  "lon": "9.2163590",
+  "category": "building",
+  "type": "yes",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "1, Wettenbrunnen, Sontheim, Heilbronn, Baden-Württemberg, 74081, Deutschland",
+  "address": {
+    "house_number": "1",
+    "road": "Wettenbrunnen",
+    "suburb": "Sontheim",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74081",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1178255",
+    "49.1180803",
+    "9.2162066",
+    "9.2165114"
+  ]
+}

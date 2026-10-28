@@ -1,0 +1,33 @@
+{
+  "place_id": 125135928,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 52289884,
+  "lat": "49.1310867",
+  "lon": "9.1911357",
+  "category": "building",
+  "type": "yes",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "117/1, Klingenberger Straße, Alt-Böckingen, Böckingen, Heilbronn, Baden-Württemberg, 74080, Deutschland",
+  "address": {
+    "house_number": "117/1",
+    "road": "Klingenberger Straße",
+    "neighbourhood": "Alt-Böckingen",
+    "suburb": "Böckingen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74080",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1310043",
+    "49.1311354",
+    "9.1910160",
+    "9.1912588"
+  ]
+}
