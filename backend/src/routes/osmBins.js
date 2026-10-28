@@ -193,7 +193,6 @@ osmBinsRouter.post(
   asyncHandler(async (req, res) => {
     const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 
-
     const originLat = Number(req.body?.origin?.latitude);
     const originLng = Number(req.body?.origin?.longitude);
 
@@ -207,14 +206,18 @@ osmBinsRouter.post(
       });
     }
 
-    // Default: start and finish at the same depot/location.
     const returnToOrigin = req.body?.returnToOrigin !== false;
 
+    // Google Routes API waypoint limit per group.
+    const MAX_STOPS_PER_GROUP = 25;
+
+    // Read bins and their latest sensor readings.
     const bins = readCsvFile(binsCsvPath);
     const readings = readCsvFile(readingsCsvPath);
     const latestBySensor = getLatestReadingBySensor(readings);
 
-    // Keep only locations where at least one sensor is OVER 70%.
+    // Find collection locations where at least one sensor
+    // has a fill percentage above the collection threshold.
     const collectionStops = bins
       .map((bin) => {
         const latitude = Number(bin.lat);
@@ -233,7 +236,9 @@ osmBinsRouter.post(
             sensorId,
             fillPercent: reading?.fillPercent ?? null,
             receivedAt: reading?.receivedAt ?? null,
-            cm: Number.isFinite(reading?.cm) ? reading.cm : null,
+            cm: Number.isFinite(reading?.cm)
+              ? reading.cm
+              : null,
           };
         });
 
@@ -241,7 +246,7 @@ osmBinsRouter.post(
           (sensor) =>
             sensor.sensorId &&
             sensor.fillPercent !== null &&
-            sensor.fillPercent > COLLECTION_THRESHOLD,
+            sensor.fillPercent > COLLECTION_THRESHOLD
         );
 
         if (sensorsToCollect.length === 0) {
@@ -250,7 +255,10 @@ osmBinsRouter.post(
 
         return {
           id: bin.id,
-          name: bin.arena_name || bin.name || "Glass collection point",
+          name:
+            bin.arena_name ||
+            bin.name ||
+            "Glass collection point",
           city: bin.city || "",
           address: bin.address || "",
           latitude,
@@ -260,149 +268,205 @@ osmBinsRouter.post(
       })
       .filter(Boolean);
 
+    // No locations need collection.
     if (collectionStops.length === 0) {
       return res.json({
         thresholdPercent: COLLECTION_THRESHOLD,
         count: 0,
+        groupCount: 0,
         stops: [],
+        groups: [],
         route: null,
         message: "No sensors currently require collection.",
       });
     }
 
-    if (collectionStops.length > 25) {
-      return res.status(422).json({
-        error: {
-          code: "TOO_MANY_STOPS",
-          message:
-            "More than 25 locations need collection. Use Google's Route Optimization API to plan a larger collection route.",
-        },
-        thresholdPercent: COLLECTION_THRESHOLD,
-        count: collectionStops.length,
-        stops: collectionStops,
-      });
-    }
-
     if (!apiKey) {
       const error = new Error(
-        "GOOGLE_MAPS_API_KEY is not configured.",
+        "GOOGLE_MAPS_API_KEY is not configured."
       );
+
       error.statusCode = 500;
       throw error;
     }
 
+    // Split all collection locations into groups of at most 25.
+    const stopGroups = [];
 
-    // When returning to the origin, optimize every collection stop.
-    // Otherwise, the final stop is the destination and stays fixed.
-    const intermediateStops = returnToOrigin
-      ? collectionStops
-      : collectionStops.slice(0, -1);
+    for (
+      let i = 0;
+      i < collectionStops.length;
+      i += MAX_STOPS_PER_GROUP
+    ) {
+      stopGroups.push(
+        collectionStops.slice(i, i + MAX_STOPS_PER_GROUP)
+      );
+    }
 
-    const destination = returnToOrigin
-      ? { latitude: originLat, longitude: originLng }
-      : collectionStops[collectionStops.length - 1];
+    // Calculate each group's route independently.
+    const groups = [];
 
-    const requestBody = {
-      origin: toWaypoint(originLat, originLng),
-      destination: toWaypoint(
-        destination.latitude,
-        destination.longitude,
-      ),
-      intermediates: intermediateStops.map((stop) =>
-        toWaypoint(stop.latitude, stop.longitude),
-      ),
-      travelMode: "DRIVE",
-      routingPreference: "TRAFFIC_AWARE",
-      departureTime: new Date().toISOString(),
-      optimizeWaypointOrder: true,
-      polylineQuality: "HIGH_QUALITY",
-      languageCode: "en",
-      units: "METRIC",
-    };
+    for (let groupIndex = 0; groupIndex < stopGroups.length; groupIndex++) {
+      const groupStops = stopGroups[groupIndex];
 
-    const googleResponse = await fetch(
-      "https://routes.googleapis.com/directions/v2:computeRoutes",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Goog-Api-Key": apiKey,
-          "X-Goog-FieldMask": [
-            "routes.duration",
-            "routes.distanceMeters",
-            "routes.polyline.encodedPolyline",
-            "routes.legs.duration",
-            "routes.legs.distanceMeters",
-            "routes.optimizedIntermediateWaypointIndex",
-          ].join(","),
-        },
-        body: JSON.stringify(requestBody),
-      },
-    );
+      // If returning to the origin, optimize every stop.
+      // Otherwise, keep the final stop fixed as the destination.
+      const intermediateStops = returnToOrigin
+        ? groupStops
+        : groupStops.slice(0, -1);
 
-    const googleData = await googleResponse.json();
+      const destination = returnToOrigin
+        ? {
+            latitude: originLat,
+            longitude: originLng,
+          }
+        : groupStops[groupStops.length - 1];
 
-    if (!googleResponse.ok) {
-      console.error("Google Routes API error:", googleData);
+      const requestBody = {
+        origin: toWaypoint(originLat, originLng),
 
-      return res.status(502).json({
-        error: {
-          code: "ROUTE_PROVIDER_ERROR",
-          message: "Google Maps could not calculate the collection route.",
+        destination: toWaypoint(
+          destination.latitude,
+          destination.longitude
+        ),
+
+        intermediates: intermediateStops.map((stop) =>
+          toWaypoint(stop.latitude, stop.longitude)
+        ),
+
+        travelMode: "DRIVE",
+        routingPreference: "TRAFFIC_AWARE",
+        departureTime: new Date().toISOString(),
+        optimizeWaypointOrder: true,
+        polylineQuality: "HIGH_QUALITY",
+        languageCode: "en",
+        units: "METRIC",
+      };
+
+      const googleResponse = await fetch(
+        "https://routes.googleapis.com/directions/v2:computeRoutes",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Goog-Api-Key": apiKey,
+            "X-Goog-FieldMask": [
+              "routes.duration",
+              "routes.distanceMeters",
+              "routes.polyline.encodedPolyline",
+              "routes.legs.duration",
+              "routes.legs.distanceMeters",
+              "routes.optimizedIntermediateWaypointIndex",
+            ].join(","),
+          },
+          body: JSON.stringify(requestBody),
+        }
+      );
+
+      const googleData = await googleResponse.json();
+
+      if (!googleResponse.ok) {
+        console.error(
+          `Google Routes API error for group ${groupIndex + 1}:`,
+          googleData
+        );
+
+        return res.status(502).json({
+          error: {
+            code: "ROUTE_PROVIDER_ERROR",
+            message: `Google Maps could not calculate route group ${groupIndex + 1}.`,
+          },
+          failedGroup: groupIndex + 1,
+          groupCount: stopGroups.length,
+        });
+      }
+
+      const googleRoute = googleData.routes?.[0];
+
+      if (!googleRoute) {
+        return res.status(502).json({
+          error: {
+            code: "NO_ROUTE_FOUND",
+            message: `Google Maps returned no route for group ${groupIndex + 1}.`,
+          },
+          failedGroup: groupIndex + 1,
+          groupCount: stopGroups.length,
+        });
+      }
+
+      // Apply Google's optimized stop order.
+      const optimizedIndexes =
+        googleRoute.optimizedIntermediateWaypointIndex ?? [];
+
+      const orderedIntermediateStops =
+        optimizedIndexes.length === intermediateStops.length
+          ? optimizedIndexes.map(
+              (index) => intermediateStops[index]
+            )
+          : intermediateStops;
+
+      // For routes that do not return to the origin,
+      // append the fixed destination after the optimized stops.
+      const orderedStops = returnToOrigin
+        ? orderedIntermediateStops
+        : [
+            ...orderedIntermediateStops,
+            groupStops[groupStops.length - 1],
+          ];
+
+      // Add sequence numbers within each group.
+      const stops = orderedStops.map((stop, index) => ({
+        ...stop,
+        sequence: index + 1,
+        group: groupIndex + 1,
+      }));
+
+      groups.push({
+        group: groupIndex + 1,
+        count: stops.length,
+        returnToOrigin,
+        stops,
+        route: {
+          distanceMeters: googleRoute.distanceMeters,
+          duration: googleRoute.duration,
+          encodedPolyline:
+            googleRoute.polyline?.encodedPolyline ?? null,
+          legs: googleRoute.legs ?? [],
         },
       });
     }
 
-    const googleRoute = googleData.routes?.[0];
+    // Flatten stops for clients that also need a complete stop list.
+    const allStops = groups.flatMap((group) => group.stops);
 
-    if (!googleRoute) {
-      return res.status(502).json({
-        error: {
-          code: "NO_ROUTE_FOUND",
-          message: "Google Maps returned no route.",
-        },
-      });
-    }
-
-    const optimizedIndexes =
-      googleRoute.optimizedIntermediateWaypointIndex ?? [];
-
-    const orderedIntermediateStops =
-      optimizedIndexes.length === intermediateStops.length
-        ? optimizedIndexes.map((index) => intermediateStops[index])
-        : intermediateStops;
-
-    const orderedStops = returnToOrigin
-      ? orderedIntermediateStops
-      : [
-          ...orderedIntermediateStops,
-          collectionStops[collectionStops.length - 1],
-        ];
-
-    const stops = orderedStops.map((stop, index) => ({
-      ...stop,
-      sequence: index + 1,
-    }));
+    // Preserve the old single-route field when there is only one group.
+    // Multiple groups have separate routes and separate polylines.
+    const route =
+      groups.length === 1 ? groups[0].route : null;
 
     return res.json({
       thresholdPercent: COLLECTION_THRESHOLD,
-      count: stops.length,
+      count: allStops.length,
+      groupCount: groups.length,
+      maxStopsPerGroup: MAX_STOPS_PER_GROUP,
       generatedAt: new Date().toISOString(),
       trafficAware: true,
       optimized: true,
       returnToOrigin,
+
       origin: {
         latitude: originLat,
         longitude: originLng,
       },
-      stops,
-      route: {
-        distanceMeters: googleRoute.distanceMeters,
-        duration: googleRoute.duration,
-        encodedPolyline:
-          googleRoute.polyline?.encodedPolyline ?? null,
-        legs: googleRoute.legs ?? [],
-      },
+
+      // All stops in one array.
+      stops: allStops,
+
+      // Each group has its own stops and optimized route.
+      groups,
+
+      // Populated for a single group; null for multiple groups.
+      route,
     });
-  }),
+  })
 );
