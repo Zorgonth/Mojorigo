@@ -130,14 +130,7 @@ osmBinsRouter.get(
 );
 
 
-
 const COLLECTION_THRESHOLD = 70;
-
-const SENSOR_TYPES = [
-  { type: "green", column: "green_sensor_id" },
-  { type: "brown", column: "brown_sensor_id" },
-  { type: "white", column: "white_sensor_id" },
-];
 
 function getLatestReadingBySensor(readings) {
   const latest = new Map();

@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { ChevronDown, UserRound } from "lucide-react";
 
-export default function HeaderControls() {
+interface HeaderControlsProps {
+  onOpenLogin: () => void;
+}
+
+export default function HeaderControls({ onOpenLogin }: HeaderControlsProps) {
   const [language, setLanguage] = useState("EN");
 
   return (
@@ -22,7 +26,8 @@ export default function HeaderControls() {
       <button
         type="button"
         className="profile-button"
-        aria-label="Profile"
+        aria-label="Open login"
+        onClick={onOpenLogin}
       >
         <UserRound size={24} />
       </button>
