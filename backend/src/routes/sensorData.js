@@ -21,6 +21,7 @@ const BIN_HEIGHT_CM = 130;
 
 // Receive a TTN uplink and save a reading.
 sensorDataRouter.post("/", async (req, res, next) => {
+    console.log("Received TTN payload:", JSON.stringify(req.body, null, 2));
   try {
     const payload = req.body ?? {};
     const device = payload.end_device_ids ?? {};
