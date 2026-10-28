@@ -17,11 +17,7 @@ const readingsCsvPath = path.join(
   "readings.csv",
 );
 
-const SENSOR_TYPES = [
-  { type: "green", column: "green_sensor_id" },
-  { type: "brown", column: "brown_sensor_id" },
-  { type: "white", column: "white_sensor_id" },
-];
+
 
 function parseNumber(value) {
   if (value === undefined || value === null || String(value).trim() === "") {

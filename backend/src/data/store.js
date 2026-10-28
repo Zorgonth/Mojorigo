@@ -8,19 +8,34 @@ function number(value) {
 }
 
 function lastCollectedAtFor(binId, collections) {
-  const dates = collections.filter((item) => item.binId === binId).map((item) => item.collectedAt);
+  const dates = collections
+    .filter((item) => item.binId === binId)
+    .map((item) => item.collectedAt);
+
   if (dates.length === 0) return null;
+
   return dates.sort()[dates.length - 1];
 }
 
 function enrichBin(bin, latestReading) {
-  const fillPercent = latestReading ? number(latestReading.fill_percent) : number(bin.fill_percent);
-  const temperatureC = latestReading ? number(latestReading.temperature_c) : number(bin.temperature_c);
-  const humidityPercent = latestReading ? number(latestReading.humidity_percent) : number(bin.humidity_percent);
+  const fillPercent = latestReading
+    ? number(latestReading.fill_percent)
+    : number(bin.fill_percent);
+
+  const temperatureC = latestReading
+    ? number(latestReading.temperature_c)
+    : number(bin.temperature_c);
+
+  const humidityPercent = latestReading
+    ? number(latestReading.humidity_percent)
+    : number(bin.humidity_percent);
 
   return {
     id: bin.id,
+
+    // Maps the CSV sensor_id column to item.sensorId.
     sensorId: bin.sensor_id,
+
     name: bin.name,
     glassType: bin.glass_type,
     glassTypeNameDe: bin.glass_type_name_de,
@@ -40,12 +55,16 @@ function enrichBin(bin, latestReading) {
 }
 
 function refreshBin(bin, collections = store.collections) {
-  const lastCollectedAt = lastCollectedAtFor(bin.id, collections) ?? bin.installedAt;
+  const lastCollectedAt =
+    lastCollectedAtFor(bin.id, collections) ?? bin.installedAt;
+
   return attachUrgency(bin, lastCollectedAt);
 }
 
 function load() {
-  const glassTypes = readCsvFile(path.join(config.dataDir, "glass_types.csv")).map((row) => ({
+  const glassTypes = readCsvFile(
+    path.join(config.dataDir, "glass_types.csv")
+  ).map((row) => ({
     id: row.id,
     nameEn: row.name_en,
     nameDe: row.name_de,
@@ -53,7 +72,9 @@ function load() {
     description: row.description,
   }));
 
-  const areas = readCsvFile(path.join(config.dataDir, "areas.csv")).map((row) => ({
+  const areas = readCsvFile(
+    path.join(config.dataDir, "areas.csv")
+  ).map((row) => ({
     id: row.id,
     name: row.name,
     city: row.city,
@@ -61,7 +82,9 @@ function load() {
     lng: number(row.lng),
   }));
 
-  const readings = readCsvFile(path.join(config.dataDir, "sensor_readings.csv")).map((row) => ({
+  const readings = readCsvFile(
+    path.join(config.dataDir, "sensor_readings.csv")
+  ).map((row) => ({
     id: row.id,
     binId: row.bin_id,
     sensorId: row.sensor_id,
@@ -72,9 +95,14 @@ function load() {
   }));
 
   const latestByBin = new Map();
+
   for (const reading of readings) {
     const current = latestByBin.get(reading.binId);
-    if (!current || reading.recordedAt > current.recorded_at) {
+
+    if (
+      !current ||
+      reading.recordedAt > current.recorded_at
+    ) {
       latestByBin.set(reading.binId, {
         recorded_at: reading.recordedAt,
         fill_percent: reading.fillPercent,
@@ -84,25 +112,54 @@ function load() {
     }
   }
 
-  const collections = readCsvFile(path.join(config.dataDir, "collections.csv")).map((row) => ({
+  const collections = readCsvFile(
+    path.join(config.dataDir, "collections.csv")
+  ).map((row) => ({
     id: row.id,
     binId: row.bin_id,
     collectedAt: row.collected_at,
     fillPercentBefore: number(row.fill_percent_before),
   }));
 
-  const bins = readCsvFile(path.join(config.dataDir, "bins.csv")).map((bin) => {
-    const enriched = enrichBin(bin, latestByBin.get(bin.id));
-    return attachUrgency(enriched, lastCollectedAtFor(enriched.id, collections) ?? enriched.installedAt);
+  const bins = readCsvFile(
+    path.join(config.dataDir, "bins.csv")
+  ).map((bin) => {
+    const enriched = enrichBin(
+      bin,
+      latestByBin.get(bin.id)
+    );
+
+    return attachUrgency(
+      enriched,
+      lastCollectedAtFor(enriched.id, collections) ??
+        enriched.installedAt
+    );
   });
 
-  return { glassTypes, areas, bins, readings, collections, rawSensorPayloads: [] };
+  return {
+    glassTypes,
+    areas,
+    bins,
+    readings,
+    collections,
+    rawSensorPayloads: [],
+  };
 }
 
 export const store = load();
 
-export function addReading({ binId, sensorId, fillPercent, temperatureC, humidityPercent, recordedAt }) {
-  const bin = store.bins.find((item) => item.id === binId);
+export function addReading({
+  binId,
+  sensorId,
+  fillPercent,
+  temperatureC,
+  humidityPercent,
+  recordedAt,
+}) {
+  const bin = store.bins.find(
+    (item) => item.id === binId
+  );
+
   if (!bin) return null;
 
   const reading = {
@@ -116,19 +173,27 @@ export function addReading({ binId, sensorId, fillPercent, temperatureC, humidit
   };
 
   store.readings.push(reading);
+
   Object.assign(bin, {
     fillPercent: reading.fillPercent,
     temperatureC: reading.temperatureC,
     humidityPercent: reading.humidityPercent,
     lastReadingAt: reading.recordedAt,
   });
+
   refreshBin(bin);
 
   return { bin, reading };
 }
 
-export function markCollected(binId, collectedAt = new Date().toISOString()) {
-  const bin = store.bins.find((item) => item.id === binId);
+export function markCollected(
+  binId,
+  collectedAt = new Date().toISOString()
+) {
+  const bin = store.bins.find(
+    (item) => item.id === binId
+  );
+
   if (!bin) return null;
 
   const collection = {
@@ -139,6 +204,7 @@ export function markCollected(binId, collectedAt = new Date().toISOString()) {
   };
 
   store.collections.push(collection);
+
   bin.fillPercent = 5;
   bin.lastReadingAt = collectedAt;
 
@@ -153,6 +219,7 @@ export function markCollected(binId, collectedAt = new Date().toISOString()) {
   });
 
   refreshBin(bin);
+
   return { bin, collection };
 }
 
@@ -162,6 +229,8 @@ export function storeRawSensorPayload(payload) {
     receivedAt: new Date().toISOString(),
     payload,
   };
+
   store.rawSensorPayloads.push(entry);
+
   return entry;
 }
