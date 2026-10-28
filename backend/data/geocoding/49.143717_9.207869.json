@@ -1,0 +1,32 @@
+{
+  "place_id": 125621714,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 96606416,
+  "lat": "49.1429880",
+  "lon": "9.2066213",
+  "category": "railway",
+  "type": "platform",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "railway",
+  "name": "Heilbronn Hbf Gleis 6-7",
+  "display_name": "Heilbronn Hbf Gleis 6-7, Hauptbahnhof/Willy-Brandt-Platz, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "railway": "Heilbronn Hbf Gleis 6-7",
+    "road": "Hauptbahnhof/Willy-Brandt-Platz",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1427078",
+    "49.1436407",
+    "9.2058162",
+    "9.2085941"
+  ]
+}

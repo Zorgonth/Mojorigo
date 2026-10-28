@@ -1,0 +1,33 @@
+{
+  "place_id": 127184025,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 1457896416,
+  "lat": "49.1465773",
+  "lon": "9.2091352",
+  "category": "building",
+  "type": "apartments",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "3, Theodor-Fischer-Straße, Neckarbogen, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "house_number": "3",
+    "road": "Theodor-Fischer-Straße",
+    "neighbourhood": "Neckarbogen",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1464716",
+    "49.1466844",
+    "9.2089971",
+    "9.2092746"
+  ]
+}

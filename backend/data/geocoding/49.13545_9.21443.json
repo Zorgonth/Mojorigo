@@ -1,0 +1,33 @@
+{
+  "place_id": 125131325,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 115625767,
+  "lat": "49.1348127",
+  "lon": "9.2149947",
+  "category": "building",
+  "type": "retail",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "40, Südstraße, Rosenberg, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "house_number": "40",
+    "road": "Südstraße",
+    "neighbourhood": "Rosenberg",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1343603",
+    "49.1356107",
+    "9.2142623",
+    "9.2154506"
+  ]
+}

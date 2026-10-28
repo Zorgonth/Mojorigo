@@ -1,0 +1,31 @@
+{
+  "place_id": 125957214,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 142707465,
+  "lat": "49.1173875",
+  "lon": "9.2150323",
+  "category": "highway",
+  "type": "secondary",
+  "place_rank": 26,
+  "importance": 0.05340004348821237,
+  "addresstype": "secondary",
+  "name": "Charlottenstraße",
+  "display_name": "Charlottenstraße, Sontheim, Heilbronn, Baden-Württemberg, 74081, Deutschland",
+  "address": {
+    "road": "Charlottenstraße",
+    "suburb": "Sontheim",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74081",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1165764",
+    "49.1188755",
+    "9.2148637",
+    "9.2159555"
+  ]
+}

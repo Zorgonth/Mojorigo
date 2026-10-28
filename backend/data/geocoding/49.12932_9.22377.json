@@ -1,0 +1,32 @@
+{
+  "place_id": 125952863,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 107789623,
+  "lat": "49.1293908",
+  "lon": "9.2236645",
+  "category": "building",
+  "type": "terrace",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "28, Richard-Wagner-Straße, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "house_number": "28",
+    "road": "Richard-Wagner-Straße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1293521",
+    "49.1294299",
+    "9.2235906",
+    "9.2237383"
+  ]
+}

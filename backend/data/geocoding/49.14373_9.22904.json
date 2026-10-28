@@ -1,0 +1,32 @@
+{
+  "place_id": 125806323,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 94972068,
+  "lat": "49.1437362",
+  "lon": "9.2290464",
+  "category": "building",
+  "type": "yes",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "46, Schillerstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "house_number": "46",
+    "road": "Schillerstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1436441",
+    "49.1437841",
+    "9.2289234",
+    "9.2291472"
+  ]
+}

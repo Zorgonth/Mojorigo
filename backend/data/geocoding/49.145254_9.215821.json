@@ -1,0 +1,32 @@
+{
+  "place_id": 125985223,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 920123619,
+  "lat": "49.1450624",
+  "lon": "9.2153871",
+  "category": "place",
+  "type": "house",
+  "place_rank": 30,
+  "importance": 0.1507975276546128,
+  "addresstype": "place",
+  "name": "",
+  "display_name": "1, Im Hospitalgrün, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "house_number": "1",
+    "road": "Im Hospitalgrün",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1448488",
+    "49.1452360",
+    "9.2150262",
+    "9.2157005"
+  ]
+}

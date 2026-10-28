@@ -1,0 +1,33 @@
+{
+  "place_id": 125852017,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 800386381,
+  "lat": "49.1391797",
+  "lon": "9.2158562",
+  "category": "place",
+  "type": "house",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "place",
+  "name": "",
+  "display_name": "9, Götzenturmstraße, Rosenberg, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "house_number": "9",
+    "road": "Götzenturmstraße",
+    "neighbourhood": "Rosenberg",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1391297",
+    "49.1392297",
+    "9.2158062",
+    "9.2159062"
+  ]
+}

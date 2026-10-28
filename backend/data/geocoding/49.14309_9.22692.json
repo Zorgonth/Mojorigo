@@ -1,0 +1,32 @@
+{
+  "place_id": 126019820,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 106655989,
+  "lat": "49.1431625",
+  "lon": "9.2269096",
+  "category": "building",
+  "type": "apartments",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "74, Gymnasiumstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "house_number": "74",
+    "road": "Gymnasiumstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1430993",
+    "49.1432256",
+    "9.2268183",
+    "9.2270009"
+  ]
+}

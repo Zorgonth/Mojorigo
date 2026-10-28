@@ -1,0 +1,32 @@
+{
+  "place_id": 124238615,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 51822591,
+  "lat": "49.1304560",
+  "lon": "9.2371580",
+  "category": "building",
+  "type": "yes",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "8, Rothenburger Straße, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "house_number": "8",
+    "road": "Rothenburger Straße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1303808",
+    "49.1305109",
+    "9.2370541",
+    "9.2372529"
+  ]
+}

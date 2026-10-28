@@ -1,0 +1,33 @@
+{
+  "place_id": 125706929,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 69574865,
+  "lat": "49.1535737",
+  "lon": "9.2356148",
+  "category": "building",
+  "type": "yes",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "Weingut Lampe",
+  "display_name": "Weingut Lampe, 30, Raffeltersteige, Kernstadt, Heilbronn, Baden-Württemberg, 74076, Deutschland",
+  "address": {
+    "building": "Weingut Lampe",
+    "house_number": "30",
+    "road": "Raffeltersteige",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74076",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1533846",
+    "49.1537562",
+    "9.2354499",
+    "9.2359353"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "place_id": 125352642,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 106507652,
+  "lat": "49.1429660",
+  "lon": "9.2272293",
+  "category": "building",
+  "type": "apartments",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "57, Karlstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "house_number": "57",
+    "road": "Karlstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1429076",
+    "49.1430244",
+    "9.2271399",
+    "9.2273187"
+  ]
+}

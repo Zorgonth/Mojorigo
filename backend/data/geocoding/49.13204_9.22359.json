@@ -1,0 +1,32 @@
+{
+  "place_id": 124234964,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 416228498,
+  "lat": "49.1320997",
+  "lon": "9.2238405",
+  "category": "building",
+  "type": "apartments",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "54, Happelstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "house_number": "54",
+    "road": "Happelstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1320117",
+    "49.1321844",
+    "9.2236526",
+    "9.2240566"
+  ]
+}

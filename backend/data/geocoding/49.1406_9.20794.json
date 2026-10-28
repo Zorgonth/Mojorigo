@@ -1,0 +1,31 @@
+{
+  "place_id": 125121460,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 12645238117,
+  "lat": "49.1409463",
+  "lon": "9.2078871",
+  "category": "amenity",
+  "type": "waste_basket",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Frankfurter Straße, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "road": "Frankfurter Straße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1408963",
+    "49.1409963",
+    "9.2078371",
+    "9.2079371"
+  ]
+}

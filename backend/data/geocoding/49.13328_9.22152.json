@@ -1,0 +1,32 @@
+{
+  "place_id": 125760315,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 107614080,
+  "lat": "49.1332365",
+  "lon": "9.2215723",
+  "category": "building",
+  "type": "detached",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "131, Werderstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "house_number": "131",
+    "road": "Werderstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1331638",
+    "49.1332778",
+    "9.2214951",
+    "9.2216495"
+  ]
+}

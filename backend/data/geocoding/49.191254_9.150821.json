@@ -1,0 +1,33 @@
+{
+  "place_id": 126222705,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 109141605,
+  "lat": "49.1908533",
+  "lon": "9.1506310",
+  "category": "building",
+  "type": "yes",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "23, Lilienthalstraße, Gewerbegebiet Biberach, Biberach, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "house_number": "23",
+    "road": "Lilienthalstraße",
+    "neighbourhood": "Gewerbegebiet Biberach",
+    "suburb": "Biberach",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1907545",
+    "49.1909886",
+    "9.1504492",
+    "9.1508519"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "place_id": 125602407,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 318185052,
+  "lat": "49.1424418",
+  "lon": "9.2135297",
+  "category": "tourism",
+  "type": "hotel",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "tourism",
+  "name": "Ibis",
+  "display_name": "Ibis, 5, Bahnhofstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "tourism": "Ibis",
+    "house_number": "5",
+    "road": "Bahnhofstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1423918",
+    "49.1424918",
+    "9.2134797",
+    "9.2135797"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "place_id": 125730102,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 100457256,
+  "lat": "49.1352085",
+  "lon": "9.2338271",
+  "category": "building",
+  "type": "yes",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "53, Alexanderstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "house_number": "53",
+    "road": "Alexanderstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1351236",
+    "49.1353058",
+    "9.2336988",
+    "9.2339515"
+  ]
+}

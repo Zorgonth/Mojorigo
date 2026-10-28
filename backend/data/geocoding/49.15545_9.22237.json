@@ -1,0 +1,33 @@
+{
+  "place_id": 125653876,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 361205021,
+  "lat": "49.1551205",
+  "lon": "9.2226895",
+  "category": "shop",
+  "type": "beverages",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "shop",
+  "name": "Heilbronner Weinmarkt",
+  "display_name": "Heilbronner Weinmarkt, 60, Kreuzenstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74076, Deutschland",
+  "address": {
+    "shop": "Heilbronner Weinmarkt",
+    "house_number": "60",
+    "road": "Kreuzenstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74076",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1550705",
+    "49.1551705",
+    "9.2226395",
+    "9.2227395"
+  ]
+}

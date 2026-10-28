@@ -1,0 +1,33 @@
+{
+  "place_id": 125830610,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 30789788,
+  "lat": "49.1189717",
+  "lon": "9.2163939",
+  "category": "building",
+  "type": "yes",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "193, Charlottenstraße, Businesspark Schwabenhof, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "house_number": "193",
+    "road": "Charlottenstraße",
+    "commercial": "Businesspark Schwabenhof",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1188771",
+    "49.1190663",
+    "9.2161931",
+    "9.2165947"
+  ]
+}

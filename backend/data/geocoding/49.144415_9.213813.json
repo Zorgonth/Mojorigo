@@ -1,0 +1,33 @@
+{
+  "place_id": 125137357,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 69755144,
+  "lat": "49.1444458",
+  "lon": "9.2138934",
+  "category": "leisure",
+  "type": "marina",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "leisure",
+  "name": "Wilhelmskanal",
+  "display_name": "Wilhelmskanal, Hagenbucherbrücke, Neckarbogen, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "leisure": "Wilhelmskanal",
+    "road": "Hagenbucherbrücke",
+    "neighbourhood": "Neckarbogen",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1438565",
+    "49.1450159",
+    "9.2134345",
+    "9.2139991"
+  ]
+}

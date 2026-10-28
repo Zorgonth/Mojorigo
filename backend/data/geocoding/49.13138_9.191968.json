@@ -1,0 +1,33 @@
+{
+  "place_id": 125169054,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 75802273,
+  "lat": "49.1313131",
+  "lon": "9.1920944",
+  "category": "building",
+  "type": "yes",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "33, Seestraße, Alt-Böckingen, Böckingen, Heilbronn, Baden-Württemberg, 74080, Deutschland",
+  "address": {
+    "house_number": "33",
+    "road": "Seestraße",
+    "neighbourhood": "Alt-Böckingen",
+    "suburb": "Böckingen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74080",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1312582",
+    "49.1313678",
+    "9.1920157",
+    "9.1921730"
+  ]
+}

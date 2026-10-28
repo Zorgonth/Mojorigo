@@ -1,0 +1,32 @@
+{
+  "place_id": 124229963,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 106120027,
+  "lat": "49.1244363",
+  "lon": "9.2309182",
+  "category": "building",
+  "type": "farm_auxiliary",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "1/1, Limberg, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "house_number": "1/1",
+    "locality": "Limberg",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1243362",
+    "49.1245340",
+    "9.2306104",
+    "9.2312261"
+  ]
+}
