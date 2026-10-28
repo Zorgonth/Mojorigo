@@ -1,0 +1,33 @@
+{
+  "place_id": 125608012,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 1457896411,
+  "lat": "49.1465653",
+  "lon": "9.2085140",
+  "category": "building",
+  "type": "apartments",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "6, Gunta-Stölzl-Straße, Neckarbogen, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "house_number": "6",
+    "road": "Gunta-Stölzl-Straße",
+    "neighbourhood": "Neckarbogen",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1464673",
+    "49.1466632",
+    "9.2083395",
+    "9.2086885"
+  ]
+}

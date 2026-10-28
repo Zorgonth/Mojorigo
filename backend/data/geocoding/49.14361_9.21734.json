@@ -1,0 +1,33 @@
+{
+  "place_id": 126125361,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 13159180926,
+  "lat": "49.1437720",
+  "lon": "9.2171370",
+  "category": "amenity",
+  "type": "restaurant",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "Taco Tica",
+  "display_name": "Taco Tica, 7, Lohtorstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "amenity": "Taco Tica",
+    "house_number": "7",
+    "road": "Lohtorstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1437220",
+    "49.1438220",
+    "9.2170870",
+    "9.2171870"
+  ]
+}

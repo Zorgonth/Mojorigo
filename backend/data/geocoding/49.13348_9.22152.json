@@ -1,0 +1,32 @@
+{
+  "place_id": 125804693,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 207052380,
+  "lat": "49.1335176",
+  "lon": "9.2216012",
+  "category": "building",
+  "type": "garage",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "35, Solothurner Straße, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "house_number": "35",
+    "road": "Solothurner Straße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1334977",
+    "49.1335375",
+    "9.2215591",
+    "9.2216434"
+  ]
+}

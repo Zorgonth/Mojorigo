@@ -1,0 +1,31 @@
+{
+  "place_id": 126097777,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 236045419,
+  "lat": "49.1392653",
+  "lon": "9.2403253",
+  "category": "amenity",
+  "type": "parking",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Im Wannental, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "road": "Im Wannental",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1391505",
+    "49.1393800",
+    "9.2402670",
+    "9.2403837"
+  ]
+}

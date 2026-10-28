@@ -1,0 +1,33 @@
+{
+  "place_id": 125906275,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 10819419165,
+  "lat": "49.1416834",
+  "lon": "9.2135185",
+  "category": "office",
+  "type": "government",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "office",
+  "name": "Autobahn GmbH Außenstelle Heilbronn",
+  "display_name": "Autobahn GmbH Außenstelle Heilbronn, 8, Frankfurter Straße, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "office": "Autobahn GmbH Außenstelle Heilbronn",
+    "house_number": "8",
+    "road": "Frankfurter Straße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1416334",
+    "49.1417334",
+    "9.2134685",
+    "9.2135685"
+  ]
+}

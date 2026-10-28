@@ -1,0 +1,32 @@
+{
+  "place_id": 125674523,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 274101738,
+  "lat": "49.1318022",
+  "lon": "9.1898811",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Hohlstraße, Alt-Böckingen, Böckingen, Heilbronn, Baden-Württemberg, 74080, Deutschland",
+  "address": {
+    "road": "Hohlstraße",
+    "neighbourhood": "Alt-Böckingen",
+    "suburb": "Böckingen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74080",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1317522",
+    "49.1318522",
+    "9.1898311",
+    "9.1899311"
+  ]
+}

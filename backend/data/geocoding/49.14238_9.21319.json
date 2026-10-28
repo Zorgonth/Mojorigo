@@ -1,0 +1,32 @@
+{
+  "place_id": 125714763,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 37089745,
+  "lat": "49.1424370",
+  "lon": "9.2133752",
+  "category": "building",
+  "type": "commercial",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "5, Bahnhofstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "house_number": "5",
+    "road": "Bahnhofstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1423322",
+    "49.1425466",
+    "9.2130781",
+    "9.2136791"
+  ]
+}

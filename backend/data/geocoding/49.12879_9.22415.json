@@ -1,0 +1,33 @@
+{
+  "place_id": 125854504,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 109407090,
+  "lat": "49.1289992",
+  "lon": "9.2244366",
+  "category": "shop",
+  "type": "car",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "shop",
+  "name": "Automobil-Center-Heilbronn",
+  "display_name": "Automobil-Center-Heilbronn, 24, Stuttgarter Straße, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "shop": "Automobil-Center-Heilbronn",
+    "house_number": "24",
+    "road": "Stuttgarter Straße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1286582",
+    "49.1293366",
+    "9.2241261",
+    "9.2247846"
+  ]
+}

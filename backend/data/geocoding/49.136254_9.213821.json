@@ -1,0 +1,32 @@
+{
+  "place_id": 125704409,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 283720735,
+  "lat": "49.1362306",
+  "lon": "9.2138114",
+  "category": "highway",
+  "type": "primary",
+  "place_rank": 26,
+  "importance": 0.05340004348821237,
+  "addresstype": "primary",
+  "name": "Südstraße",
+  "display_name": "Südstraße, Rosenberg, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "road": "Südstraße",
+    "neighbourhood": "Rosenberg",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1361106",
+    "49.1370075",
+    "9.2119752",
+    "9.2141054"
+  ]
+}

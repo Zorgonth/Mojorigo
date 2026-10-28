@@ -1,0 +1,32 @@
+{
+  "place_id": 125752161,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 107220883,
+  "lat": "49.1402709",
+  "lon": "9.2229902",
+  "category": "building",
+  "type": "office",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "8, Titotstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "house_number": "8",
+    "road": "Titotstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1401955",
+    "49.1403463",
+    "9.2228596",
+    "9.2231207"
+  ]
+}

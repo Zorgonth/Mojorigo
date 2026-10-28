@@ -1,0 +1,31 @@
+{
+  "place_id": 125806913,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 366625734,
+  "lat": "49.1462167",
+  "lon": "9.2218194",
+  "category": "highway",
+  "type": "primary",
+  "place_rank": 26,
+  "importance": 0.05340004348821237,
+  "addresstype": "primary",
+  "name": "Weinsberger Straße",
+  "display_name": "Weinsberger Straße, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "road": "Weinsberger Straße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1461699",
+    "49.1462333",
+    "9.2214269",
+    "9.2229496"
+  ]
+}

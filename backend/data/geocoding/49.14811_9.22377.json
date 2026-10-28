@@ -1,0 +1,33 @@
+{
+  "place_id": 126168079,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 83871799,
+  "lat": "49.1480296",
+  "lon": "9.2242678",
+  "category": "amenity",
+  "type": "kindergarten",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "Olgakrippe",
+  "display_name": "Olgakrippe, 58, Sichererstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74076, Deutschland",
+  "address": {
+    "amenity": "Olgakrippe",
+    "house_number": "58",
+    "road": "Sichererstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74076",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1477969",
+    "49.1481860",
+    "9.2237376",
+    "9.2247919"
+  ]
+}

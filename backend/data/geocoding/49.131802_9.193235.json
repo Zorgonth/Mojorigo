@@ -1,0 +1,34 @@
+{
+  "place_id": 125301259,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 8489437437,
+  "lat": "49.1318024",
+  "lon": "9.1931386",
+  "category": "office",
+  "type": "company",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "office",
+  "name": "Brennstoff Baumhauer",
+  "display_name": "Brennstoff Baumhauer, 8, Neue Straße, Alt-Böckingen, Böckingen, Heilbronn, Baden-Württemberg, 74080, Deutschland",
+  "address": {
+    "office": "Brennstoff Baumhauer",
+    "house_number": "8",
+    "road": "Neue Straße",
+    "neighbourhood": "Alt-Böckingen",
+    "suburb": "Böckingen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74080",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1317524",
+    "49.1318524",
+    "9.1930886",
+    "9.1931886"
+  ]
+}

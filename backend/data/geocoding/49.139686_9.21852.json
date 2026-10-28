@@ -1,0 +1,33 @@
+{
+  "place_id": 126406224,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 243024985,
+  "lat": "49.1395953",
+  "lon": "9.2187373",
+  "category": "building",
+  "type": "commercial",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "7, Fleiner Straße, Rosenberg, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "house_number": "7",
+    "road": "Fleiner Straße",
+    "neighbourhood": "Rosenberg",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1394910",
+    "49.1396949",
+    "9.2185158",
+    "9.2188684"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "place_id": 125786682,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 143301193,
+  "lat": "49.1823816",
+  "lon": "9.1168553",
+  "category": "leisure",
+  "type": "pitch",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "leisure",
+  "name": "Sportanlage Deutschordenshalle",
+  "display_name": "Sportanlage Deutschordenshalle, Rudolf-Harbig-Straße, Kirchhausen, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "leisure": "Sportanlage Deutschordenshalle",
+    "road": "Rudolf-Harbig-Straße",
+    "suburb": "Kirchhausen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1819388",
+    "49.1828242",
+    "9.1159970",
+    "9.1177137"
+  ]
+}

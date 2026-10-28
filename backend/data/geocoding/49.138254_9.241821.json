@@ -1,0 +1,33 @@
+{
+  "place_id": 125776234,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 271809196,
+  "lat": "49.1383993",
+  "lon": "9.2416076",
+  "category": "building",
+  "type": "detached",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "building",
+  "name": "",
+  "display_name": "14, Friedrich-Niethammer-Straße, Badener Hof, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "house_number": "14",
+    "road": "Friedrich-Niethammer-Straße",
+    "neighbourhood": "Badener Hof",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1383290",
+    "49.1384696",
+    "9.2415325",
+    "9.2416827"
+  ]
+}
