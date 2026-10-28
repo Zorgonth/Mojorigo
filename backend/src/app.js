@@ -8,6 +8,7 @@ import { binsRouter } from "./routes/bins.js";
 import { routesRouter } from "./routes/routes.js";
 import { osmBinsRouter } from "./routes/osmBins.js";
 import { sensorsRouter } from "./routes/sensors.js";
+import { sensorDataRouter } from "./routes/sensorData.js";
 
 export function createApp() {
   const app = express();
@@ -19,6 +20,7 @@ export function createApp() {
     res.json({ status: "ok", service: "mojorigo-backend" });
   });
 
+  app.use("/api/sensor-data", sensorDataRouter);
   app.use("/api/bins", binsRouter);
   app.use("/api/osm-bins", osmBinsRouter);
   app.use("/api/sensors", sensorsRouter);
