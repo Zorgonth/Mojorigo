@@ -1,0 +1,31 @@
+{
+  "place_id": 126330930,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 799288430,
+  "lat": "49.1643009",
+  "lon": "9.1667222",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Maihaldenstraße, Frankenbach, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Maihaldenstraße",
+    "suburb": "Frankenbach",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1642509",
+    "49.1643509",
+    "9.1666722",
+    "9.1667722"
+  ]
+}

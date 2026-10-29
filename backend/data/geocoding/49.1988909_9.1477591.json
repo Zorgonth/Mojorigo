@@ -1,0 +1,31 @@
+{
+  "place_id": 125733255,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 969762418,
+  "lat": "49.1988909",
+  "lon": "9.1477591",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Hahnenäckerstraße, Biberach, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Hahnenäckerstraße",
+    "suburb": "Biberach",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1988409",
+    "49.1989409",
+    "9.1477091",
+    "9.1478091"
+  ]
+}

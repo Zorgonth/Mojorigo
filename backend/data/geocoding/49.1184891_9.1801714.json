@@ -1,0 +1,31 @@
+{
+  "place_id": 128685138,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 291426846,
+  "lat": "49.1184891",
+  "lon": "9.1801714",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Amsterdamer Straße, Horkheim, Heilbronn, Baden-Württemberg, 74081, Deutschland",
+  "address": {
+    "road": "Amsterdamer Straße",
+    "suburb": "Horkheim",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74081",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1184391",
+    "49.1185391",
+    "9.1801214",
+    "9.1802214"
+  ]
+}

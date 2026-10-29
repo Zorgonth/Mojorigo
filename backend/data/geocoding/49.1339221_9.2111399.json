@@ -1,0 +1,32 @@
+{
+  "place_id": 124658211,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 339597247,
+  "lat": "49.1339221",
+  "lon": "9.2111399",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Schoettlestraße, Rosenberg, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "road": "Schoettlestraße",
+    "neighbourhood": "Rosenberg",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1338721",
+    "49.1339721",
+    "9.2110899",
+    "9.2111899"
+  ]
+}

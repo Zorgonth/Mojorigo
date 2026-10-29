@@ -1,0 +1,31 @@
+{
+  "place_id": 124213407,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 1269377701,
+  "lat": "49.1563719",
+  "lon": "9.2009935",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Im Fleischbeil, Neckargartach, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Im Fleischbeil",
+    "suburb": "Neckargartach",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1563219",
+    "49.1564219",
+    "9.2009435",
+    "9.2010435"
+  ]
+}

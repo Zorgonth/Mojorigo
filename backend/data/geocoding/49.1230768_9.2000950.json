@@ -1,0 +1,31 @@
+{
+  "place_id": 125191941,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 274344431,
+  "lat": "49.1230768",
+  "lon": "9.2000950",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Mauerstraße, Sontheim, Heilbronn, Baden-Württemberg, 74081, Deutschland",
+  "address": {
+    "road": "Mauerstraße",
+    "suburb": "Sontheim",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74081",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1230268",
+    "49.1231268",
+    "9.2000450",
+    "9.2001450"
+  ]
+}

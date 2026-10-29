@@ -1,0 +1,31 @@
+{
+  "place_id": 124221463,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 567379449,
+  "lat": "49.1665831",
+  "lon": "9.2047297",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Böckinger Straße, Neckargartach, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Böckinger Straße",
+    "suburb": "Neckargartach",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1665331",
+    "49.1666331",
+    "9.2046797",
+    "9.2047797"
+  ]
+}

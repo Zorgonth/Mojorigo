@@ -1,3 +1,7 @@
+import { collectionGroups, routeTotals, type CollectionRoutes } from "./collection-routes";
+import { dashboardMetrics, metricLocations, type CollectionEvent } from "./dashboard-metrics";
+import { parseMapResponse, type GlassBin } from "./bin-data";
+import ContainerStatusTable from "./ContainerStatusTable";
 import LanguageSelect from "./LanguageSelect";
 import { useTranslation } from "react-i18next";
 import { locale, locationLabel, urgencyLabel, t } from "../i18n";
@@ -155,15 +159,17 @@ function DashboardPage({ onBack }: DashboardPageProps) {
   const { t: translate } = useTranslation();
   const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
   const [mapPoints, setMapPoints] = useState<MapPoint[]>([]);
+  const [locations, setLocations] = useState<GlassBin[] | null>(null);
+  const [locationError, setLocationError] = useState(false);
+  const [collectionEvents, setCollectionEvents] = useState<CollectionEvent[] | null>(null);
+  const [clock, setClock] = useState(() => new Date());
+  const [reload, setReload] = useState(0);
+  const [activeMetric, setActiveMetric] = useState<"all" | "pickup" | "fullness" | "collected" | "route">("all");
   const [loading, setLoading] = useState(true);
   const [selectedGlassType, setSelectedGlassType] = useState<(typeof chipFilters)[number]["key"]>("all");
   const [mapSearch, setMapSearch] = useState("");
-  const [routeResult, setRouteResult] = useState<{
-    count?: number;
-    route?: { duration?: string; distanceMeters?: number } | null;
-    stops?: Array<{ sequence?: number; name?: string; address?: string; latitude?: number; longitude?: number; id?: string }>;
-    message?: string;
-  } | null>(null);
+  const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
+  const [routeResult, setRouteResult] = useState<CollectionRoutes | null>(null);
   const [routeError, setRouteError] = useState("");
   const [isGeneratingRoutes, setIsGeneratingRoutes] = useState(false);
 
@@ -203,47 +209,49 @@ function DashboardPage({ onBack }: DashboardPageProps) {
     return () => controller.abort();
   }, []);
 
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch("/api/osm-bins/map", {signal:controller.signal})
+      .then(r=>{if(!r.ok)throw Error();return r.json();})
+      .then(data=>{setLocations(parseMapResponse(data));setLocationError(false);})
+      .catch(()=>{if(!controller.signal.aborted)setLocationError(true);});
+    fetch("/api/osm-bins/collections", {signal:controller.signal})
+      .then(r=>{if(!r.ok)throw Error();return r.json();})
+      .then(data=>setCollectionEvents(data.data))
+      .catch(()=>{if(!controller.signal.aborted)setCollectionEvents(null);});
+    return ()=>controller.abort();
+  }, [reload]);
+  useEffect(() => {
+    const timer = window.setInterval(() => setClock(new Date()), 60000);
+    return () => window.clearInterval(timer);
+  }, []);
+  const metrics = useMemo(()=>dashboardMetrics(locations ?? [], selectedGlassType, collectionEvents ?? [], clock), [locations, selectedGlassType, collectionEvents, clock]);
+  const tableLocations = useMemo(()=>locations === null ? null : metricLocations(locations, selectedGlassType, activeMetric === "pickup" || activeMetric === "fullness" ? activeMetric : "all"), [locations,selectedGlassType,activeMetric]);
+  function openMetric(metric: typeof activeMetric) {
+    setActiveMetric(metric);
+    setMapSearch("");
+    requestAnimationFrame(()=>document.getElementById(metric === "route" ? "collection-route-panel" : metric === "collected" ? "collection-events-panel" : "container-status-panel")?.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",block:"nearest"}));
+  }
+
   const filteredMapPoints = useMemo(() => {
     return mapPoints.filter((point) => matchesGlassType(point.glassType, selectedGlassType));
   }, [mapPoints, selectedGlassType]);
 
-  const stats = useMemo(() => {
-    if (!dashboardData) {
-      return [];
-    }
-
-    const dataPoints = filteredMapPoints.length > 0 ? filteredMapPoints : mapPoints;
-    const needsPickup = dataPoints.filter((point) => point.needsEmptying).length;
-    const avgFill = dataPoints.length > 0 ? Math.round(dataPoints.reduce((sum, point) => sum + point.fillPercent, 0) / dataPoints.length) : 0;
-    const routeEfficiency = Math.max(25, Math.min(98, 100 - Math.round(avgFill * 0.6)));
-    const areasCount = new Set(dataPoints.map((point) => point.areaName)).size;
-
-    return [
-      { label: "Total Smart Bins", value: String(dataPoints.length), delta: translate("{{count}} areas", {count: areasCount}), accent: "blue" },
-      { label: "Needs Pickup", value: String(needsPickup), delta: translate("{{count}} collections", {count: dashboardData.totals.collections}), accent: "red" },
-      { label: "Avg. Fullness", value: `${avgFill}%`, delta: `${Math.round(dashboardData.avgTemperatureC)}°C`, accent: "amber" },
-      { label: "Collected Today", value: String(dashboardData.totals.collections), delta: translate("{{count}} readings", {count: dashboardData.totals.readings}), accent: "green" },
-      { label: "Route Efficiency", value: `${routeEfficiency}%`, delta: translate("{{value}}% humidity", {value: Math.round(dashboardData.avgHumidityPercent)}), accent: "teal" },
-    ];
-  }, [dashboardData, filteredMapPoints, mapPoints, translate]);
-
-  const areaRows = useMemo(() => {
-    const grouped = new Map<string, number[]>();
-
-    for (const point of filteredMapPoints.length > 0 ? filteredMapPoints : mapPoints) {
-      const key = point.areaName || "Unknown";
-      const bucketIndex = point.fillPercent <= 25 ? 0 : point.fillPercent <= 50 ? 1 : point.fillPercent <= 75 ? 2 : point.fillPercent <= 90 ? 3 : 4;
-      const values = grouped.get(key) ?? [0, 0, 0, 0, 0, 0];
-      values[bucketIndex] += 1;
-      values[5] += 1;
-      grouped.set(key, values);
-    }
-
-    return Array.from(grouped.entries()).map(([area, values]) => ({
-      area,
-      values,
-    }));
-  }, [filteredMapPoints, mapPoints]);
+  const routeGroups = collectionGroups(routeResult);
+  const routeSummary = routeTotals(routeGroups);
+  function formatRouteDuration(raw?: string) {
+    if (!raw || !/^\d+(?:\.\d+)?s$/.test(raw)) return t("Unavailable");
+    const minutes = Math.ceil(Number(raw.slice(0,-1))/60);
+    return minutes >= 60 ? t("{{hours}}h {{minutes}}m", {hours:Math.floor(minutes/60),minutes:minutes%60}) : t("{{minutes}} min",{minutes});
+  }
+  const ready = locations !== null && !locationError;
+  const stats = [
+    { key:"all" as const, label:"Total Smart Bins", value:ready ? String(metrics.total) : "—", delta:translate("{{count}} locations",{count:locations?.length ?? 0}), accent:"blue" },
+    { key:"pickup" as const, label:"Needs Pickup", value:ready ? String(metrics.pickups) : "—", delta:translate("Compartments over 70% full"), accent:"red" },
+    { key:"fullness" as const, label:"Avg. Fullness", value:ready && metrics.average !== null ? `${metrics.average.toLocaleString(locale(),{maximumFractionDigits:1})}%` : "—", delta:translate("{{count}} reported sensors",{count:metrics.reported}), accent:"amber" },
+    { key:"collected" as const, label:"Collected Today", value:collectionEvents ? String(metrics.collectionsToday.length) : "—", delta:translate("Location collections · Berlin time · all colours"), accent:"green" },
+    { key:"route" as const, label:"Collection route", value:routeGroups.length ? translate("Generated") : translate("Not generated"), delta:routeGroups.length && routeSummary.distance !== null ? `${(routeSummary.distance / 1000).toLocaleString(locale(),{maximumFractionDigits:1})} km` : translate("View route planning"), accent:"teal" },
+  ];
 
   const handleGenerateRoutes = async () => {
     setIsGeneratingRoutes(true);
@@ -259,13 +267,14 @@ function DashboardPage({ onBack }: DashboardPageProps) {
         body: JSON.stringify({
           origin: { latitude: 49.1427, longitude: 9.2109 },
           returnToOrigin: true,
+          language: locale() === "de-DE" ? "de" : "en",
         }),
       });
 
       const payload = await response.json();
 
       if (!response.ok) {
-        throw new Error(payload?.error?.message ?? "Unable to generate the collection route.");
+        throw new Error(payload?.failedGroup ? t("Could not calculate route group {{group}}. Check the routing service and try again.", {group:payload.failedGroup}) : payload?.error?.message ?? "Unable to generate the collection route.");
       }
 
       setRouteResult(payload);
@@ -277,17 +286,10 @@ function DashboardPage({ onBack }: DashboardPageProps) {
     }
   };
 
-  const routeDuration = (() => {
-    const raw = routeResult?.route?.duration;
-    const seconds = raw && /^\d+(?:\.\d+)?s$/.test(raw) ? Number(raw.slice(0, -1)) : null;
-    if (seconds === null) return raw || t("Unavailable");
-    const minutes = Math.ceil(seconds / 60);
-    return minutes >= 60 ? t("{{hours}}h {{minutes}}m", {hours: Math.floor(minutes / 60), minutes: minutes % 60}) : t("{{minutes}} min", {minutes});
-  })();
-  const routeRows = routeResult?.route && routeResult.stops?.length ? [{
-    name: "Collection route", stops: routeResult.stops.length, est: routeDuration,
-    traffic: "Traffic-aware", driver: "Unassigned", status: "Generated",
-  }] : [];
+  const routeRows = routeGroups.map(group => ({
+    name:t("Route {{group}}",{group:group.group}), group:group.group, stops:group.stops.length,
+    est:formatRouteDuration(group.route.duration), traffic:"Traffic-aware",driver:"Unassigned",status:"Generated",
+  }));
 
   const selectedBin = useMemo(() => {
     const sourceBins = filteredMapPoints.length > 0 ? filteredMapPoints : mapPoints;
@@ -417,7 +419,7 @@ function DashboardPage({ onBack }: DashboardPageProps) {
 
           <div className="stats-grid">
             {stats.map((card) => (
-              <div key={t(card.label)} className={`stat-card ${card.accent}`}>
+              <button type="button" key={card.key} className={`stat-card ${card.accent} ${activeMetric === card.key ? "stat-selected" : ""}`} onClick={() => openMetric(card.key)} aria-pressed={activeMetric === card.key}>
                 <div className="stat-icon">
                   {card.accent === "blue" && <Warehouse size={18} />}
                   {card.accent === "red" && <AlertTriangle size={18} />}
@@ -432,48 +434,22 @@ function DashboardPage({ onBack }: DashboardPageProps) {
                     <span>{card.delta}</span>
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
 
+          {activeMetric === "collected" && <section className="panel collection-events-panel" id="collection-events-panel" aria-label={t("Collected Today")}>
+            <h2>{t("Collected Today")}</h2><p>{t("Location collections · Berlin time · all colours")}</p>
+            {collectionEvents === null ? <p role="status">{t("Collection history unavailable")}</p> : !metrics.collectionsToday.length ? <p>{t("No collections recorded today")}</p> : <ul>{metrics.collectionsToday.map(event=><li key={event.id}><strong>{locationLabel(event.name)}</strong> · {new Date(event.collectedAt).toLocaleTimeString(locale(),{timeZone:"Europe/Berlin",hour:"2-digit",minute:"2-digit"})}</li>)}</ul>}
+          </section>}
+          {(activeMetric === "pickup" || activeMetric === "fullness") && <p className="dashboard-metric-note" role="status">{t(activeMetric === "pickup" ? "Showing locations with compartments over 70% full" : "Locations sorted by highest reported fullness")}</p>}
           <div className="content-grid">
-            <section className="panel table-panel">
+            <section className="panel table-panel" id="container-status-panel">
               <div className="panel-title-row">
                 <h2>{t("Bin Status Overview")}</h2>
               </div>
-              <div className="legend-row">
-                <span>0 – 25%</span>
-                <span>26 – 50%</span>
-                <span>51 – 75%</span>
-                <span>76 – 90%</span>
-                <span>91 – 100%</span>
-                <span>{t("Total")}</span>
-              </div>
-              <div className="table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>{t("Area / District")}</th>
-                      <th>0 – 25%</th>
-                      <th>26 – 50%</th>
-                      <th>51 – 75%</th>
-                      <th>76 – 90%</th>
-                      <th>91 – 100%</th>
-                      <th>{t("Total")}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {areaRows.map((row) => (
-                      <tr key={t(row.area)}>
-                        <td>{t(row.area)}</td>
-                        {row.values.map((value, index) => (
-                          <td key={`${t(row.area)}-${index}`}>{value}</td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <ContainerStatusTable bins={tableLocations} error={locationError} onRetry={() => setReload(reload + 1)} glassType={selectedGlassType} search={mapSearch} selected={selectedLocation} onSelect={setSelectedLocation}/>
+
             </section>
 
             <section className="panel map-panel">
@@ -494,13 +470,13 @@ function DashboardPage({ onBack }: DashboardPageProps) {
               </div>
 
               <div className="map-canvas dashboard-map-canvas">
-                <GlassBinsMap glassType={selectedGlassType} searchTerm={mapSearch} />
+                <GlassBinsMap animate={false} bins={tableLocations?.filter(bin => !mapSearch.trim() || `${bin.name} ${bin.address} ${bin.area} ${bin.city} ${bin.postcode} ${bin.id}`.toLowerCase().includes(mapSearch.trim().toLowerCase())) ?? []} glassType={selectedGlassType} searchTerm={mapSearch} selected={selectedLocation} onSelect={setSelectedLocation} />
               </div>
             </section>
           </div>
 
           <div className="bottom-grid">
-            <section className="panel route-panel">
+            <section className="panel route-panel" id="collection-route-panel">
               <div className="panel-title-row">
                 <h2>{t("Generated Routes")}</h2>
                 <button type="button" className="generate-route-button" onClick={handleGenerateRoutes} disabled={isGeneratingRoutes}>
@@ -510,10 +486,12 @@ function DashboardPage({ onBack }: DashboardPageProps) {
               </div>
 
               {routeError && <div className="route-message error">{t(routeError)}</div>}
-              {routeResult?.route && (
-                <div className="route-message success">{t("Collection route:")}{" "}{routeResult.route.distanceMeters !== undefined ? `${(routeResult.route.distanceMeters / 1000).toLocaleString(locale(), {maximumFractionDigits: 1, minimumFractionDigits: 1})} km` : t("Distance unavailable")} · {routeDuration}
-                </div>
-              )}
+              {routeGroups.length > 0 && <div className="route-message success" role="status">
+                {t("{{groups}} routes · {{stops}} collection stops", {groups:routeGroups.length,stops:routeSummary.stops})}
+                {" · "}{routeSummary.distance === null ? t("Distance unavailable") : `${(routeSummary.distance/1000).toLocaleString(locale(),{maximumFractionDigits:1})} km`}
+                {" · "}{formatRouteDuration(routeSummary.seconds === null ? undefined : `${routeSummary.seconds}s`)}
+                <p>{t("Each group is optimized separately and returns to the depot. Totals combine all routes; travel time excludes collection work.")}</p>
+              </div>}
 
               {routeResult?.message && <p className="route-message" role="status">{t(routeResult.message)}</p>}
               {!routeResult && !routeError && !isGeneratingRoutes && <p className="route-message">{t("Generate a collection route for locations with a compartment over 70% full.")}</p>}
@@ -537,13 +515,17 @@ function DashboardPage({ onBack }: DashboardPageProps) {
                   </div>
                 ))}
               </div>}
-              {routeResult?.route && <ol className="collection-stops" aria-label={t("Collection stop order")}>
-                {routeResult.stops?.map((stop, index) => <li key={stop.id ?? index}>
-                  <strong>{locationLabel(stop.name || stop.address || "Collection location")}</strong>
-                  {stop.address && stop.address !== stop.name && <span>{locationLabel(stop.address)}</span>}
-                  {stop.latitude !== undefined && stop.longitude !== undefined && <a href={`https://www.google.com/maps/dir/?api=1&destination=${stop.latitude},${stop.longitude}`} target="_blank" rel="noreferrer">{t("Directions ↗")}</a>}
-                </li>)}
-              </ol>}
+              {routeGroups.map(group => <details className="route-group-details" key={group.group} open={routeGroups.length === 1}>
+                <summary>{t("Route {{group}}",{group:group.group})} · {t("{{count}} stops",{count:group.stops.length})} · {formatRouteDuration(group.route.duration)}</summary>
+                <ol className="collection-stops" aria-label={t("Collection stop order")}>
+                  {group.stops.map((stop,index)=><li key={stop.id ?? index}>
+                    <strong>{locationLabel(stop.name || stop.address || "Collection location")}</strong>
+                    {stop.address && stop.address!==stop.name && <span>{locationLabel(stop.address)}</span>}
+                    {stop.latitude!==undefined && stop.longitude!==undefined && <a href={`https://www.google.com/maps/dir/?api=1&destination=${stop.latitude},${stop.longitude}`} target="_blank" rel="noreferrer">{t("Directions ↗")}</a>}
+                  </li>)}
+                </ol>
+              </details>)}
+
             </section>
 
             <section className="panel selected-panel">

@@ -1,0 +1,31 @@
+{
+  "place_id": 126122203,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 1431732999,
+  "lat": "49.1553078",
+  "lon": "9.2276378",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Friedrich-Ebert-Straße, Kernstadt, Heilbronn, Baden-Württemberg, 74076, Deutschland",
+  "address": {
+    "road": "Friedrich-Ebert-Straße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74076",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1552578",
+    "49.1553578",
+    "9.2275878",
+    "9.2276878"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "place_id": 126126624,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 367972709,
+  "lat": "49.1818954",
+  "lon": "9.1162929",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Kapellenweg, Kirchhausen, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Kapellenweg",
+    "suburb": "Kirchhausen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1818454",
+    "49.1819454",
+    "9.1162429",
+    "9.1163429"
+  ]
+}

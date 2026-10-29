@@ -1,0 +1,33 @@
+{
+  "place_id": 125905414,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 8438211203,
+  "lat": "49.1833953",
+  "lon": "9.1804612",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Pfaffenstraße, Industriepark Böllinger Höfe, Altböllinger Höfe, Neckargartach, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Pfaffenstraße",
+    "industrial": "Industriepark Böllinger Höfe",
+    "hamlet": "Altböllinger Höfe",
+    "suburb": "Neckargartach",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1833453",
+    "49.1834453",
+    "9.1804112",
+    "9.1805112"
+  ]
+}

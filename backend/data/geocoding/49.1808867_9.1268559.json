@@ -1,0 +1,32 @@
+{
+  "place_id": 125651888,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "way",
+  "osm_id": 1240891663,
+  "lat": "49.1808688",
+  "lon": "9.1268273",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Ernst-Abbe-Straße, Gewerbegebiet Kirchhausen, Kirchhausen, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Ernst-Abbe-Straße",
+    "neighbourhood": "Gewerbegebiet Kirchhausen",
+    "suburb": "Kirchhausen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1807683",
+    "49.1809695",
+    "9.1267494",
+    "9.1269051"
+  ]
+}

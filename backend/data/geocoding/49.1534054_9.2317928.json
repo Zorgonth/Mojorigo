@@ -1,0 +1,31 @@
+{
+  "place_id": 124229885,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 1431752340,
+  "lat": "49.1534054",
+  "lon": "9.2317928",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Schickhardtstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74076, Deutschland",
+  "address": {
+    "road": "Schickhardtstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74076",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1533554",
+    "49.1534554",
+    "9.2317428",
+    "9.2318428"
+  ]
+}

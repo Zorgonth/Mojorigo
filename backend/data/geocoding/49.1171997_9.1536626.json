@@ -1,0 +1,31 @@
+{
+  "place_id": 126160538,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 3845745998,
+  "lat": "49.1171997",
+  "lon": "9.1536626",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Theodor-Heuss-Straße, Klingenberg, Heilbronn, Baden-Württemberg, 74081, Deutschland",
+  "address": {
+    "road": "Theodor-Heuss-Straße",
+    "suburb": "Klingenberg",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74081",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1171497",
+    "49.1172497",
+    "9.1536126",
+    "9.1537126"
+  ]
+}

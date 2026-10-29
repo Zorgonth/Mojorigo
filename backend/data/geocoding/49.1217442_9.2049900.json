@@ -1,0 +1,31 @@
+{
+  "place_id": 126122243,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 6060014777,
+  "lat": "49.1217442",
+  "lon": "9.2049900",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Max-Planck-Straße, Sontheim, Heilbronn, Baden-Württemberg, 74081, Deutschland",
+  "address": {
+    "road": "Max-Planck-Straße",
+    "suburb": "Sontheim",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74081",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1216942",
+    "49.1217942",
+    "9.2049400",
+    "9.2050400"
+  ]
+}

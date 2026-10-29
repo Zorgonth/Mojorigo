@@ -1,0 +1,32 @@
+{
+  "place_id": 126148273,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 338945247,
+  "lat": "49.1336598",
+  "lon": "9.2171919",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Werderstraße, Industriegebiet Knorrstraße, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "road": "Werderstraße",
+    "industrial": "Industriegebiet Knorrstraße",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1336098",
+    "49.1337098",
+    "9.2171419",
+    "9.2172419"
+  ]
+}

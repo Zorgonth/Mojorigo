@@ -17,6 +17,12 @@ names = {f'{f["geometry"]["coordinates"][1]:.6f},{f["geometry"]["coordinates"][0
 audit = []
 for row in rows:
     cache = root / 'data/geocoding' / f'{row["lat"]}_{row["lng"]}.json'
+    if not cache.exists():
+        rounded = (round(float(row['lat']), 6), round(float(row['lng']), 6))
+        for existing in (root / 'data/geocoding').glob('*.json'):
+            if tuple(round(float(v), 6) for v in existing.stem.split('_')) == rounded:
+                cache = existing
+                break
     result = json.loads(cache.read_text()) if cache.exists() else {}
     address = result.get('address', {})
     street = address.get('road') or address.get('pedestrian') or address.get('residential') or address.get('footway') or address.get('path')

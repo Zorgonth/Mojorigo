@@ -1,0 +1,32 @@
+{
+  "place_id": 126127928,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 322010169,
+  "lat": "49.1287809",
+  "lon": "9.2067300",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Friedrich-Dürr-Straße, Rosenberg, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "road": "Friedrich-Dürr-Straße",
+    "neighbourhood": "Rosenberg",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1287309",
+    "49.1288309",
+    "9.2066800",
+    "9.2067800"
+  ]
+}

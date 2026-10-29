@@ -1,112 +1,112 @@
 id,green_sensor_id,brown_sensor_id,white_sensor_id,arena_name,city,address,lat,lng,postcode,address_source,address_match
-BIN-001,SENSOR-001-green,SENSOR-001-brown,SENSOR-001-white,,Heilbronn,,49.1318022,9.1898811,,,
-BIN-002,SENSOR-002-green,SENSOR-002-brown,SENSOR-002-white,,Heilbronn,,49.1230768,9.2000950,,,
-BIN-003,SENSOR-003-green,SENSOR-003-brown,SENSOR-003-white,,Heilbronn,,49.1184891,9.1801714,,,
-BIN-004,SENSOR-004-green,SENSOR-004-brown,SENSOR-004-white,,Heilbronn,,49.1174531,9.1526494,,,
-BIN-005,SENSOR-005-green,SENSOR-005-brown,SENSOR-005-white,,Heilbronn,,49.1360171,9.2574021,,,
-BIN-006,SENSOR-006-green,SENSOR-006-brown,SENSOR-006-white,,Heilbronn,,49.1433533,9.2176173,,,
-BIN-007,SENSOR-007-green,SENSOR-007-brown,SENSOR-007-white,,Heilbronn,,49.1458591,9.2193279,,,
-BIN-008,SENSOR-008-green,SENSOR-008-brown,SENSOR-008-white,,Heilbronn,,49.1401876,9.2342150,,,
-BIN-009,SENSOR-009-green,SENSOR-009-brown,SENSOR-009-white,,Heilbronn,,49.1340534,9.2490080,,,
-BIN-010,SENSOR-010-green,SENSOR-010-brown,SENSOR-010-white,,Heilbronn,,49.1322041,9.2077220,,,
-BIN-011,SENSOR-011-green,SENSOR-011-brown,SENSOR-011-white,,Heilbronn,,49.1287809,9.2067300,,,
-BIN-012,SENSOR-012-green,SENSOR-012-brown,SENSOR-012-white,,Heilbronn,,49.1336598,9.2171919,,,
-BIN-013,SENSOR-013-green,SENSOR-013-brown,SENSOR-013-white,,Heilbronn,,49.1339221,9.2111399,,,
-BIN-014,SENSOR-014-green,SENSOR-014-brown,SENSOR-014-white,,Heilbronn,,49.1259269,9.2014570,,,
-BIN-015,SENSOR-015-green,SENSOR-015-brown,SENSOR-015-white,,Heilbronn,,49.1396704,9.2080009,,,
-BIN-016,SENSOR-016-green,SENSOR-016-brown,SENSOR-016-white,,Heilbronn,,49.1412476,9.2341343,,,
-BIN-017,SENSOR-017-green,SENSOR-017-brown,SENSOR-017-white,,Heilbronn,,49.1255439,9.2082596,,,
-BIN-018,SENSOR-018-green,SENSOR-018-brown,SENSOR-018-white,,Heilbronn,,49.1336515,9.2202231,,,
-BIN-019,SENSOR-019-green,SENSOR-019-brown,SENSOR-019-white,,Heilbronn,,49.1365029,9.2227257,,,
-BIN-020,SENSOR-020-green,SENSOR-020-brown,SENSOR-020-white,,Heilbronn,,49.1315840,9.2295212,,,
-BIN-021,SENSOR-021-green,SENSOR-021-brown,SENSOR-021-white,,Heilbronn,,49.1331222,9.2444936,,,
-BIN-022,SENSOR-022-green,SENSOR-022-brown,SENSOR-022-white,,Heilbronn,,49.1384758,9.2469845,,,
-BIN-023,SENSOR-023-green,SENSOR-023-brown,SENSOR-023-white,,Heilbronn,,49.1222509,9.1955142,,,
-BIN-024,SENSOR-024-green,SENSOR-024-brown,SENSOR-024-white,,Heilbronn,,49.1621964,9.2279926,,,
-BIN-025,SENSOR-025-green,SENSOR-025-brown,SENSOR-025-white,,Heilbronn,,49.1818954,9.1162929,,,
-BIN-026,SENSOR-026-green,SENSOR-026-brown,SENSOR-026-white,,Heilbronn,,49.1141283,9.1722666,,,
-BIN-027,SENSOR-027-green,SENSOR-027-brown,SENSOR-027-white,,Heilbronn,,49.1442668,9.2248975,,,
-BIN-028,SENSOR-028-green,SENSOR-028-brown,SENSOR-028-white,,Heilbronn,,49.1200618,9.2116980,,,
-BIN-029,SENSOR-029-green,SENSOR-029-brown,SENSOR-029-white,,Heilbronn,,49.1399716,9.1763468,,,
-BIN-030,SENSOR-030-green,SENSOR-030-brown,SENSOR-030-white,,Heilbronn,,49.1390289,9.2177088,,,
-BIN-031,SENSOR-031-green,SENSOR-031-brown,SENSOR-031-white,,Heilbronn,,49.1369004,9.1901524,,,
-BIN-032,SENSOR-032-green,SENSOR-032-brown,SENSOR-032-white,,Heilbronn,,49.1396411,9.2119643,,,
-BIN-033,SENSOR-033-green,SENSOR-033-brown,SENSOR-033-white,,Heilbronn,,49.1184491,9.2065173,,,
-BIN-034,SENSOR-034-green,SENSOR-034-brown,SENSOR-034-white,,Heilbronn,,49.1167806,9.2065860,,,
-BIN-035,SENSOR-035-green,SENSOR-035-brown,SENSOR-035-white,,Heilbronn,,49.1180192,9.1970266,,,
-BIN-036,SENSOR-036-green,SENSOR-036-brown,SENSOR-036-white,,Heilbronn,,49.1176980,9.1892053,,,
-BIN-037,SENSOR-037-green,SENSOR-037-brown,SENSOR-037-white,,Heilbronn,,49.1240373,9.2244640,,,
-BIN-038,SENSOR-038-green,SENSOR-038-brown,SENSOR-038-white,,Heilbronn,,49.1367827,9.2074241,,,
-BIN-039,SENSOR-039-green,SENSOR-039-brown,SENSOR-039-white,,Heilbronn,,49.1446337,9.2364224,,,
-BIN-040,SENSOR-040-green,SENSOR-040-brown,SENSOR-040-white,,Heilbronn,,49.1411566,9.2280659,,,
-BIN-041,SENSOR-041-green,SENSOR-041-brown,SENSOR-041-white,,Heilbronn,,49.1402276,9.2246023,,,
-BIN-042,SENSOR-042-green,SENSOR-042-brown,SENSOR-042-white,,Heilbronn,,49.1317043,9.1905340,,,
-BIN-043,SENSOR-043-green,SENSOR-043-brown,SENSOR-043-white,,Heilbronn,,49.1507558,9.1854197,,,
-BIN-044,SENSOR-044-green,SENSOR-044-brown,SENSOR-044-white,,Heilbronn,,49.1458465,9.1767206,,,
-BIN-045,SENSOR-045-green,SENSOR-045-brown,SENSOR-045-white,,Heilbronn,,49.1446126,9.1823769,,,
-BIN-046,SENSOR-046-green,SENSOR-046-brown,SENSOR-046-white,,Heilbronn,,49.1440205,9.1919236,,,
-BIN-047,SENSOR-047-green,SENSOR-047-brown,SENSOR-047-white,,Heilbronn,,49.1538711,9.2135997,,,
-BIN-048,SENSOR-048-green,SENSOR-048-brown,SENSOR-048-white,,Heilbronn,,49.1331485,9.2368989,,,
-BIN-049,SENSOR-049-green,SENSOR-049-brown,SENSOR-049-white,,Heilbronn,,49.1498671,9.2230951,,,
-BIN-050,SENSOR-050-green,SENSOR-050-brown,SENSOR-050-white,,Heilbronn,,49.1382427,9.1697102,,,
-BIN-051,SENSOR-051-green,SENSOR-051-brown,SENSOR-051-white,,Heilbronn,,49.1373470,9.1705079,,,
-BIN-052,SENSOR-052-green,SENSOR-052-brown,SENSOR-052-white,,Heilbronn,,49.1554312,9.1756068,,,
-BIN-053,SENSOR-053-green,SENSOR-053-brown,SENSOR-053-white,,Heilbronn,,49.1271341,9.2216410,,,
-BIN-054,SENSOR-054-green,SENSOR-054-brown,SENSOR-054-white,,Heilbronn,,49.1255292,9.2268891,,,
-BIN-055,SENSOR-055-green,SENSOR-055-brown,SENSOR-055-white,,Heilbronn,,49.1259244,9.2162972,,,
-BIN-056,SENSOR-056-green,SENSOR-056-brown,SENSOR-056-white,,Heilbronn,,49.1284379,9.2102314,,,
-BIN-057,SENSOR-057-green,SENSOR-057-brown,SENSOR-057-white,,Heilbronn,,49.1472262,9.1889590,,,
-BIN-058,SENSOR-058-green,SENSOR-058-brown,SENSOR-058-white,,Heilbronn,,49.1665831,9.2047297,,,
-BIN-059,SENSOR-059-green,SENSOR-059-brown,SENSOR-059-white,,Heilbronn,,49.1637191,9.2009805,,,
-BIN-060,SENSOR-060-green,SENSOR-060-brown,SENSOR-060-white,,Heilbronn,,49.1708685,9.1980043,,,
-BIN-061,SENSOR-061-green,SENSOR-061-brown,SENSOR-061-white,,Heilbronn,,49.1576176,9.1744986,,,
-BIN-062,SENSOR-062-green,SENSOR-062-brown,SENSOR-062-white,,Heilbronn,,49.1438557,9.2303428,,,
-BIN-063,SENSOR-063-green,SENSOR-063-brown,SENSOR-063-white,,Heilbronn,,49.1643009,9.1667222,,,
-BIN-064,SENSOR-064-green,SENSOR-064-brown,SENSOR-064-white,,Heilbronn,,49.1741038,9.2009512,,,
-BIN-065,SENSOR-065-green,SENSOR-065-brown,SENSOR-065-white,,Heilbronn,,49.1988909,9.1477591,,,
-BIN-066,SENSOR-066-green,SENSOR-066-brown,SENSOR-066-white,,Heilbronn,,49.1475937,9.1821280,,,
-BIN-067,SENSOR-067-green,SENSOR-067-brown,SENSOR-067-white,,Heilbronn,,49.1448354,9.1865124,,,
-BIN-068,SENSOR-068-green,SENSOR-068-brown,SENSOR-068-white,,Heilbronn,,49.1563719,9.2009935,,,
-BIN-069,SENSOR-069-green,SENSOR-069-brown,SENSOR-069-white,,Heilbronn,,49.1536960,9.2240177,,,
-BIN-070,SENSOR-070-green,SENSOR-070-brown,SENSOR-070-white,,Heilbronn,,49.1553078,9.2276378,,,
-BIN-071,SENSOR-071-green,SENSOR-071-brown,SENSOR-071-white,,Heilbronn,,49.1534054,9.2317928,,,
-BIN-072,SENSOR-072-green,SENSOR-072-brown,SENSOR-072-white,,Heilbronn,,49.1588840,9.1961246,,,
-BIN-073,SENSOR-073-green,SENSOR-073-brown,SENSOR-073-white,,Heilbronn,,49.1339054,9.2333228,,,
-BIN-074,SENSOR-074-green,SENSOR-074-brown,SENSOR-074-white,,Heilbronn,,49.1194148,9.1934216,,,
-BIN-075,SENSOR-075-green,SENSOR-075-brown,SENSOR-075-white,,Heilbronn,,49.1861618,9.1066519,,,
-BIN-076,SENSOR-076-green,SENSOR-076-brown,SENSOR-076-white,,Heilbronn,,49.1351649,9.1822036,,,
-BIN-077,SENSOR-077-green,SENSOR-077-brown,SENSOR-077-white,,Heilbronn,,49.1133944,9.1687181,,,
-BIN-078,SENSOR-078-green,SENSOR-078-brown,SENSOR-078-white,,Heilbronn,,49.1171997,9.1536626,,,
-BIN-079,SENSOR-079-green,SENSOR-079-brown,SENSOR-079-white,,Heilbronn,,49.1393468,9.2124687,,,
-BIN-080,SENSOR-080-green,SENSOR-080-brown,SENSOR-080-white,,Heilbronn,,49.1217442,9.2049900,,,
-BIN-081,SENSOR-081-green,SENSOR-081-brown,SENSOR-081-white,,Heilbronn,,49.1322347,9.2242634,,,
-BIN-082,SENSOR-082-green,SENSOR-082-brown,SENSOR-082-white,,Heilbronn,,49.1485190,9.2391607,,,
-BIN-083,SENSOR-083-green,SENSOR-083-brown,SENSOR-083-white,,Heilbronn,,49.1512124,9.2199423,,,
-BIN-084,SENSOR-084-green,SENSOR-084-brown,SENSOR-084-white,,Heilbronn,,49.1288763,9.1873796,,,
-BIN-085,SENSOR-085-green,SENSOR-085-brown,SENSOR-085-white,,Heilbronn,,49.1537371,9.1867523,,,
-BIN-086,SENSOR-086-green,SENSOR-086-brown,SENSOR-086-white,,Heilbronn,,49.1676153,9.1972773,,,
-BIN-087,SENSOR-087-green,SENSOR-087-brown,SENSOR-087-white,,Heilbronn,,49.1833953,9.1804612,,,
-BIN-088,SENSOR-088-green,SENSOR-088-brown,SENSOR-088-white,,Heilbronn,,49.1133291,9.1688526,,,
-BIN-089,SENSOR-089-green,SENSOR-089-brown,SENSOR-089-white,,Heilbronn,,49.1375577,9.1772962,,,
-BIN-090,SENSOR-090-green,SENSOR-090-brown,SENSOR-090-white,,Heilbronn,,49.1401078,9.1909687,,,
-BIN-091,SENSOR-091-green,SENSOR-091-brown,SENSOR-091-white,,Heilbronn,,49.1420832,9.1803271,,,
-BIN-092,SENSOR-092-green,SENSOR-092-brown,SENSOR-092-white,,Heilbronn,,49.1310833,9.2234580,,,
-BIN-093,SENSOR-093-green,SENSOR-093-brown,SENSOR-093-white,,Heilbronn,,49.1414793,9.2094754,,,
-BIN-094,SENSOR-094-green,SENSOR-094-brown,SENSOR-094-white,,Heilbronn,,49.1458150,9.1765735,,,
-BIN-095,SENSOR-095-green,SENSOR-095-brown,SENSOR-095-white,,Heilbronn,,49.1507641,9.2307544,,,
-BIN-096,SENSOR-096-green,SENSOR-096-brown,SENSOR-096-white,,Heilbronn,,49.1841212,9.1101785,,,
-BIN-097,SENSOR-097-green,SENSOR-097-brown,SENSOR-097-white,,Heilbronn,,49.1834792,9.1103904,,,
-BIN-098,SENSOR-098-green,SENSOR-098-brown,SENSOR-098-white,,Heilbronn,,49.1321464,9.2226362,,,
-BIN-099,SENSOR-099-green,SENSOR-099-brown,SENSOR-099-white,,Heilbronn,,49.1822654,9.1064139,,,
-BIN-100,SENSOR-100-green,SENSOR-100-brown,SENSOR-100-white,,Heilbronn,,49.1818996,9.1162527,,,
-BIN-101,SENSOR-101-green,SENSOR-101-brown,SENSOR-101-white,,Heilbronn,,49.1846337,9.1184507,,,
-BIN-102,SENSOR-102-green,SENSOR-102-brown,SENSOR-102-white,,Heilbronn,,49.1809661,9.1264750,,,
-BIN-103,SENSOR-103-green,SENSOR-103-brown,SENSOR-103-white,,Heilbronn,,49.1808310,9.1264596,,,
-BIN-104,SENSOR-104-green,SENSOR-104-brown,SENSOR-104-white,,Heilbronn,,49.1238371,9.2294107,,,
-BIN-105,SENSOR-105-green,SENSOR-105-brown,SENSOR-105-white,Recyclinghof-Ost,Heilbronn,,49.1398361,9.2401867,,,
-BIN-106,SENSOR-106-green,SENSOR-106-brown,SENSOR-106-white,,Heilbronn,,49.1507902,9.2265551,,,
-BIN-107,SENSOR-107-green,SENSOR-107-brown,SENSOR-107-white,,Heilbronn,,49.1397223,9.2403393,,,
-BIN-108,SENSOR-108-green,SENSOR-108-brown,SENSOR-108-white,Recyclinghof Kirchhausen,Heilbronn,Ernst-Abbe-Straße 23,49.1808867,9.1268559,74078,OSM,exact
-BIN-109,SENSOR-109-green,SENSOR-109-brown,SENSOR-109-white,,Heilbronn,,49.1807661,9.1265544,,,
-BIN-110,SENSOR-110-green,SENSOR-110-brown,SENSOR-110-white,,Heilbronn,,49.1808689,9.1268272,,,
-BIN-111,SENSOR-111-green,SENSOR-111-brown,SENSOR-111-white,,Heilbronn,,49.1846423,9.1184378,,,
+BIN-001,SENSOR-001-green,SENSOR-001-brown,SENSOR-001-white,Hohlstraße,Heilbronn,Hohlstraße,49.1318022,9.1898811,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-002,SENSOR-002-green,SENSOR-002-brown,SENSOR-002-white,Mauerstraße,Heilbronn,Mauerstraße,49.1230768,9.2000950,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-003,SENSOR-003-green,SENSOR-003-brown,SENSOR-003-white,Amsterdamer Straße,Heilbronn,Amsterdamer Straße,49.1184891,9.1801714,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-004,SENSOR-004-green,SENSOR-004-brown,SENSOR-004-white,Am Wasserturm,Heilbronn,Am Wasserturm,49.1174531,9.1526494,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-005,SENSOR-005-green,SENSOR-005-brown,SENSOR-005-white,Schirrmannstraße,Heilbronn,Schirrmannstraße,49.1360171,9.2574021,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-006,SENSOR-006-green,SENSOR-006-brown,SENSOR-006-white,Lohtorstraße,Heilbronn,Lohtorstraße,49.1433533,9.2176173,74072,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-007,SENSOR-007-green,SENSOR-007-brown,SENSOR-007-white,Turmstraße,Heilbronn,Turmstraße,49.1458591,9.2193279,74072,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-008,SENSOR-008-green,SENSOR-008-brown,SENSOR-008-white,Bismarckstraße,Heilbronn,Bismarckstraße,49.1401876,9.2342150,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-009,SENSOR-009-green,SENSOR-009-brown,SENSOR-009-white,Badener Straße,Heilbronn,Badener Straße,49.1340534,9.2490080,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-010,SENSOR-010-green,SENSOR-010-brown,SENSOR-010-white,Bietigheimer Straße,Heilbronn,Bietigheimer Straße,49.1322041,9.2077220,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-011,SENSOR-011-green,SENSOR-011-brown,SENSOR-011-white,Friedrich-Dürr-Straße,Heilbronn,Friedrich-Dürr-Straße,49.1287809,9.2067300,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-012,SENSOR-012-green,SENSOR-012-brown,SENSOR-012-white,Werderstraße,Heilbronn,Werderstraße,49.1336598,9.2171919,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-013,SENSOR-013-green,SENSOR-013-brown,SENSOR-013-white,Schoettlestraße,Heilbronn,Schoettlestraße,49.1339221,9.2111399,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-014,SENSOR-014-green,SENSOR-014-brown,SENSOR-014-white,Kolpingstraße,Heilbronn,Kolpingstraße,49.1259269,9.2014570,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-015,SENSOR-015-green,SENSOR-015-brown,SENSOR-015-white,Weststraße,Heilbronn,Weststraße,49.1396704,9.2080009,74072,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-016,SENSOR-016-green,SENSOR-016-brown,SENSOR-016-white,Kernerstraße,Heilbronn,Kernerstraße,49.1412476,9.2341343,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-017,SENSOR-017-green,SENSOR-017-brown,SENSOR-017-white,Robert-Bosch-Straße,Heilbronn,Robert-Bosch-Straße,49.1255439,9.2082596,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-018,SENSOR-018-green,SENSOR-018-brown,SENSOR-018-white,Urbanstraße,Heilbronn,Urbanstraße,49.1336515,9.2202231,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-019,SENSOR-019-green,SENSOR-019-brown,SENSOR-019-white,Steinstraße,Heilbronn,Steinstraße,49.1365029,9.2227257,74072,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-020,SENSOR-020-green,SENSOR-020-brown,SENSOR-020-white,Blücherstraße,Heilbronn,Blücherstraße,49.1315840,9.2295212,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-021,SENSOR-021-green,SENSOR-021-brown,SENSOR-021-white,Reutlinger Straße,Heilbronn,Reutlinger Straße,49.1331222,9.2444936,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-022,SENSOR-022-green,SENSOR-022-brown,SENSOR-022-white,Am Seelesberg,Heilbronn,Am Seelesberg,49.1384758,9.2469845,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-023,SENSOR-023-green,SENSOR-023-brown,SENSOR-023-white,Bottwarbahnstraße,Heilbronn,Bottwarbahnstraße,49.1222509,9.1955142,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-024,SENSOR-024-green,SENSOR-024-brown,SENSOR-024-white,Binswanger Straße,Heilbronn,Binswanger Straße,49.1621964,9.2279926,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-025,SENSOR-025-green,SENSOR-025-brown,SENSOR-025-white,Kapellenweg,Heilbronn,Kapellenweg,49.1818954,9.1162929,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-026,SENSOR-026-green,SENSOR-026-brown,SENSOR-026-white,Nussäckerstraße,Heilbronn,Nussäckerstraße,49.1141283,9.1722666,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-027,SENSOR-027-green,SENSOR-027-brown,SENSOR-027-white,Schillerstraße,Heilbronn,Schillerstraße,49.1442668,9.2248975,74072,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-028,SENSOR-028-green,SENSOR-028-brown,SENSOR-028-white,Max-von-Laue-Straße,Heilbronn,Max-von-Laue-Straße,49.1200618,9.2116980,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-029,SENSOR-029-green,SENSOR-029-brown,SENSOR-029-white,Helmholtzstraße,Heilbronn,Helmholtzstraße,49.1399716,9.1763468,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-030,SENSOR-030-green,SENSOR-030-brown,SENSOR-030-white,Rollwagstraße,Heilbronn,Rollwagstraße,49.1390289,9.2177088,74072,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-031,SENSOR-031-green,SENSOR-031-brown,SENSOR-031-white,Friedrichstraße,Heilbronn,Friedrichstraße,49.1369004,9.1901524,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-032,SENSOR-032-green,SENSOR-032-brown,SENSOR-032-white,Achtungstraße,Heilbronn,Achtungstraße,49.1396411,9.2119643,74072,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-033,SENSOR-033-green,SENSOR-033-brown,SENSOR-033-white,Robert-Bosch-Straße,Heilbronn,Robert-Bosch-Straße,49.1184491,9.2065173,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-034,SENSOR-034-green,SENSOR-034-brown,SENSOR-034-white,Staufenbergstraße,Heilbronn,Staufenbergstraße,49.1167806,9.2065860,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-035,SENSOR-035-green,SENSOR-035-brown,SENSOR-035-white,Staufenbergstraße,Heilbronn,Staufenbergstraße,49.1180192,9.1970266,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-036,SENSOR-036-green,SENSOR-036-brown,SENSOR-036-white,Hauptstraße,Heilbronn,Hauptstraße,49.1176980,9.1892053,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-037,SENSOR-037-green,SENSOR-037-brown,SENSOR-037-white,Herbert-Hoover-Straße,Heilbronn,Herbert-Hoover-Straße,49.1240373,9.2244640,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-038,SENSOR-038-green,SENSOR-038-brown,SENSOR-038-white,Kornacherstraße,Heilbronn,Kornacherstraße,49.1367827,9.2074241,74072,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-039,SENSOR-039-green,SENSOR-039-brown,SENSOR-039-white,Pfühlstraße,Heilbronn,Pfühlstraße,49.1446337,9.2364224,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-040,SENSOR-040-green,SENSOR-040-brown,SENSOR-040-white,Friedensplatz,Heilbronn,Friedensplatz,49.1411566,9.2280659,74072,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-041,SENSOR-041-green,SENSOR-041-brown,SENSOR-041-white,Bismarckstraße,Heilbronn,Bismarckstraße,49.1402276,9.2246023,74072,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-042,SENSOR-042-green,SENSOR-042-brown,SENSOR-042-white,Klingenberger Straße,Heilbronn,Klingenberger Straße,49.1317043,9.1905340,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-043,SENSOR-043-green,SENSOR-043-brown,SENSOR-043-white,Hofweg,Heilbronn,Hofweg,49.1507558,9.1854197,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-044,SENSOR-044-green,SENSOR-044-brown,SENSOR-044-white,Sinsheimer Straße,Heilbronn,Sinsheimer Straße,49.1458465,9.1767206,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-045,SENSOR-045-green,SENSOR-045-brown,SENSOR-045-white,Bruchsaler Straße,Heilbronn,Bruchsaler Straße,49.1446126,9.1823769,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-046,SENSOR-046-green,SENSOR-046-brown,SENSOR-046-white,Grünewaldstraße,Heilbronn,Grünewaldstraße,49.1440205,9.1919236,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-047,SENSOR-047-green,SENSOR-047-brown,SENSOR-047-white,Gottlieb-Daimler-Straße,Heilbronn,Gottlieb-Daimler-Straße,49.1538711,9.2135997,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-048,SENSOR-048-green,SENSOR-048-brown,SENSOR-048-white,Lothringer Straße,Heilbronn,Lothringer Straße,49.1331485,9.2368989,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-049,SENSOR-049-green,SENSOR-049-brown,SENSOR-049-white,Pestalozzistraße,Heilbronn,Pestalozzistraße,49.1498671,9.2230951,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-050,SENSOR-050-green,SENSOR-050-brown,SENSOR-050-white,Wolfsgraben,Heilbronn,Wolfsgraben,49.1382427,9.1697102,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-051,SENSOR-051-green,SENSOR-051-brown,SENSOR-051-white,Längelterstraße,Heilbronn,Längelterstraße,49.1373470,9.1705079,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-052,SENSOR-052-green,SENSOR-052-brown,SENSOR-052-white,Brechhausstraße,Heilbronn,Brechhausstraße,49.1554312,9.1756068,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-053,SENSOR-053-green,SENSOR-053-brown,SENSOR-053-white,Hohenstaufenstraße,Heilbronn,Hohenstaufenstraße,49.1271341,9.2216410,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-054,SENSOR-054-green,SENSOR-054-brown,SENSOR-054-white,Happenbacher Straße,Heilbronn,Happenbacher Straße,49.1255292,9.2268891,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-055,SENSOR-055-green,SENSOR-055-brown,SENSOR-055-white,Sontheimer Landwehr,Heilbronn,Sontheimer Landwehr,49.1259244,9.2162972,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-056,SENSOR-056-green,SENSOR-056-brown,SENSOR-056-white,Merkurstraße,Heilbronn,Merkurstraße,49.1284379,9.2102314,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-057,SENSOR-057-green,SENSOR-057-brown,SENSOR-057-white,Holunderweg,Heilbronn,Holunderweg,49.1472262,9.1889590,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-058,SENSOR-058-green,SENSOR-058-brown,SENSOR-058-white,Böckinger Straße,Heilbronn,Böckinger Straße,49.1665831,9.2047297,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-059,SENSOR-059-green,SENSOR-059-brown,SENSOR-059-white,Stettiner Straße,Heilbronn,Stettiner Straße,49.1637191,9.2009805,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-060,SENSOR-060-green,SENSOR-060-brown,SENSOR-060-white,Wilhelm-Schäffer-Straße,Heilbronn,Wilhelm-Schäffer-Straße,49.1708685,9.1980043,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-061,SENSOR-061-green,SENSOR-061-brown,SENSOR-061-white,Dörnlestraße,Heilbronn,Dörnlestraße,49.1576176,9.1744986,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-062,SENSOR-062-green,SENSOR-062-brown,SENSOR-062-white,Schillerstraße,Heilbronn,Schillerstraße,49.1438557,9.2303428,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-063,SENSOR-063-green,SENSOR-063-brown,SENSOR-063-white,Maihaldenstraße,Heilbronn,Maihaldenstraße,49.1643009,9.1667222,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-064,SENSOR-064-green,SENSOR-064-brown,SENSOR-064-white,Böllinger Straße,Heilbronn,Böllinger Straße,49.1741038,9.2009512,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-065,SENSOR-065-green,SENSOR-065-brown,SENSOR-065-white,Hahnenäckerstraße,Heilbronn,Hahnenäckerstraße,49.1988909,9.1477591,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-066,SENSOR-066-green,SENSOR-066-brown,SENSOR-066-white,Heidelberger Straße,Heilbronn,Heidelberger Straße,49.1475937,9.1821280,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-067,SENSOR-067-green,SENSOR-067-brown,SENSOR-067-white,Heidelberger Straße,Heilbronn,Heidelberger Straße,49.1448354,9.1865124,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-068,SENSOR-068-green,SENSOR-068-brown,SENSOR-068-white,Im Fleischbeil,Heilbronn,Im Fleischbeil,49.1563719,9.2009935,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-069,SENSOR-069-green,SENSOR-069-brown,SENSOR-069-white,Rauchstraße,Heilbronn,Rauchstraße,49.1536960,9.2240177,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-070,SENSOR-070-green,SENSOR-070-brown,SENSOR-070-white,Friedrich-Ebert-Straße,Heilbronn,Friedrich-Ebert-Straße,49.1553078,9.2276378,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-071,SENSOR-071-green,SENSOR-071-brown,SENSOR-071-white,Schickhardtstraße,Heilbronn,Schickhardtstraße,49.1534054,9.2317928,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-072,SENSOR-072-green,SENSOR-072-brown,SENSOR-072-white,Marienburger Straße,Heilbronn,Marienburger Straße,49.1588840,9.1961246,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-073,SENSOR-073-green,SENSOR-073-brown,SENSOR-073-white,Alexanderstraße,Heilbronn,Alexanderstraße,49.1339054,9.2333228,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-074,SENSOR-074-green,SENSOR-074-brown,SENSOR-074-white,Zwirnereistraße,Heilbronn,Zwirnereistraße,49.1194148,9.1934216,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-075,SENSOR-075-green,SENSOR-075-brown,SENSOR-075-white,Schlossstraße,Heilbronn,Schlossstraße,49.1861618,9.1066519,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-076,SENSOR-076-green,SENSOR-076-brown,SENSOR-076-white,Heckenstraße,Heilbronn,Heckenstraße,49.1351649,9.1822036,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-077,SENSOR-077-green,SENSOR-077-brown,SENSOR-077-white,Hossäckerweg,Heilbronn,Hossäckerweg,49.1133944,9.1687181,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-078,SENSOR-078-green,SENSOR-078-brown,SENSOR-078-white,Theodor-Heuss-Straße,Heilbronn,Theodor-Heuss-Straße,49.1171997,9.1536626,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-079,SENSOR-079-green,SENSOR-079-brown,SENSOR-079-white,Achtungstraße,Heilbronn,Achtungstraße,49.1393468,9.2124687,74072,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-080,SENSOR-080-green,SENSOR-080-brown,SENSOR-080-white,Max-Planck-Straße,Heilbronn,Max-Planck-Straße,49.1217442,9.2049900,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-081,SENSOR-081-green,SENSOR-081-brown,SENSOR-081-white,Happelstraße,Heilbronn,Happelstraße,49.1322347,9.2242634,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-082,SENSOR-082-green,SENSOR-082-brown,SENSOR-082-white,Haller Straße,Heilbronn,Haller Straße,49.1485190,9.2391607,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-083,SENSOR-083-green,SENSOR-083-brown,SENSOR-083-white,Gaswerkstraße,Heilbronn,Gaswerkstraße,49.1512124,9.2199423,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-084,SENSOR-084-green,SENSOR-084-brown,SENSOR-084-white,Hofstattstraße,Heilbronn,Hofstattstraße,49.1288763,9.1873796,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-085,SENSOR-085-green,SENSOR-085-brown,SENSOR-085-white,Maasstraße,Heilbronn,Maasstraße,49.1537371,9.1867523,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-086,SENSOR-086-green,SENSOR-086-brown,SENSOR-086-white,Widmannstraße,Heilbronn,Widmannstraße,49.1676153,9.1972773,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-087,SENSOR-087-green,SENSOR-087-brown,SENSOR-087-white,Pfaffenstraße,Heilbronn,Pfaffenstraße,49.1833953,9.1804612,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-088,SENSOR-088-green,SENSOR-088-brown,SENSOR-088-white,Hossäckerweg,Heilbronn,Hossäckerweg,49.1133291,9.1688526,74081,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-089,SENSOR-089-green,SENSOR-089-brown,SENSOR-089-white,Längelterstraße,Heilbronn,Längelterstraße,49.1375577,9.1772962,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-090,SENSOR-090-green,SENSOR-090-brown,SENSOR-090-white,Im Haselter,Heilbronn,Im Haselter,49.1401078,9.1909687,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-091,SENSOR-091-green,SENSOR-091-brown,SENSOR-091-white,Bruchsaler Straße,Heilbronn,Bruchsaler Straße,49.1420832,9.1803271,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-092,SENSOR-092-green,SENSOR-092-brown,SENSOR-092-white,Schmollerstraße,Heilbronn,Schmollerstraße,49.1310833,9.2234580,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-093,SENSOR-093-green,SENSOR-093-brown,SENSOR-093-white,Mozartstraße,Heilbronn,Mozartstraße,49.1414793,9.2094754,74072,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-094,SENSOR-094-green,SENSOR-094-brown,SENSOR-094-white,Sinsheimer Straße,Heilbronn,Sinsheimer Straße,49.1458150,9.1765735,74080,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-095,SENSOR-095-green,SENSOR-095-brown,SENSOR-095-white,Wartbergstraße,Heilbronn,Wartbergstraße,49.1507641,9.2307544,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-096,SENSOR-096-green,SENSOR-096-brown,SENSOR-096-white,Innenhof,Heilbronn,Innenhof,49.1841212,9.1101785,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-097,SENSOR-097-green,SENSOR-097-brown,SENSOR-097-white,Sankt-Alban-Gassen,Heilbronn,Sankt-Alban-Gassen,49.1834792,9.1103904,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-098,SENSOR-098-green,SENSOR-098-brown,SENSOR-098-white,Happelstraße,Heilbronn,Happelstraße,49.1321464,9.2226362,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-099,SENSOR-099-green,SENSOR-099-brown,SENSOR-099-white,Bensheimer Straße,Heilbronn,Bensheimer Straße,49.1822654,9.1064139,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-100,SENSOR-100-green,SENSOR-100-brown,SENSOR-100-white,Kapellenweg,Heilbronn,Kapellenweg,49.1818996,9.1162527,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-101,SENSOR-101-green,SENSOR-101-brown,SENSOR-101-white,Paul-Gerhardt-Straße,Heilbronn,Paul-Gerhardt-Straße,49.1846337,9.1184507,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-102,SENSOR-102-green,SENSOR-102-brown,SENSOR-102-white,Ernst-Abbe-Straße,Heilbronn,Ernst-Abbe-Straße,49.1809661,9.1264750,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-103,SENSOR-103-green,SENSOR-103-brown,SENSOR-103-white,Ernst-Abbe-Straße,Heilbronn,Ernst-Abbe-Straße,49.1808310,9.1264596,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-104,SENSOR-104-green,SENSOR-104-brown,SENSOR-104-white,Herbert-Hoover-Straße,Heilbronn,Herbert-Hoover-Straße,49.1238371,9.2294107,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-105,SENSOR-105-green,SENSOR-105-brown,SENSOR-105-white,Recyclinghof-Ost,Heilbronn,Im Wannental,49.1398361,9.2401867,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-106,SENSOR-106-green,SENSOR-106-brown,SENSOR-106-white,Lessingstraße,Heilbronn,Lessingstraße,49.1507902,9.2265551,74076,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-107,SENSOR-107-green,SENSOR-107-brown,SENSOR-107-white,Im Wannental,Heilbronn,Im Wannental,49.1397223,9.2403393,74074,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-108,SENSOR-108-green,SENSOR-108-brown,SENSOR-108-white,Recyclinghof Kirchhausen,Heilbronn,Ernst-Abbe-Straße,49.1808867,9.1268559,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-109,SENSOR-109-green,SENSOR-109-brown,SENSOR-109-white,Ernst-Abbe-Straße,Heilbronn,Ernst-Abbe-Straße,49.1807661,9.1265544,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-110,SENSOR-110-green,SENSOR-110-brown,SENSOR-110-white,Ernst-Abbe-Straße,Heilbronn,Ernst-Abbe-Straße,49.1808689,9.1268272,74078,OpenStreetMap / Nominatim,mapped_recycling_location
+BIN-111,SENSOR-111-green,SENSOR-111-brown,SENSOR-111-white,Paul-Gerhardt-Straße,Heilbronn,Paul-Gerhardt-Straße,49.1846423,9.1184378,74078,OpenStreetMap / Nominatim,mapped_recycling_location

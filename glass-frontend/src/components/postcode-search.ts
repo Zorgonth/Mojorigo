@@ -2,28 +2,28 @@
 // within each postcode (including cached OSM postcode assignments). Not a street address.
 export const postcodeCentres: Record<string, [number, number]> = {
   "74072": [
-    49.142196,
-    9.216557
+    49.14061,
+    9.217023
   ],
   "74074": [
-    49.132078,
-    9.227807
+    49.132193,
+    9.228111
   ],
   "74076": [
-    49.150201,
-    9.218115
+    49.15072,
+    9.228111
   ],
   "74078": [
-    49.174645,
-    9.145308
+    49.174805,
+    9.152581
   ],
   "74080": [
-    49.131225,
-    9.189694
+    49.140551,
+    9.182943
   ],
   "74081": [
-    49.115898,
-    9.206515
+    49.118998,
+    9.188888
   ]
 };
 export function distanceMetres(from: [number, number], to: [number, number]): number {

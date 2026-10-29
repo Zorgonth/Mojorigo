@@ -1,0 +1,31 @@
+{
+  "place_id": 124148483,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 928238595,
+  "lat": "49.1741038",
+  "lon": "9.2009512",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Böllinger Straße, Neckargartach, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Böllinger Straße",
+    "suburb": "Neckargartach",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1740538",
+    "49.1741538",
+    "9.2009012",
+    "9.2010012"
+  ]
+}

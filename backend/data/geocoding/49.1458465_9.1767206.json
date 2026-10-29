@@ -1,0 +1,32 @@
+{
+  "place_id": 125991123,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 418149299,
+  "lat": "49.1458465",
+  "lon": "9.1767206",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Sinsheimer Straße, Schanz, Böckingen, Heilbronn, Baden-Württemberg, 74080, Deutschland",
+  "address": {
+    "road": "Sinsheimer Straße",
+    "neighbourhood": "Schanz",
+    "suburb": "Böckingen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74080",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1457965",
+    "49.1458965",
+    "9.1766706",
+    "9.1767706"
+  ]
+}
