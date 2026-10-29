@@ -1,0 +1,32 @@
+{
+  "place_id": 125760653,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 7124463155,
+  "lat": "49.1512124",
+  "lon": "9.2199423",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Gaswerkstraße, Industriegebiet Neckar, Kernstadt, Heilbronn, Baden-Württemberg, 74076, Deutschland",
+  "address": {
+    "road": "Gaswerkstraße",
+    "industrial": "Industriegebiet Neckar",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74076",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1511624",
+    "49.1512624",
+    "9.2198923",
+    "9.2199923"
+  ]
+}

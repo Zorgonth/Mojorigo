@@ -1,11 +1,11 @@
+import LandingPage from "./components/LandingPage";
 import { useTranslation } from "react-i18next";
 import { t } from "./i18n";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronDown, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import "./App.css";
 import "./liquid-theme.css";
 import DashboardPage from "./components/DashboardPage";
-import GlassFilters from "./components/GlassFilters";
 import GlassBinsMap from "./components/GlassBinsMap";
 import HeaderControls from "./components/HeaderControls";
 import LoginPage from "./components/LoginPage";
@@ -14,15 +14,57 @@ import Navigation, { type NavigationTab } from "./components/Navigation";
 import NearbyBins from "./components/NearbyBins";
 import { postcodeCentres, rankByDistance } from "./components/postcode-search";
 import SearchBar from "./components/SearchBar";
-import { demoBins, parseMapResponse, compartmentEntries, type GlassBin, type GlassColor } from "./components/bin-data";
+import { demoBins, parseMapResponse, type GlassBin, type GlassColor } from "./components/bin-data";
 
 function App() {
   useTranslation();
   const [activeTab, setActiveTab] = useState<NavigationTab>("find");
-  const [view, setView] = useState<"home" | "login" | "dashboard">("home");
+  const [view, setView] = useState<"landing" | "home" | "login" | "dashboard">("landing");
+  const [managerOpening, setManagerOpening] = useState(false);
+  const [managerUnlocking, setManagerUnlocking] = useState(false);
+  const [mapOpening, setMapOpening] = useState(false);
+  const [leaving, setLeaving] = useState(false);
+  const [direction, setDirection] = useState<"left" | "right">("left");
+  const navigationTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (navigationTimer.current) clearTimeout(navigationTimer.current); }, []);
+  function navigate(next: typeof view, nextDirection: "left" | "right" = "right") {
+    if (navigationTimer.current || mapOpening) return;
+    setDirection(nextDirection);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setView(next); window.scrollTo(0, 0); return; }
+    if (next === "login") {
+      if (view === "landing") {
+        setManagerOpening(true);
+        setView("login"); setLeaving(false); window.scrollTo(0, 0);
+        navigationTimer.current = setTimeout(() => { setManagerOpening(false); navigationTimer.current = null; }, 950);
+        return;
+      }
+      setView("login"); setLeaving(false); window.scrollTo(0, 0);
+      return;
+    }
+    if (view === "login" && next === "dashboard") {
+      setManagerUnlocking(true);
+      setView("dashboard");
+      navigationTimer.current = setTimeout(() => { setManagerUnlocking(false); navigationTimer.current = null; }, 1000);
+      return;
+    }
+    if (view === "landing" && next === "home") {
+      setMapOpening(true);
+      setActiveTab("find");
+      setView("home");
+      window.scrollTo(0, 0);
+      navigationTimer.current = setTimeout(() => { setMapOpening(false); navigationTimer.current = null; }, 1600);
+      return;
+    }
+    setLeaving(true);
+    navigationTimer.current = setTimeout(() => {
+      if (next === "landing") setActiveTab("find");
+      setView(next); setLeaving(false); navigationTimer.current = null; window.scrollTo(0, 0);
+    }, 320);
+  }
+  const motionClass = `page-stage ${mapOpening ? "page-map-opening" : ""} page-direction-${direction} ${leaving ? "page-leaving" : ""}`;
   const [bins, setBins] = useState<GlassBin[]>(demoBins);
   const [demo, setDemo] = useState(true);
-  const [color, setColor] = useState<GlassColor>("All");
+  const color: GlassColor = "All";
   const [query, setQuery] = useState("");
   const [expanded, setExpanded] = useState(false);
   const [panelCollapsed, setPanelCollapsed] = useState(false);
@@ -63,39 +105,43 @@ function App() {
     setExpanded(false);
     setSelected(null);
   }
-  function searchLocation(coordinates: [number, number]) {
-    setQuery("");
+  function searchLocation(coordinates: [number, number], label = "") {
+    setQuery(label);
     setLocation(coordinates);
     setExpanded(false);
     setSelected(null);
   }
   const visibleSelected = filtered.some(bin => bin.id === selected) ? selected : null;
 
-  if (view === "login") {
-    return <LoginPage onBack={() => setView("home")} onLogin={() => setView("dashboard")} />;
-  }
-
-  if (view === "dashboard") {
-    return <DashboardPage onBack={() => setView("home")} />;
-  }
+  const managerVisible = view === "login" || view === "dashboard";
+  const locked = view === "login" || managerUnlocking;
+  const managerScene = <div className={`manager-stage ${managerVisible ? (managerOpening ? "manager-expanding" : "") : view === "landing" ? "manager-landing-preview" : "manager-preloaded"} ${leaving && managerVisible ? "manager-leaving" : ""}`} inert={!managerVisible || leaving} aria-hidden={!managerVisible}>
+    <div className="manager-dashboard" inert={locked || !managerVisible} aria-hidden={locked || !managerVisible}>
+      <DashboardPage onBack={() => navigate("landing", "left")} />
+    </div>
+    {locked && <div className={`manager-login-overlay ${managerUnlocking ? "manager-unlocking" : ""}`} inert={managerUnlocking} aria-hidden={managerUnlocking}>
+      <LoginPage onBack={() => navigate("landing", "left")} onLogin={() => navigate("dashboard", "right")} />
+    </div>}
+  </div>;
 
   return (
-    <main className={`glass-app ${activeTab === "find" ? "finder-page" : ""}`}>
+    <>{managerScene}<div className={`${motionClass} citizen-stage ${managerVisible && !managerOpening ? "citizen-behind-manager" : ""}`} key="citizen" inert={leaving || managerVisible} aria-hidden={managerVisible}><main inert={view === "landing"} aria-hidden={view === "landing"} className={`glass-app ${view === "landing" ? "citizen-preloaded" : ""} finder-page ${activeTab !== "find" ? "map-info-page" : ""}`}>
       <div className="glass-background" />
 
       <header className="glass-header">
-        <div className="brand">
+        <button type="button" className="brand landing-home-button" onClick={() => navigate("landing", "right")} aria-label={t("Return to home")}>
           <div className="glass-logo">
             G.<span className="logo-l">L</span>.A.S.S
           </div>
           <span className="brand-tagline">{t("GLASS RECYCLING NEAR YOU")}</span>
-        </div>
+        </button>
 
         <Navigation activeTab={activeTab} onChange={setActiveTab} />
-        <HeaderControls onOpenLogin={() => setView("login")} />
+        <HeaderControls onOpenLogin={() => navigate("login", "right")} />
       </header>
 
-      {activeTab !== "find" ? <InfoPage section={activeTab} onFind={() => setActiveTab("find")} /> : <div className={`glass-layout ${panelCollapsed ? "panel-collapsed" : ""}`}>
+      {activeTab !== "find" && <InfoPage section={activeTab} onFind={() => setActiveTab("find")} />}
+      <div className={`glass-layout ${panelCollapsed ? "panel-collapsed" : ""}`} inert={activeTab !== "find"} aria-hidden={activeTab !== "find"}>
         <button
           type="button"
           className="panel-toggle"
@@ -109,7 +155,7 @@ function App() {
           <ChevronDown size={15} className={panelCollapsed ? "toggle-flipped" : ""} />
         </button>
 
-        <aside id="container-search-panel" className="glass-sidebar" hidden={panelCollapsed}>
+        <aside id="container-search-panel" className="glass-sidebar" inert={panelCollapsed || activeTab !== "find"} aria-hidden={panelCollapsed || activeTab !== "find"}>
           <div className="sidebar-intro">
               <h1>
                 <span>{t("Find a glass")}</span>
@@ -120,11 +166,9 @@ function App() {
 
           <div className="sidebar-scroll">
             <SearchBar onSearch={searchPostcode} onLocation={searchLocation} />
-            {location && <p className="search-results-note" role="status">{query ? t("Closest to {{postcode}} · approximate postcode reference point", {postcode: query}) : t("Closest to your location")}{t(". Distances are straight-line estimates.")}</p>}
-            <GlassFilters selected={color} onChange={setColor} />
+            {location && <p className="search-results-note" role="status">{query ? (/^\d{5}$/.test(query) ? t("Closest to {{postcode}} · approximate postcode reference point", {postcode: query}) : t("Closest to {{address}}", {address: query})) : t("Closest to your location")}{t(". Distances are straight-line estimates.")}</p>}
             <NearbyBins
-              color={color}
-              total={compartmentEntries(filtered, color).length}
+              total={filtered.length}
               bins={expanded ? filtered : filtered.slice(0, 5)}
               selected={visibleSelected}
               onSelect={setSelected}
@@ -150,6 +194,7 @@ function App() {
 
         <section className="glass-map" aria-label={t("Map of glass collection points")}>
           <GlassBinsMap
+            showDetails={false}
             bins={filtered}
             selected={visibleSelected}
             onSelect={setSelected}
@@ -157,8 +202,12 @@ function App() {
             location={location}
           />
         </section>
-      </div>}
+      </div>
     </main>
+    {(view === "landing" || mapOpening || managerOpening) && <div className={`landing-layer landing-live-dashboard ${mapOpening ? "landing-layer-leaving" : ""} ${managerOpening ? "landing-manager-opening" : ""}`} inert={mapOpening || managerOpening} aria-hidden={mapOpening || managerOpening}>
+      <LandingPage onCitizen={() => navigate("home", "left")} onManager={() => navigate("login", "right")}/>
+    </div>}
+    </div></>
   );
 }
 

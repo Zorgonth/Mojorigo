@@ -1,0 +1,32 @@
+{
+  "place_id": 125712662,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 432498337,
+  "lat": "49.1538711",
+  "lon": "9.2135997",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Gottlieb-Daimler-Straße, Industriegebiet Neckar, Kernstadt, Heilbronn, Baden-Württemberg, 74076, Deutschland",
+  "address": {
+    "road": "Gottlieb-Daimler-Straße",
+    "industrial": "Industriegebiet Neckar",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74076",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1538211",
+    "49.1539211",
+    "9.2135497",
+    "9.2136497"
+  ]
+}

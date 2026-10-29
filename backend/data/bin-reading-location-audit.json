@@ -1,0 +1,1449 @@
+{
+  "note": "The updated reading records reference different coordinates from the current bin registry. Preserve measurement timestamps, levels and recorded locations until the intended registry/reading pairing is confirmed. Current map locations and address enrichment use bins.csv coordinates.",
+  "mismatchedReadings": 666,
+  "locations": [
+    {
+      "id": "BIN-001",
+      "currentCoordinates": [
+        49.1318022,
+        9.1898811
+      ],
+      "readingCoordinates": [
+        49.137498,
+        9.201803
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-002",
+      "currentCoordinates": [
+        49.1230768,
+        9.200095
+      ],
+      "readingCoordinates": [
+        49.137728,
+        9.199165
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-003",
+      "currentCoordinates": [
+        49.1184891,
+        9.1801714
+      ],
+      "readingCoordinates": [
+        49.139234,
+        9.199218
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-004",
+      "currentCoordinates": [
+        49.1174531,
+        9.1526494
+      ],
+      "readingCoordinates": [
+        49.136687,
+        9.208354
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-005",
+      "currentCoordinates": [
+        49.1360171,
+        9.2574021
+      ],
+      "readingCoordinates": [
+        49.133022,
+        9.211262
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-006",
+      "currentCoordinates": [
+        49.1433533,
+        9.2176173
+      ],
+      "readingCoordinates": [
+        49.141949,
+        9.220389
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-007",
+      "currentCoordinates": [
+        49.1458591,
+        9.2193279
+      ],
+      "readingCoordinates": [
+        49.136557,
+        9.200418
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-008",
+      "currentCoordinates": [
+        49.1401876,
+        9.234215
+      ],
+      "readingCoordinates": [
+        49.139688,
+        9.214425
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-009",
+      "currentCoordinates": [
+        49.1340534,
+        9.249008
+      ],
+      "readingCoordinates": [
+        49.134455,
+        9.211887
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-010",
+      "currentCoordinates": [
+        49.1322041,
+        9.207722
+      ],
+      "readingCoordinates": [
+        49.139523,
+        9.214479
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-011",
+      "currentCoordinates": [
+        49.1287809,
+        9.20673
+      ],
+      "readingCoordinates": [
+        49.139762,
+        9.19959
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-012",
+      "currentCoordinates": [
+        49.1336598,
+        9.2171919
+      ],
+      "readingCoordinates": [
+        49.141732,
+        9.214356
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-013",
+      "currentCoordinates": [
+        49.1339221,
+        9.2111399
+      ],
+      "readingCoordinates": [
+        49.136897,
+        9.200849
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-014",
+      "currentCoordinates": [
+        49.1259269,
+        9.201457
+      ],
+      "readingCoordinates": [
+        49.141076,
+        9.221957
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-015",
+      "currentCoordinates": [
+        49.1396704,
+        9.2080009
+      ],
+      "readingCoordinates": [
+        49.146412,
+        9.224178
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-016",
+      "currentCoordinates": [
+        49.1412476,
+        9.2341343
+      ],
+      "readingCoordinates": [
+        49.146237,
+        9.22624
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-017",
+      "currentCoordinates": [
+        49.1255439,
+        9.2082596
+      ],
+      "readingCoordinates": [
+        49.134001,
+        9.208155
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-018",
+      "currentCoordinates": [
+        49.1336515,
+        9.2202231
+      ],
+      "readingCoordinates": [
+        49.139995,
+        9.220234
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-019",
+      "currentCoordinates": [
+        49.1365029,
+        9.2227257
+      ],
+      "readingCoordinates": [
+        49.134743,
+        9.21092
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-020",
+      "currentCoordinates": [
+        49.131584,
+        9.2295212
+      ],
+      "readingCoordinates": [
+        49.139547,
+        9.199044
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-021",
+      "currentCoordinates": [
+        49.1331222,
+        9.2444936
+      ],
+      "readingCoordinates": [
+        49.146766,
+        9.224544
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-022",
+      "currentCoordinates": [
+        49.1384758,
+        9.2469845
+      ],
+      "readingCoordinates": [
+        49.146747,
+        9.223157
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-023",
+      "currentCoordinates": [
+        49.1222509,
+        9.1955142
+      ],
+      "readingCoordinates": [
+        49.141337,
+        9.214986
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-024",
+      "currentCoordinates": [
+        49.1621964,
+        9.2279926
+      ],
+      "readingCoordinates": [
+        49.139785,
+        9.201125
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-025",
+      "currentCoordinates": [
+        49.1818954,
+        9.1162929
+      ],
+      "readingCoordinates": [
+        49.135825,
+        9.208325
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-026",
+      "currentCoordinates": [
+        49.1141283,
+        9.1722666
+      ],
+      "readingCoordinates": [
+        49.136045,
+        9.199875
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-027",
+      "currentCoordinates": [
+        49.1442668,
+        9.2248975
+      ],
+      "readingCoordinates": [
+        49.145111,
+        9.226972
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-028",
+      "currentCoordinates": [
+        49.1200618,
+        9.211698
+      ],
+      "readingCoordinates": [
+        49.138587,
+        9.199553
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-029",
+      "currentCoordinates": [
+        49.1399716,
+        9.1763468
+      ],
+      "readingCoordinates": [
+        49.143331,
+        9.226507
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-030",
+      "currentCoordinates": [
+        49.1390289,
+        9.2177088
+      ],
+      "readingCoordinates": [
+        49.138701,
+        9.221267
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-031",
+      "currentCoordinates": [
+        49.1369004,
+        9.1901524
+      ],
+      "readingCoordinates": [
+        49.136089,
+        9.199993
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-032",
+      "currentCoordinates": [
+        49.1396411,
+        9.2119643
+      ],
+      "readingCoordinates": [
+        49.13536,
+        9.209569
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-033",
+      "currentCoordinates": [
+        49.1184491,
+        9.2065173
+      ],
+      "readingCoordinates": [
+        49.143303,
+        9.223516
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-034",
+      "currentCoordinates": [
+        49.1167806,
+        9.206586
+      ],
+      "readingCoordinates": [
+        49.136127,
+        9.200195
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-035",
+      "currentCoordinates": [
+        49.1180192,
+        9.1970266
+      ],
+      "readingCoordinates": [
+        49.139945,
+        9.200146
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-036",
+      "currentCoordinates": [
+        49.117698,
+        9.1892053
+      ],
+      "readingCoordinates": [
+        49.144077,
+        9.224509
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-037",
+      "currentCoordinates": [
+        49.1240373,
+        9.224464
+      ],
+      "readingCoordinates": [
+        49.137515,
+        9.19935
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-038",
+      "currentCoordinates": [
+        49.1367827,
+        9.2074241
+      ],
+      "readingCoordinates": [
+        49.142389,
+        9.222086
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-039",
+      "currentCoordinates": [
+        49.1446337,
+        9.2364224
+      ],
+      "readingCoordinates": [
+        49.141345,
+        9.220619
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-040",
+      "currentCoordinates": [
+        49.1411566,
+        9.2280659
+      ],
+      "readingCoordinates": [
+        49.140293,
+        9.220924
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-041",
+      "currentCoordinates": [
+        49.1402276,
+        9.2246023
+      ],
+      "readingCoordinates": [
+        49.133943,
+        9.210535
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-042",
+      "currentCoordinates": [
+        49.1317043,
+        9.190534
+      ],
+      "readingCoordinates": [
+        49.134726,
+        9.209331
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-043",
+      "currentCoordinates": [
+        49.1507558,
+        9.1854197
+      ],
+      "readingCoordinates": [
+        49.133412,
+        9.210146
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-044",
+      "currentCoordinates": [
+        49.1458465,
+        9.1767206
+      ],
+      "readingCoordinates": [
+        49.14057,
+        9.213909
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-045",
+      "currentCoordinates": [
+        49.1446126,
+        9.1823769
+      ],
+      "readingCoordinates": [
+        49.146702,
+        9.224803
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-046",
+      "currentCoordinates": [
+        49.1440205,
+        9.1919236
+      ],
+      "readingCoordinates": [
+        49.142879,
+        9.214385
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-047",
+      "currentCoordinates": [
+        49.1538711,
+        9.2135997
+      ],
+      "readingCoordinates": [
+        49.133712,
+        9.211844
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-048",
+      "currentCoordinates": [
+        49.1331485,
+        9.2368989
+      ],
+      "readingCoordinates": [
+        49.139576,
+        9.221356
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-049",
+      "currentCoordinates": [
+        49.1498671,
+        9.2230951
+      ],
+      "readingCoordinates": [
+        49.133108,
+        9.208888
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-050",
+      "currentCoordinates": [
+        49.1382427,
+        9.1697102
+      ],
+      "readingCoordinates": [
+        49.139696,
+        9.218848
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-051",
+      "currentCoordinates": [
+        49.137347,
+        9.1705079
+      ],
+      "readingCoordinates": [
+        49.139851,
+        9.221944
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-052",
+      "currentCoordinates": [
+        49.1554312,
+        9.1756068
+      ],
+      "readingCoordinates": [
+        49.141165,
+        9.221233
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-053",
+      "currentCoordinates": [
+        49.1271341,
+        9.221641
+      ],
+      "readingCoordinates": [
+        49.138293,
+        9.201352
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-054",
+      "currentCoordinates": [
+        49.1255292,
+        9.2268891
+      ],
+      "readingCoordinates": [
+        49.13593,
+        9.20886
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-055",
+      "currentCoordinates": [
+        49.1259244,
+        9.2162972
+      ],
+      "readingCoordinates": [
+        49.139209,
+        9.216871
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-056",
+      "currentCoordinates": [
+        49.1284379,
+        9.2102314
+      ],
+      "readingCoordinates": [
+        49.139613,
+        9.200587
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-057",
+      "currentCoordinates": [
+        49.1472262,
+        9.188959
+      ],
+      "readingCoordinates": [
+        49.136181,
+        9.21098
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-058",
+      "currentCoordinates": [
+        49.1665831,
+        9.2047297
+      ],
+      "readingCoordinates": [
+        49.14268,
+        9.213085
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-059",
+      "currentCoordinates": [
+        49.1637191,
+        9.2009805
+      ],
+      "readingCoordinates": [
+        49.14049,
+        9.221429
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-060",
+      "currentCoordinates": [
+        49.1708685,
+        9.1980043
+      ],
+      "readingCoordinates": [
+        49.14087,
+        9.216516
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-061",
+      "currentCoordinates": [
+        49.1576176,
+        9.1744986
+      ],
+      "readingCoordinates": [
+        49.145519,
+        9.223865
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-062",
+      "currentCoordinates": [
+        49.1438557,
+        9.2303428
+      ],
+      "readingCoordinates": [
+        49.13651,
+        9.209062
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-063",
+      "currentCoordinates": [
+        49.1643009,
+        9.1667222
+      ],
+      "readingCoordinates": [
+        49.146405,
+        9.224981
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-064",
+      "currentCoordinates": [
+        49.1741038,
+        9.2009512
+      ],
+      "readingCoordinates": [
+        49.136011,
+        9.208634
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-065",
+      "currentCoordinates": [
+        49.1988909,
+        9.1477591
+      ],
+      "readingCoordinates": [
+        49.133463,
+        9.209507
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-066",
+      "currentCoordinates": [
+        49.1475937,
+        9.182128
+      ],
+      "readingCoordinates": [
+        49.141529,
+        9.214384
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-067",
+      "currentCoordinates": [
+        49.1448354,
+        9.1865124
+      ],
+      "readingCoordinates": [
+        49.146777,
+        9.223409
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-068",
+      "currentCoordinates": [
+        49.1563719,
+        9.2009935
+      ],
+      "readingCoordinates": [
+        49.138983,
+        9.198801
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-069",
+      "currentCoordinates": [
+        49.153696,
+        9.2240177
+      ],
+      "readingCoordinates": [
+        49.141593,
+        9.215429
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-070",
+      "currentCoordinates": [
+        49.1553078,
+        9.2276378
+      ],
+      "readingCoordinates": [
+        49.136158,
+        9.199922
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-071",
+      "currentCoordinates": [
+        49.1534054,
+        9.2317928
+      ],
+      "readingCoordinates": [
+        49.143531,
+        9.22527
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-072",
+      "currentCoordinates": [
+        49.158884,
+        9.1961246
+      ],
+      "readingCoordinates": [
+        49.13632,
+        9.201579
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-073",
+      "currentCoordinates": [
+        49.1339054,
+        9.2333228
+      ],
+      "readingCoordinates": [
+        49.139283,
+        9.215613
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-074",
+      "currentCoordinates": [
+        49.1194148,
+        9.1934216
+      ],
+      "readingCoordinates": [
+        49.142351,
+        9.21866
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-075",
+      "currentCoordinates": [
+        49.1861618,
+        9.1066519
+      ],
+      "readingCoordinates": [
+        49.143526,
+        9.225863
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-076",
+      "currentCoordinates": [
+        49.1351649,
+        9.1822036
+      ],
+      "readingCoordinates": [
+        49.140501,
+        9.216094
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-077",
+      "currentCoordinates": [
+        49.1133944,
+        9.1687181
+      ],
+      "readingCoordinates": [
+        49.141055,
+        9.220399
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-078",
+      "currentCoordinates": [
+        49.1171997,
+        9.1536626
+      ],
+      "readingCoordinates": [
+        49.143593,
+        9.226947
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-079",
+      "currentCoordinates": [
+        49.1393468,
+        9.2124687
+      ],
+      "readingCoordinates": [
+        49.139338,
+        9.222353
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-080",
+      "currentCoordinates": [
+        49.1217442,
+        9.20499
+      ],
+      "readingCoordinates": [
+        49.133426,
+        9.210631
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-081",
+      "currentCoordinates": [
+        49.1322347,
+        9.2242634
+      ],
+      "readingCoordinates": [
+        49.133481,
+        9.210178
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-082",
+      "currentCoordinates": [
+        49.148519,
+        9.2391607
+      ],
+      "readingCoordinates": [
+        49.138076,
+        9.199917
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-083",
+      "currentCoordinates": [
+        49.1512124,
+        9.2199423
+      ],
+      "readingCoordinates": [
+        49.137917,
+        9.198778
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-084",
+      "currentCoordinates": [
+        49.1288763,
+        9.1873796
+      ],
+      "readingCoordinates": [
+        49.140669,
+        9.219526
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-085",
+      "currentCoordinates": [
+        49.1537371,
+        9.1867523
+      ],
+      "readingCoordinates": [
+        49.13908,
+        9.200227
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-086",
+      "currentCoordinates": [
+        49.1676153,
+        9.1972773
+      ],
+      "readingCoordinates": [
+        49.141628,
+        9.215187
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-087",
+      "currentCoordinates": [
+        49.1833953,
+        9.1804612
+      ],
+      "readingCoordinates": [
+        49.14229,
+        9.21406
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-088",
+      "currentCoordinates": [
+        49.1133291,
+        9.1688526
+      ],
+      "readingCoordinates": [
+        49.146977,
+        9.225647
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-089",
+      "currentCoordinates": [
+        49.1375577,
+        9.1772962
+      ],
+      "readingCoordinates": [
+        49.141582,
+        9.222209
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-090",
+      "currentCoordinates": [
+        49.1401078,
+        9.1909687
+      ],
+      "readingCoordinates": [
+        49.133471,
+        9.208909
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-091",
+      "currentCoordinates": [
+        49.1420832,
+        9.1803271
+      ],
+      "readingCoordinates": [
+        49.139989,
+        9.220659
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-092",
+      "currentCoordinates": [
+        49.1310833,
+        9.223458
+      ],
+      "readingCoordinates": [
+        49.138301,
+        9.199917
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-093",
+      "currentCoordinates": [
+        49.1414793,
+        9.2094754
+      ],
+      "readingCoordinates": [
+        49.14093,
+        9.214247
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-094",
+      "currentCoordinates": [
+        49.145815,
+        9.1765735
+      ],
+      "readingCoordinates": [
+        49.139083,
+        9.218799
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-095",
+      "currentCoordinates": [
+        49.1507641,
+        9.2307544
+      ],
+      "readingCoordinates": [
+        49.144619,
+        9.225616
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-096",
+      "currentCoordinates": [
+        49.1841212,
+        9.1101785
+      ],
+      "readingCoordinates": [
+        49.136171,
+        9.199486
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-097",
+      "currentCoordinates": [
+        49.1834792,
+        9.1103904
+      ],
+      "readingCoordinates": [
+        49.142971,
+        9.216236
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-098",
+      "currentCoordinates": [
+        49.1321464,
+        9.2226362
+      ],
+      "readingCoordinates": [
+        49.136339,
+        9.200865
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-099",
+      "currentCoordinates": [
+        49.1822654,
+        9.1064139
+      ],
+      "readingCoordinates": [
+        49.14406,
+        9.223084
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-100",
+      "currentCoordinates": [
+        49.1818996,
+        9.1162527
+      ],
+      "readingCoordinates": [
+        49.142447,
+        9.215626
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-101",
+      "currentCoordinates": [
+        49.1846337,
+        9.1184507
+      ],
+      "readingCoordinates": [
+        49.134034,
+        9.210176
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-102",
+      "currentCoordinates": [
+        49.1809661,
+        9.126475
+      ],
+      "readingCoordinates": [
+        49.137954,
+        9.198603
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-103",
+      "currentCoordinates": [
+        49.180831,
+        9.1264596
+      ],
+      "readingCoordinates": [
+        49.136526,
+        9.209112
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-104",
+      "currentCoordinates": [
+        49.1238371,
+        9.2294107
+      ],
+      "readingCoordinates": [
+        49.146035,
+        9.225714
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-105",
+      "currentCoordinates": [
+        49.1398361,
+        9.2401867
+      ],
+      "readingCoordinates": [
+        49.136177,
+        9.208372
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-106",
+      "currentCoordinates": [
+        49.1507902,
+        9.2265551
+      ],
+      "readingCoordinates": [
+        49.13614,
+        9.210831
+      ],
+      "readingLabel": "Bismarckstraße 12",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-107",
+      "currentCoordinates": [
+        49.1397223,
+        9.2403393
+      ],
+      "readingCoordinates": [
+        49.138989,
+        9.20096
+      ],
+      "readingLabel": "Heilbronn Hauptbahnhof",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-108",
+      "currentCoordinates": [
+        49.1808867,
+        9.1268559
+      ],
+      "readingCoordinates": [
+        49.141768,
+        9.219244
+      ],
+      "readingLabel": "Kiliansplatz 1",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-109",
+      "currentCoordinates": [
+        49.1807661,
+        9.1265544
+      ],
+      "readingCoordinates": [
+        49.139378,
+        9.213145
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-110",
+      "currentCoordinates": [
+        49.1808689,
+        9.1268272
+      ],
+      "readingCoordinates": [
+        49.14213,
+        9.215193
+      ],
+      "readingLabel": "Allee 20",
+      "readingCount": 6
+    },
+    {
+      "id": "BIN-111",
+      "currentCoordinates": [
+        49.1846423,
+        9.1184378
+      ],
+      "readingCoordinates": [
+        49.143459,
+        9.226441
+      ],
+      "readingLabel": "Neckarufer 5",
+      "readingCount": 6
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "place_id": 125799212,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 416814317,
+  "lat": "49.1317043",
+  "lon": "9.1905340",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Klingenberger Straße, Alt-Böckingen, Böckingen, Heilbronn, Baden-Württemberg, 74080, Deutschland",
+  "address": {
+    "road": "Klingenberger Straße",
+    "neighbourhood": "Alt-Böckingen",
+    "suburb": "Böckingen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74080",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1316543",
+    "49.1317543",
+    "9.1904840",
+    "9.1905840"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "place_id": 125187716,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 362493743,
+  "lat": "49.1331222",
+  "lon": "9.2444936",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Reutlinger Straße, Badener Hof, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "road": "Reutlinger Straße",
+    "neighbourhood": "Badener Hof",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1330722",
+    "49.1331722",
+    "9.2444436",
+    "9.2445436"
+  ]
+}

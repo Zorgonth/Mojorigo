@@ -28,9 +28,11 @@ test('language switching translates labels, validations, dynamic counts and colo
  assert.equal(instance.t('About'),'About');
  assert.equal(instance.t('{{count}} results',{count:1}),'1 result');
 });
-test('only EN and DE appear in the shared language selector',()=>{
+test('language control toggles only between EN and DE without a selector',()=>{
  const selector=read('../src/components/LanguageSelect.tsx');
- assert.deepEqual([...selector.matchAll(/<option value="(.*?)" lang=".*?">(.*?)<\/option>/g)].map(m=>[m[1],m[2]]),[['en','EN'],['de','DE']]);
+ assert.ok(!selector.includes('<select'));
+ assert.ok(selector.includes('changeLanguage(german ? "en" : "de")'));
+ assert.ok(selector.includes('{german ? "DE" : "EN"}'));
 });
 test('every literal translation key used by UI components has both translations',()=>{
  const root=new URL('../src/',import.meta.url);

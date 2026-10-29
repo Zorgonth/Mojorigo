@@ -10,6 +10,8 @@ import { osmBinsRouter } from "./routes/osmBins.js";
 import { sensorsRouter } from "./routes/sensors.js";
 import { sensorDataRouter } from "./routes/sensorData.js";
 
+import { locationSearchRouter } from "./routes/locationSearch.js";
+
 export function createApp() {
   const app = express();
 
@@ -23,6 +25,7 @@ export function createApp() {
   app.use("/api/sensor-data", sensorDataRouter);
   app.use("/api/bins", binsRouter);
   app.use("/api/osm-bins", osmBinsRouter);
+  app.use("/api/location-search", locationSearchRouter);
   app.use("/api/sensors", sensorsRouter);
   app.use("/api/alerts", alertsRouter);
   app.use("/api/routes", routesRouter);

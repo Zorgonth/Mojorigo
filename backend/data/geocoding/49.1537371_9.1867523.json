@@ -1,0 +1,31 @@
+{
+  "place_id": 125780687,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 7523989878,
+  "lat": "49.1537371",
+  "lon": "9.1867523",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Maasstraße, Neckargartach, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Maasstraße",
+    "suburb": "Neckargartach",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1536871",
+    "49.1537871",
+    "9.1867023",
+    "9.1868023"
+  ]
+}

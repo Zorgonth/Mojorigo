@@ -1,0 +1,32 @@
+{
+  "place_id": 125841788,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 8457202723,
+  "lat": "49.1420832",
+  "lon": "9.1803271",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Bruchsaler Straße, Schanz, Böckingen, Heilbronn, Baden-Württemberg, 74080, Deutschland",
+  "address": {
+    "road": "Bruchsaler Straße",
+    "neighbourhood": "Schanz",
+    "suburb": "Böckingen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74080",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1420332",
+    "49.1421332",
+    "9.1802771",
+    "9.1803771"
+  ]
+}

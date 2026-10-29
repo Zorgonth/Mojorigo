@@ -1,0 +1,32 @@
+{
+  "place_id": 125724621,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 402905133,
+  "lat": "49.1240373",
+  "lon": "9.2244640",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Herbert-Hoover-Straße, Herbert-Hoover-Siedlung, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "road": "Herbert-Hoover-Straße",
+    "residential": "Herbert-Hoover-Siedlung",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1239873",
+    "49.1240873",
+    "9.2244140",
+    "9.2245140"
+  ]
+}

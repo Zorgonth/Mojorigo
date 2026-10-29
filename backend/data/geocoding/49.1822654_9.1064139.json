@@ -1,0 +1,31 @@
+{
+  "place_id": 125906198,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 13379822732,
+  "lat": "49.1822654",
+  "lon": "9.1064139",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Bensheimer Straße, Kirchhausen, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Bensheimer Straße",
+    "suburb": "Kirchhausen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1822154",
+    "49.1823154",
+    "9.1063639",
+    "9.1064639"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "place_id": 124239031,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 362495213,
+  "lat": "49.1384758",
+  "lon": "9.2469845",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Am Seelesberg, Badener Hof, Kernstadt, Heilbronn, Baden-Württemberg, 74074, Deutschland",
+  "address": {
+    "road": "Am Seelesberg",
+    "neighbourhood": "Badener Hof",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74074",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1384258",
+    "49.1385258",
+    "9.2469345",
+    "9.2470345"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "place_id": 126082497,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 13379878253,
+  "lat": "49.1846337",
+  "lon": "9.1184507",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Paul-Gerhardt-Straße, Kirchhausen, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Paul-Gerhardt-Straße",
+    "suburb": "Kirchhausen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1845837",
+    "49.1846837",
+    "9.1184007",
+    "9.1185007"
+  ]
+}

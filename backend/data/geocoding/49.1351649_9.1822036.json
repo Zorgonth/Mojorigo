@@ -1,0 +1,32 @@
+{
+  "place_id": 126378810,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 3394169750,
+  "lat": "49.1351649",
+  "lon": "9.1822036",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Heckenstraße, Alt-Böckingen, Böckingen, Heilbronn, Baden-Württemberg, 74080, Deutschland",
+  "address": {
+    "road": "Heckenstraße",
+    "neighbourhood": "Alt-Böckingen",
+    "suburb": "Böckingen",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74080",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1351149",
+    "49.1352149",
+    "9.1821536",
+    "9.1822536"
+  ]
+}

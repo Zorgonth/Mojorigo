@@ -1,0 +1,32 @@
+{
+  "place_id": 125582763,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 11559038697,
+  "lat": "49.1414793",
+  "lon": "9.2094754",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Mozartstraße, Rosenberg, Kernstadt, Heilbronn, Baden-Württemberg, 74072, Deutschland",
+  "address": {
+    "road": "Mozartstraße",
+    "neighbourhood": "Rosenberg",
+    "suburb": "Kernstadt",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74072",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1414293",
+    "49.1415293",
+    "9.2094254",
+    "9.2095254"
+  ]
+}

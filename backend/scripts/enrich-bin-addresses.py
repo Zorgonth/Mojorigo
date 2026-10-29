@@ -18,6 +18,12 @@ with (root / 'data/bins.csv').open() as f:
 for i, row in enumerate(rows):
     cache = cache_dir / f'{row["lat"]}_{row["lng"]}.json'
     if not cache.exists():
+        rounded = (round(float(row['lat']), 6), round(float(row['lng']), 6))
+        for existing in (root / 'data/geocoding').glob('*.json'):
+            if tuple(round(float(v), 6) for v in existing.stem.split('_')) == rounded:
+                cache = existing
+                break
+    if not cache.exists():
         url = f'https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat={row["lat"]}&lon={row["lng"]}&zoom=18&addressdetails=1'
         result = subprocess.run(['curl', '-f', '-sS', '--max-time', '25', '-A', 'Mojorigo-address-audit/1.0 (one-time local dataset enrichment)', url], capture_output=True, text=True)
         if result.returncode:

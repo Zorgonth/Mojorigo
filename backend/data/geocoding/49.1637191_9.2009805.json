@@ -1,0 +1,32 @@
+{
+  "place_id": 125821768,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 570227076,
+  "lat": "49.1637191",
+  "lon": "9.2009805",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Stettiner Straße, Sachsenäcker, Neckargartach, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Stettiner Straße",
+    "neighbourhood": "Sachsenäcker",
+    "suburb": "Neckargartach",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1636691",
+    "49.1637691",
+    "9.2009305",
+    "9.2010305"
+  ]
+}

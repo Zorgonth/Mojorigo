@@ -1,0 +1,31 @@
+{
+  "place_id": 126033706,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 8456712134,
+  "lat": "49.1133291",
+  "lon": "9.1688526",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Hossäckerweg, Horkheim, Heilbronn, Baden-Württemberg, 74081, Deutschland",
+  "address": {
+    "road": "Hossäckerweg",
+    "suburb": "Horkheim",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74081",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1132791",
+    "49.1133791",
+    "9.1688026",
+    "9.1689026"
+  ]
+}

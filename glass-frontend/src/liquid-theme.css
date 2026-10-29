@@ -786,3 +786,399 @@ button:focus-visible, a:focus-visible, select:focus-visible {
   .finder-page .brand-tagline { font-size: 6px; letter-spacing: 1px; }
   .header-controls .language-selector { width: 70px; }
 }
+
+/* Current locations replace the legacy district totals. */
+.container-status-scroll { max-height: 470px; overflow: auto; border-radius: 16px; }
+.container-status-table { width: 100%; min-width: 540px; border-collapse: separate; border-spacing: 0; }
+.container-status-table thead th { position: sticky; top: 0; z-index: 1; background: #f1f7fc; color: #003f6d; white-space: nowrap; }
+.container-status-table tbody th { text-align: left; min-width: 180px; font-weight: 400; }
+.container-status-table th, .container-status-table td { padding: 13px 12px; border-bottom: 1px solid #003f6d12; }
+.container-status-table tr.container-row-selected > * { background: #dcecff80; }
+.container-location-button { display: grid; gap: 5px; border: 0; padding: 0; background: transparent; color: #005a9c; text-align: left; }
+.container-location-button strong { font-size: 13px; font-weight: 550; }
+.container-location-button > span { font-size: 11px; color: #52687a; }
+.table-sensor-fill { display: grid; gap: 7px; min-width: 78px; font-size: 12px; color: #172b3b; }
+.table-sensor-fill .fill-track { width: 100%; height: 7px; }
+.container-table-summary, .container-table-message { padding: 12px 4px; margin: 0; font-size: 13px; color: #52687a; }
+
+/* Dashboard metrics are keyboard-accessible filters, backed by current sensors. */
+button.stat-card { text-align: left; font: inherit; cursor: pointer; width: 100%; }
+button.stat-card:hover { background: #ffffffbf; box-shadow: 0 5px 18px #005a9c1a; }
+button.stat-card.stat-selected { border-color: #3b8ccb; box-shadow: inset 0 0 0 1px #3b8ccb66, 0 4px 14px #005a9c12; }
+.dashboard-metric-note { color: #005a9c; font-size: 13px; margin: 0 0 16px; }
+.collection-events-panel { margin-bottom: 20px; }
+.collection-events-panel h2 { font-size: 20px; margin: 0 0 10px; color: #003f6d; }
+.collection-events-panel p, .collection-events-panel li { font-size: 13px; line-height: 1.7; color: #52687a; }
+.collection-events-panel ul { padding-left: 20px; max-height: 230px; overflow: auto; }
+.stat-card .stat-copy { min-width: 0; }
+.stat-card .stat-value-row { flex-wrap: wrap; }
+.route-group-details { margin-top: 12px; border: 1px solid #ffffffcc; border-radius: 18px; background: #ffffff70; }
+.route-group-details summary { padding: 14px 16px; cursor: pointer; color: #005a9c; font-size: 13px; font-weight: 550; }
+.route-group-details .collection-stops { margin: 0 16px 14px; max-height: 320px; overflow-y: auto; }
+.route-message.success p { font-size: 12px; margin: 8px 0 0; line-height: 1.6; }
+
+/* Replay the pin entrance when the already-loaded citizen map is revealed. */
+.page-map-opening .glass-bin-pin { animation: map-pin-reveal 500ms cubic-bezier(.2,.8,.3,1.15) calc(350ms + var(--pin-delay, 0ms)) backwards; }
+.page-map-opening .bin-cluster > span { animation: map-cluster-reveal 500ms cubic-bezier(.2,.8,.3,1.15) calc(350ms + var(--pin-delay, 0ms)) backwards; }
+@keyframes map-pin-reveal { from { opacity: 0; transform: rotate(-45deg) scale(.4); } to { opacity: 1; transform: rotate(-45deg) scale(1); } }
+@keyframes map-cluster-reveal { from { opacity: 0; transform: translateY(10px) scale(.5); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+/* Sign-in is a frosted lock screen over the already-mounted dashboard. */
+.manager-stage { min-height: 100dvh; background: #dce8ed; }
+.manager-dashboard { min-height: 100dvh; }
+.manager-login-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #f6faff57, #e6f0f84d 55%, #ffffff66);
+  backdrop-filter: blur(22px) saturate(115%);
+  -webkit-backdrop-filter: blur(22px) saturate(115%);
+  animation: lock-screen-appear 280ms ease-out both;
+}
+.manager-login-overlay .login-shell { min-height: 100dvh; background: transparent; padding-bottom: 30px; }
+.manager-login-overlay .login-shell > .glass-background,
+.manager-login-overlay .login-shell::before { display: none; }
+.manager-login-overlay .login-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100dvh - 136px);
+  padding: 24px;
+  gap: 0;
+}
+.manager-login-overlay .login-intro { display: none; }
+.manager-login-overlay .login-card {
+  width: min(460px, 100%);
+  margin: 0;
+  background: linear-gradient(145deg, #ffffffd9, #f1f7fcb3);
+  border: 1px solid #fffffff2;
+  border-radius: 30px;
+  box-shadow: inset 0 2px 3px white, 0 18px 65px #003f6d1f;
+}
+.manager-login-overlay .glass-header { background: transparent; }
+.manager-login-overlay.manager-unlocking {
+  pointer-events: none;
+  will-change: transform;
+  animation: unlock-frost-lift 1000ms cubic-bezier(.65,0,.2,1) both;
+}
+.manager-leaving { animation: lock-screen-appear 320ms ease reverse both; }
+@keyframes lock-screen-appear { from { opacity: 0; } to { opacity: 1; } }
+@keyframes unlock-frost-lift {
+  0% { transform: translateY(0); opacity: 1; }
+  65% { opacity: 1; }
+  100% { transform: translateY(-105%); opacity: 0; }
+}
+@media (max-width: 700px) {
+  .manager-login-overlay .login-layout { min-height: calc(100dvh - 106px); padding: 16px; }
+  .manager-login-overlay .glass-header { height: 90px; min-height: 90px; flex-direction: row; align-items: center; flex-wrap: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .manager-login-overlay, .manager-login-overlay.manager-unlocking, .manager-leaving { animation: none; }
+}
+
+/* Keep the frost opaque from its first frame, including while data loads. */
+.manager-login-overlay { animation: none; }
+.manager-login-overlay .login-card { animation: login-card-arrive 280ms ease-out both; }
+.manager-login-overlay.manager-unlocking { animation: unlock-frost-lift 1000ms cubic-bezier(.65,0,.2,1) both; }
+@keyframes login-card-arrive { from { opacity: 0; translate: 0 8px; } to { opacity: 1; translate: 0 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .manager-login-overlay .login-card { animation: none; }
+}
+
+/* Warm the real dashboard before opening the lock screen; never remount it on click. */
+.manager-preloaded {
+  position: fixed;
+  inset: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+.citizen-behind-manager { position: fixed; inset: 0; visibility: hidden; pointer-events: none; z-index: -1; }
+.manager-login-overlay .login-card { animation: none; }
+
+/* Only the sign-in card moves; the dashboard and frost stay steady. */
+.manager-login-overlay:not(.manager-unlocking) .login-card {
+  animation: login-card-rise 650ms cubic-bezier(.16, 1, .3, 1) 80ms both;
+}
+@keyframes login-card-rise {
+  from { opacity: 0; transform: translateY(55dvh); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .manager-login-overlay:not(.manager-unlocking) .login-card { animation: none; }
+}
+
+/* Keep the citizen navigation's selected tab solid Rathaus blue. */
+.finder-page .glass-navigation .nav-button.nav-active {
+  background: #005a9c;
+  border-color: #005a9c;
+  color: #ffffff;
+  box-shadow: 0 2px 6px #005a9c26;
+}
+.finder-page .glass-navigation .nav-button.nav-active svg { color: #ffffff; }
+
+/* About and recycling sit over the same mounted citizen map. */
+.finder-page > .glass-background { display: none; }
+.finder-page.map-info-page { height: auto; min-height: 100dvh; overflow: visible; }
+.map-info-page > .glass-layout { position: fixed; inset: 0; height: 100dvh; pointer-events: none; }
+.map-info-page > .glass-layout > .panel-toggle,
+.map-info-page .selected-bin-panel,
+.map-info-page .leaflet-control-container { display: none; }
+.map-info-page::before { background: none; }
+.finder-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(135deg, #f6faff57, #e6f0f84d 55%, #ffffff66);
+  backdrop-filter: blur(22px) saturate(115%);
+  -webkit-backdrop-filter: blur(22px) saturate(115%);
+  opacity: 0;
+  transition: opacity 750ms ease;
+}
+.finder-page.map-info-page::after { opacity: 1; }
+.map-info-page > .glass-header { position: fixed; }
+.map-info-page > .info-page { z-index: 4; padding-top: 130px; }
+@media (max-width: 700px) {
+  .map-info-page > .info-page { padding-top: 175px; }
+}
+.language-toggle { font: 600 13px/1 'Geist Variable', sans-serif; cursor: pointer; color: #005a9c; }
+.language-toggle:focus-visible { outline: 2px solid #005a9c; outline-offset: 3px; }
+.language-toggle:active, .finder-page .language-toggle:active { background: #005a9c; color: #fff; }
+
+/* A short press, with focus styling reserved for keyboard navigation. */
+.language-selector.language-toggle,
+.finder-page .language-selector.language-toggle {
+  background: linear-gradient(145deg, #ffffff8c, #e6f0f84d 60%, #ffffff66);
+  border-color: #ffffffc9;
+  color: #005a9c;
+  transition: transform 100ms ease, background 100ms ease;
+}
+.language-selector.language-toggle:focus,
+.language-selector.language-toggle:focus-within,
+.finder-page .language-selector.language-toggle:focus,
+.finder-page .language-selector.language-toggle:focus-within {
+  background: linear-gradient(145deg, #ffffff8c, #e6f0f84d 60%, #ffffff66);
+  color: #005a9c;
+}
+.language-selector.language-toggle:focus:not(:focus-visible) { outline: none; }
+.language-selector.language-toggle:active,
+.finder-page .language-selector.language-toggle:active {
+  transform: scale(.94);
+  background: #d8eafb;
+  color: #005a9c;
+}
+.language-selector.language-toggle:active,
+.finder-page .language-selector.language-toggle:active {
+  background: #005a9c;
+  border-color: #005a9c;
+  color: #ffffff;
+}
+
+/* One card per location, with colour selection kept within that card. */
+.nearby-bin-card.grouped-location-card { display: block; height: auto; padding: 14px; text-align: left; }
+.location-card-heading { display: flex; align-items: center; gap: 12px; width: 100%; border: 0; background: transparent; padding: 0; text-align: left; color: #003f6d; }
+.grouped-location-card > .sensor-levels { margin: 12px 2px 2px; }
+.location-colour-controls .glass-filters { margin-top: 14px; padding: 2px; }
+.location-colour-controls .glass-filter-buttons { gap: 4px; }
+.location-colour-controls .glass-filter { height: 32px; min-height: 32px; padding: 0 6px; font-size: 11px; }
+.location-colour-controls .glass-filter-active:nth-child(n) { background: #005a9c; color: white; box-shadow: inset 0 1px 2px #ffffff66; border-color: #005a9c; }
+
+/* Trial the dashboard's green on the selected Green compartment control. */
+.location-colour-controls .glass-filter-green.glass-filter-active:nth-child(n) {
+  background: #3b8a59;
+  border-color: #3b8a59;
+  color: #ffffff;
+}
+
+/* Solid glass-colour selections in the location cards and pin popups. */
+.location-colour-controls .glass-filter-brown.glass-filter-active:nth-child(n) {
+  background: #87552f;
+  border-color: #87552f;
+  color: #ffffff;
+}
+.location-colour-controls .glass-filter-white.glass-filter-active:nth-child(n) {
+  background: #ffffff;
+  border-color: #a5b5c2;
+  color: #243b4d;
+  box-shadow: inset 0 0 0 1px #d8e2ea, 0 2px 6px #003f6d12;
+}
+
+/* Directions uses the same solid primary treatment as the other main actions. */
+:is(.glass-map, .dashboard-map-canvas) .selected-bin-actions a {
+  background: #005a9c;
+  border: 1px solid #005a9c;
+  color: #ffffff;
+  box-shadow: 0 2px 6px #005a9c26;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  font-weight: 550;
+  transition: background 120ms ease, transform 100ms ease;
+}
+:is(.glass-map, .dashboard-map-canvas) .selected-bin-actions a:hover { background: #003f6d; border-color: #003f6d; }
+:is(.glass-map, .dashboard-map-canvas) .selected-bin-actions a:active { transform: scale(.96); }
+
+/* Search shares the primary action colour and simple interaction. */
+.postcode-search .postcode-submit {
+  background: #005a9c !important;
+  border: 1px solid #005a9c !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px #005a9c26;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: background 120ms ease, transform 100ms ease;
+}
+.postcode-search .postcode-submit:hover { background: #003f6d !important; border-color: #003f6d !important; box-shadow: 0 2px 6px #005a9c26; }
+.postcode-search .postcode-submit:active { transform: scale(.96); }
+
+/* Selected locations use the brand blue rather than the fill-status green. */
+.glass-bins-map .glass-bin-pin.marker-selected {
+  background: #005a9c;
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 0 0 4px #ffffffb3, 0 0 0 8px #005a9c26, 0 4px 14px #005a9c33;
+}
+
+/* A pin identifies a location, not the fill level of three different containers. */
+.glass-bins-map .glass-bin-pin.location-pin {
+  background: #f6faff;
+  color: #005a9c;
+  border-color: #ffffff;
+  box-shadow: 0 2px 8px #003f6d2e;
+}
+.glass-bins-map .glass-bin-pin.location-pin.marker-selected {
+  background: #005a9c;
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 0 0 4px #ffffffb3, 0 0 0 8px #005a9c26, 0 4px 14px #005a9c33;
+}
+
+/* Minimal line artwork replaces the miniature illustrated bins. */
+.glass-card-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  border: 1px solid #ffffffd9;
+  background: #005a9c0a;
+  color: #005a9c;
+}
+.glass-card-icon.brown { color: #87552f; background: #87552f0d; }
+.glass-card-icon.green { color: #3b8a59; background: #3b8a590d; }
+.glass-card-icon.white { color: #718596; background: #ffffffa6; }
+
+/* Keep location details attached to the actual Leaflet marker. */
+.container-pin-popup .leaflet-popup-content-wrapper {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.container-pin-popup .leaflet-popup-content { margin: 0; width: min(350px, calc(100vw - 40px)) !important; }
+.container-pin-popup .selected-bin-panel {
+  position: relative !important;
+  inset: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  max-height: min(540px, 65dvh) !important;
+  overflow: auto;
+  margin: 0;
+  box-sizing: border-box;
+  animation: pin-bubble-open 240ms ease-out both;
+  transform-origin: center bottom;
+}
+.container-pin-popup .leaflet-popup-tip { background: #edf4fa; }
+@keyframes pin-bubble-open {
+  from { opacity: 0; translate: 0 8px; scale: .94; }
+  to { opacity: 1; translate: 0 0; scale: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .container-pin-popup .selected-bin-panel { animation: none; }
+}
+
+.address-search-results { list-style: none; padding: 5px; margin: 10px 0; border-radius: 18px; background: #ffffffb8; max-height: 220px; overflow: auto; }
+.address-search-results button { width: 100%; padding: 12px; border: 0; border-radius: 12px; background: transparent; color: #003f6d; font: inherit; text-align: left; cursor: pointer; }
+.address-search-results button:hover, .address-search-results button:focus-visible { background: #e6f0f8; }
+
+.search-location-marker { background: transparent; border: none; }
+.search-location-marker svg { overflow: visible; filter: drop-shadow(0 4px 7px #003f6d55); }
+
+/* Slide the finder sheet out of view while retaining its scroll position. */
+.finder-page .glass-layout > .glass-sidebar {
+  transform: translateY(0);
+  visibility: visible;
+  transition: transform 520ms cubic-bezier(.22, 1, .36, 1), visibility 0s;
+}
+.finder-page .glass-layout.panel-collapsed > .glass-sidebar,
+.finder-page.map-info-page .glass-layout > .glass-sidebar {
+  transform: translateY(calc(100% + 180px));
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 520ms cubic-bezier(.22, 1, .36, 1), visibility 0s 520ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .finder-page .glass-layout > .glass-sidebar,
+  .finder-page .glass-layout.panel-collapsed > .glass-sidebar,
+  .finder-page.map-info-page .glass-layout > .glass-sidebar { transition: none; }
+}
+
+/* The map veil remains mounted; only its opacity changes between tabs. */
+.map-info-page > .info-page {
+  animation: info-content-fade 550ms ease 240ms both;
+}
+@keyframes info-content-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .finder-page::after { transition: none; }
+  .map-info-page > .info-page { animation: none; }
+}
+
+.about-content { display: grid; gap: 24px; padding-bottom: 24px; }
+.about-content .info-card { padding: clamp(24px, 4vw, 40px); }
+.about-content .info-card h2 { margin-top: 0; }
+.about-content .info-card p { max-width: 78ch; font-size: 15px; }
+.about-content .info-card li { padding: 6px 0; }
+.about-content strong { color: #003f6d; font-weight: 650; }
+.about-content .about-emphasis { margin-top: 24px; }
+.about-vision { border-top: 3px solid #3b8a59; }
+
+.about-vision .about-emphasis strong { color: #3b8a59; }
+
+.about-content .info-card:not(.about-vision) { border-top: 3px solid #005a9c; }
+
+.info-colours .recycling-colour-card.white { background: #fff; border-color: #dce3e9; color: #172b3b; }
+.info-colours .recycling-colour-card.brown { background: #87552f; border-color: #87552f; color: #fff; }
+.info-colours .recycling-colour-card.green { background: #3b8a59; border-color: #3b8a59; color: #fff; }
+.info-colours .recycling-colour-card h3,
+.info-colours .recycling-colour-card p,
+.info-colours .recycling-colour-card .info-german { color: inherit; }
+
+.info-colours .recycling-colour-card.brown,
+.info-colours .recycling-colour-card.green {
+  box-shadow: none;
+}
+
+/* Inlay the sorting colours within one shared frosted panel. */
+.info-colours {
+  padding: 18px;
+  border: 1px solid #ffffffd9;
+  border-radius: 30px;
+  background: linear-gradient(140deg, #ffffffbd, #ffffff80);
+  backdrop-filter: blur(24px) saturate(115%);
+  -webkit-backdrop-filter: blur(24px) saturate(115%);
+  box-shadow: var(--glass-shadow);
+  gap: 14px;
+}
+.info-colours .recycling-colour-card { border-radius: 18px; }
+@media (max-width: 700px) {
+  .info-colours { padding: 12px; gap: 12px; }
+}
+
+.info-card.recycling-accepted { border-top: 3px solid #3b8a59; }
+.info-card.recycling-excluded { border-top: 3px solid #e30613; }

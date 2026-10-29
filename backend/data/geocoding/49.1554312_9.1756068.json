@@ -1,0 +1,31 @@
+{
+  "place_id": 124225801,
+  "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+  "osm_type": "node",
+  "osm_id": 475086448,
+  "lat": "49.1554312",
+  "lon": "9.1756068",
+  "category": "amenity",
+  "type": "recycling",
+  "place_rank": 30,
+  "importance": 6.671015487902675e-05,
+  "addresstype": "amenity",
+  "name": "",
+  "display_name": "Brechhausstraße, Frankenbach, Heilbronn, Baden-Württemberg, 74078, Deutschland",
+  "address": {
+    "road": "Brechhausstraße",
+    "suburb": "Frankenbach",
+    "city": "Heilbronn",
+    "state": "Baden-Württemberg",
+    "ISO3166-2-lvl4": "DE-BW",
+    "postcode": "74078",
+    "country": "Deutschland",
+    "country_code": "de"
+  },
+  "boundingbox": [
+    "49.1553812",
+    "49.1554812",
+    "9.1755568",
+    "9.1756568"
+  ]
+}

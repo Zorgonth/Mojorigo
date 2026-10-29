@@ -18,6 +18,11 @@ const readingsCsvPath = path.join(
 );
 
 
+const SENSOR_TYPES = [
+  { type: "green", column: "green_sensor_id" },
+  { type: "brown", column: "brown_sensor_id" },
+  { type: "white", column: "white_sensor_id" },
+];
 
 function parseNumber(value) {
   if (value === undefined || value === null || String(value).trim() === "") {
@@ -32,11 +37,11 @@ function getLatestReadings(readings) {
   const latestBySensor = new Map();
 
   for (const reading of readings) {
-    const sensorId = String(reading.sensorId ?? "").trim();
+    const sensorId = String(reading.sensorId ?? "").trim().toLowerCase();
     if (!sensorId) continue;
 
     const timestamp = Date.parse(reading.receivedAt ?? "");
-    const previous = latestBySensor.get(sensorId);
+    const previous = latestBySensor.get(sensorId.toLowerCase());
 
     if (
       !previous ||
@@ -81,7 +86,7 @@ osmBinsRouter.get(
       .map((bin) => {
         const sensors = SENSOR_TYPES.map(({ type, column }) => {
           const sensorId = String(bin[column] ?? "").trim();
-          const reading = latestBySensor.get(sensorId);
+          const reading = latestBySensor.get(sensorId.toLowerCase());
 
           return {
             type,
@@ -118,6 +123,19 @@ osmBinsRouter.get(
   }),
 );
 
+// Collection events are location-wide; the CSV does not record a glass colour.
+osmBinsRouter.get("/collections", asyncHandler(async (_req, res) => {
+  const bins = new Map(readCsvFile(binsCsvPath).map(bin => [bin.id, bin]));
+  const data = readCsvFile(path.join(backendRoot, "data", "collections.csv"))
+    .filter(row => bins.has(row.bin_id) && Number.isFinite(Date.parse(row.collected_at)))
+    .map(row => {
+      const bin = bins.get(row.bin_id);
+      return { id: row.id, binId: row.bin_id, collectedAt: row.collected_at,
+        name: bin.arena_name || bin.address || "Glass collection point", address: bin.address || "" };
+    });
+  res.json({data});
+}));
+
 osmBinsRouter.get(
   "/:osmType/:osmId/maps-link",
   asyncHandler(async (req, res) => {
@@ -135,7 +153,7 @@ function getLatestReadingBySensor(readings) {
   const latest = new Map();
 
   for (const reading of readings) {
-    const sensorId = String(reading.sensorId ?? "").trim();
+    const sensorId = String(reading.sensorId ?? "").trim().toLowerCase();
     const receivedAt = reading.receivedAt;
     const timestamp = Date.parse(receivedAt ?? "");
     const fillPercent = Number(reading.fillPercent);
@@ -229,7 +247,7 @@ osmBinsRouter.post(
 
         const sensors = SENSOR_TYPES.map(({ type, column }) => {
           const sensorId = String(bin[column] ?? "").trim();
-          const reading = latestBySensor.get(sensorId);
+          const reading = latestBySensor.get(sensorId.toLowerCase());
 
           return {
             type,
@@ -336,10 +354,10 @@ osmBinsRouter.post(
 
         travelMode: "DRIVE",
         routingPreference: "TRAFFIC_AWARE",
-        departureTime: new Date().toISOString(),
+        // Omit departureTime so Google uses request time; a local "now" can arrive in the past.
         optimizeWaypointOrder: true,
         polylineQuality: "HIGH_QUALITY",
-        languageCode: "en",
+        languageCode: req.body?.language === "de" ? "de" : "en",
         units: "METRIC",
       };
 
