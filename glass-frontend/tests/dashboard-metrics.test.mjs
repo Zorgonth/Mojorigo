@@ -25,3 +25,11 @@ test('today means Europe/Berlin calendar day rather than UTC or all-time collect
  const events=[{id:'1',collectedAt:'2026-10-27T23:30:00Z'},{id:'2',collectedAt:'2026-10-28T23:30:00Z'},{id:'3',collectedAt:'invalid'},{id:'4',collectedAt:'2026-10-27T10:00:00Z'}];
  assert.deepEqual(dashboardMetrics(bins,'all',events,new Date('2026-10-28T12:00:00Z')).collectionsToday.map(e=>e.id),['1']);
 });
+test('overview sorts every colour highest first; All uses the fullest compartment, with missing readings last',()=>{
+ const input=[...bins,{id:'c',sensors:[sensor('Brown',null),sensor('White',null),sensor('Green',null)]}];
+ assert.deepEqual(metricLocations(input,'all','all').map(b=>b.id),['b','a','c']);
+ assert.deepEqual(metricLocations(input,'brown','all').map(b=>b.id),['a','b','c']);
+ assert.deepEqual(metricLocations(input,'white','all').map(b=>b.id),['b','a','c']);
+ assert.deepEqual(metricLocations(input,'green','all').map(b=>b.id),['a','b','c']);
+ assert.deepEqual(input.map(b=>b.id),['a','b','c']);
+});

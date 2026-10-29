@@ -47,7 +47,7 @@ test('card selection reveals a clustered marker after movement and cancels stale
    'react-leaflet':{useMap:()=>map},'../i18n':{locationLabel:s=>s,t:s=>s},'./bin-data':{locationTitle:()=> 'Allee'},
    'leaflet':{divIcon:()=>({}),marker:()=>marker,markerClusterGroup:()=>group,MarkerCluster:class {},popup:()=>popup,point:()=>({})},
   }).default;
-  component({bins:[{id:'A',latitude:49.14,longitude:9.22}],selected:'A',color:'All',onSelect:()=>{},popupContent:null});
+  component({bins:[{id:'A',latitude:49.14,longitude:9.22}],selected:'A',color:'All',onSelect:()=>{},popupContent:"details"});
   const cleanups=effects.map(fn=>fn());
   assert.equal(calls.includes('open'),false);
   for(const fn of [...frames.values()]) fn();

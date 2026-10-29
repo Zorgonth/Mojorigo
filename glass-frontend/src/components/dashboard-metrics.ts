@@ -14,5 +14,5 @@ export function dashboardMetrics(bins: GlassBin[], glassType: DashboardGlassType
 export function metricLocations(bins: GlassBin[], glassType: DashboardGlassType, metric: "all" | "pickup" | "fullness") {
  const readings = (bin: GlassBin) => bin.sensors.filter(s => (glassType === "all" || s.color.toLowerCase() === glassType) && s.sensorId && s.fillPercent !== null).map(s=>s.fillPercent!);
  const filtered = metric === "pickup" ? bins.filter(bin => readings(bin).some(fill=>fill>70)) : [...bins];
- return metric === "fullness" ? filtered.sort((a,b)=> Math.max(-1,...readings(b))-Math.max(-1,...readings(a))) : filtered;
+ return filtered.sort((a,b)=> Math.max(-1,...readings(b)) - Math.max(-1,...readings(a)) || a.id.localeCompare(b.id));
 }

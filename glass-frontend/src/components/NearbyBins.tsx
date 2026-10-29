@@ -18,7 +18,7 @@ function LocationCard({ bin, selected, onSelect }: {bin: GlassBin; selected: boo
    {bin.distanceMetres !== undefined && <span className="container-distance">{bin.distanceMetres < 1000 ? `${Math.round(bin.distanceMetres/10)*10} m` : `${(bin.distanceMetres/1000).toLocaleString(locale(),{maximumFractionDigits:1,minimumFractionDigits:1})} km`} {t("away")}</span>}</span><ChevronRight size={17}/>
   </button>
   <div className="location-colour-controls"><GlassFilters selected={color} onChange={setColor}/></div>
-  <SensorLevels bin={bin} compact color={color}/>
+  <SensorLevels citizen bin={bin} compact color={color}/>
  </article>;
 }
 export default function NearbyBins({ bins, selected, onSelect, total }: { total: number; bins: GlassBin[]; selected: string | null; onSelect: (id: string) => void }) {

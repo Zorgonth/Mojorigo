@@ -21,6 +21,7 @@ export default function ClusteredBins({ bins, color, selected, onSelect, popupCo
 }) {
   const { i18n } = useTranslation();
   const map = useMap();
+  const hasPopup = Boolean(popupContent);
   const popupHost = useMemo(() => document.createElement("div"), []);
   const clusterGroup = useRef<L.MarkerClusterGroup | null>(null);
   const markers = useRef(new Map<string, L.Marker>());
@@ -112,7 +113,7 @@ export default function ClusteredBins({ bins, color, selected, onSelect, popupCo
       revealFrame = requestAnimationFrame(() => {
         if (cancelled) return;
         group.zoomToShowLayer(marker, () => {
-          if (cancelled) return;
+          if (cancelled || !hasPopup) return;
           marker.bindPopup(popup).openPopup();
           popup.update();
           popup.on("remove", close);
@@ -125,8 +126,7 @@ export default function ClusteredBins({ bins, color, selected, onSelect, popupCo
     else {
       map.once("moveend", reveal);
       map.setView(marker.getLatLng(), zoom, {
-        // Keep cluster membership synchronous while the map animates to a selected pin.
-      animate: false,
+        animate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
       });
     }
     return () => {
@@ -137,6 +137,6 @@ export default function ClusteredBins({ bins, color, selected, onSelect, popupCo
       popup.remove();
       marker.unbindPopup();
     };
-  }, [map, bins, color, selected, onSelect, i18n.resolvedLanguage, popupHost]);
+  }, [map, bins, color, selected, onSelect, i18n.resolvedLanguage, popupHost, hasPopup]);
   return createPortal(popupContent, popupHost);
 }
