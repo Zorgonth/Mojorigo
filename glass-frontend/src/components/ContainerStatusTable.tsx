@@ -21,8 +21,8 @@ export default function ContainerStatusTable({ glassType, search, selected, onSe
   <div className="table-wrap container-status-scroll"><table className="container-status-table">
    <caption className="sr-only">{t("Container locations and sensor fill levels")}</caption>
    <thead><tr><th scope="col">{t("Location")}</th><th scope="col">{t("Postcode")}</th>{colours.map(colour => <th scope="col" key={colour}>{t("{{colour}} glass", {colour: t(colour)})}</th>)}</tr></thead>
-   <tbody>{rows.map(bin => <tr key={bin.id} className={selected === bin.id ? "container-row-selected" : ""}>
-    <th scope="row"><button type="button" className="container-location-button" onClick={() => onSelect(bin.id)} aria-pressed={selected === bin.id} title={t("Show on map")}>
+   <tbody>{rows.map(bin => <tr key={bin.id} className={selected === bin.id ? "container-row-selected" : ""} onClick={() => onSelect(bin.id)}>
+    <th scope="row"><button type="button" className="container-location-button" onClick={event => { event.stopPropagation(); onSelect(bin.id); }} aria-pressed={selected === bin.id} title={t("Show on map")}>
      <strong>{locationLabel(locationTitle(bin))}</strong><span>{bin.address && bin.address !== locationTitle(bin) ? locationLabel(bin.address) : bin.city}</span>
     </button></th><td>{bin.postcode || "—"}</td>
     {colours.map(colour => {

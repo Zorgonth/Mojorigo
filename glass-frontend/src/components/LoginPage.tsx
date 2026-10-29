@@ -1,3 +1,4 @@
+import { useState } from "react";
 import LanguageSelect from "./LanguageSelect";
 import { useTranslation } from "react-i18next";
 import { t } from "../i18n";
@@ -10,6 +11,7 @@ interface LoginPageProps {
 
 function LoginPage({ onBack, onLogin }: LoginPageProps) {
   useTranslation();
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <main className="glass-app login-shell">
       <div className="glass-background" />
@@ -54,8 +56,9 @@ function LoginPage({ onBack, onLogin }: LoginPageProps) {
 
         <section className="login-card" aria-label={t("Login form")}>
           <div className="login-card-header">
-            <span className="login-pill">{t("Secure sign in")}</span>
+            <span className="login-pill"><LockKeyhole size={14} aria-hidden="true"/>{t("Secure sign in")}</span>
             <h2>{t("Welcome back")}</h2>
+            <p className="login-description">{t("Sign in to manage collections and keep Heilbronn recycling.")}</p>
           </div>
 
           <form
@@ -69,7 +72,7 @@ function LoginPage({ onBack, onLogin }: LoginPageProps) {
               <span>{t("Email address")}</span>
               <div className="input-shell">
                 <Mail size={16} />
-                <input type="email" placeholder={t("name@example.com")} defaultValue="hello@glass.local" />
+                <input autoComplete="username" type="email" placeholder={t("name@example.com")} defaultValue="hello@glass.local" />
               </div>
             </label>
 
@@ -77,10 +80,9 @@ function LoginPage({ onBack, onLogin }: LoginPageProps) {
               <span>{t("Password")}</span>
               <div className="input-shell">
                 <LockKeyhole size={16} />
-                <input type="password" placeholder={t("Enter password")} defaultValue="glass-demo" />
-                <button type="button" className="password-toggle" aria-label={t("Toggle password visibility")}>
-                  <EyeOff size={15} />
-                  <Eye size={15} className="password-toggle-hidden" />
+                <input autoComplete="current-password" type={showPassword ? "text" : "password"} placeholder={t("Enter password")} defaultValue="glass-demo" />
+                <button type="button" className="password-toggle" aria-label={t("Toggle password visibility")} aria-pressed={showPassword} onClick={() => setShowPassword(value => !value)}>
+                  {showPassword ? <Eye size={18}/> : <EyeOff size={18}/>}
                 </button>
               </div>
             </label>

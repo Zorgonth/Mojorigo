@@ -49,7 +49,8 @@ export function binFill(bin: GlassBin, color: GlassColor = "All"): number | null
   const values = bin.sensors.filter(s => color === "All" || s.color === color).map(s => s.fillPercent).filter((fill): fill is number => fill !== null);
   return values.length ? Math.max(...values) : null;
 }
-export const fillTone = (fill: number | null) => fill === null ? "unknown" : fill <= 30 ? "low" : fill <= 80 ? "medium" : "high";
+export const citizenFillTone = (fill: number | null) => fill === null ? "unknown" : fill <= 35 ? "low" : fill < 75 ? "medium" : "high";
+export const fillTone = citizenFillTone;
 export const demoBins = parseMapResponse({ data: [
   { id: "demo-1", name: "Sülmerstraße 12", address: "74072 Heilbronn", latitude: 49.1468, longitude: 9.2202, sensors: [
     {type: "green", sensorId: "demo-green", fillPercent: 23}, {type: "white", sensorId: "demo-white", fillPercent: 78}, {type: "brown", sensorId: "demo-brown", fillPercent: 91}

@@ -393,3 +393,117 @@ html, body, #root { background-color: #dfe9e4; }
   backdrop-filter: blur(22px) saturate(115%);
   -webkit-backdrop-filter: blur(22px) saturate(115%);
 }
+
+.landing-attribution {
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 3px 7px;
+  border-radius: 9px 0 0 0;
+}
+
+.landing-attribution {
+  left: 0;
+  right: auto;
+  border-radius: 0 9px 0 0;
+}
+
+.landing-brand { padding: 16px 46px; }
+.landing-brand .landing-logo { font-size: clamp(66px, 7vw, 102px); letter-spacing: -2px; }
+@media (max-width: 700px) {
+  .landing-brand { padding: 16px 26px; }
+  .landing-brand .landing-logo { font-size: clamp(48px, 10vw, 64px); letter-spacing: -1px; }
+}
+
+/* Extend the choice panels to the outer edges while preserving central labels. */
+.landing-citizen .landing-choice-button { padding: 0 clamp(24px, 3vw, 52px) 0 0; }
+.landing-manager .landing-choice-button { padding: 0 0 0 clamp(24px, 3vw, 52px); }
+.landing-choice .landing-choice-content {
+  max-width: none;
+  height: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  padding-top: 110px;
+  padding-bottom: 0;
+  transform: none;
+}
+.landing-citizen .landing-choice-content { border-radius: 0 28px 28px 0; border-left: 0; border-top: 0; border-bottom: 0; }
+.landing-manager .landing-choice-content { border-radius: 28px 0 0 28px; border-right: 0; border-top: 0; border-bottom: 0; }
+.landing-choice-button:hover .landing-choice-content { transform: none; }
+@media (max-width: 700px) {
+  .landing-citizen .landing-choice-button { padding: 0 10px 0 0; }
+  .landing-manager .landing-choice-button { padding: 0 0 0 10px; }
+  .landing-choice .landing-choice-content { padding-top: 140px; padding-left: 12px; padding-right: 12px; }
+}
+
+/* Bring the inner panel edges toward the ends of the centred brand panel. */
+@media (min-width: 701px) {
+  .landing-citizen .landing-choice-button { padding-right: clamp(180px, 21vw, 330px); }
+  .landing-manager .landing-choice-button { padding-left: clamp(180px, 21vw, 330px); }
+}
+
+@media (min-width: 701px) {
+  .landing-citizen .landing-choice-button { padding-right: 50%; }
+  .landing-manager .landing-choice-button { padding-left: 50%; }
+}
+
+/* Mirror the manager entrance: clear the chosen window and push the other away. */
+.landing-layer-leaving {
+  animation: landing-citizen-finish 850ms steps(1, end) both;
+  pointer-events: none;
+}
+.landing-layer-leaving .landing-manager {
+  animation: manager-window-push 850ms cubic-bezier(.22, 1, .36, 1) both;
+}
+.landing-layer-leaving .landing-citizen {
+  animation: landing-choice-disappear 250ms ease both;
+}
+.landing-layer-leaving .landing-header,
+.landing-layer-leaving .landing-footer {
+  animation: landing-choice-disappear 220ms ease both;
+}
+.page-map-opening .finder-page .glass-sidebar {
+  animation: search-panel-rise 750ms cubic-bezier(.16, 1, .3, 1) 280ms both;
+}
+@keyframes manager-window-push {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+@keyframes landing-citizen-finish {
+  from { visibility: visible; }
+  to { visibility: hidden; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing-layer-leaving,
+  .landing-layer-leaving .landing-manager,
+  .landing-layer-leaving .landing-citizen,
+  .landing-layer-leaving .landing-header,
+  .landing-layer-leaving .landing-footer { animation: none; }
+}
+
+/* Let the citizen glass panel leave left as the opposite window moves right. */
+.landing-layer-leaving .landing-citizen { animation: none; }
+.landing-layer-leaving .landing-citizen .landing-map,
+.landing-layer-leaving .landing-citizen .landing-attribution {
+  animation: landing-choice-disappear 250ms ease both;
+}
+.landing-layer-leaving .landing-citizen .landing-choice-button {
+  animation: citizen-window-push 850ms cubic-bezier(.22, 1, .36, 1) both;
+}
+.landing-layer-leaving .landing-citizen {
+  background: transparent;
+  box-shadow: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing-layer-leaving .landing-citizen .landing-map,
+  .landing-layer-leaving .landing-citizen .landing-attribution,
+  .landing-layer-leaving .landing-citizen .landing-choice-button { animation: none; }
+}
+
+/* Move the full citizen frost veil with the departing button. */
+.landing-layer-leaving .landing-citizen::after {
+  animation: citizen-window-push 850ms cubic-bezier(.22, 1, .36, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing-layer-leaving .landing-citizen::after { animation: none; }
+}
