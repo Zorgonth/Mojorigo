@@ -17,6 +17,11 @@ const readingsCsvPath = path.join(
   "readings.csv",
 );
 
+const SENSOR_TYPES = [
+  { type: "glass", column: "sensor_id" },
+  { type: "paper", column: "sensor_id_paper" },
+  { type: "plastic", column: "sensor_id_plastic" },
+];
 
 
 function parseNumber(value) {
